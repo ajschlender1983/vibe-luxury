@@ -1,0 +1,82 @@
+/* ============================================================
+   VIBE — Luxury elevation layer (site-wide)
+   Applied over the existing theme on inner pages. Additive & tasteful:
+   violet-forward accents, calmer type & spacing, refined pill buttons,
+   ambient ripple on hero/CTA regions, settle reveals. Photography untouched.
+   Inner pages already use the violet token system, so this ELEVATES rather
+   than recolors. Brand colors only.
+   ============================================================ */
+:root{
+  --lx-violet:128 60 238;      /* #803cee */
+  --lx-violet-soft:168 130 246;
+  --lx-cream:255 250 247;
+  --lx-ink:26 26 26;
+  --lx-aubergine:27 15 46;     /* #1B0F2E */
+  --lx-aubergine-2:15 9 24;
+  --lx-ease:cubic-bezier(.2,.7,.2,1);
+  /* nudge the theme's own accent tokens toward the brand violet, just in case */
+  --accent:128 60 238 !important;
+  --color-primary:128 60 238;
+}
+
+/* ---- Type: let headings breathe (Abel is already loaded by the theme) ---- */
+h1,h2,.h0,.h1,.h2,[class*="__title"]{ letter-spacing:.045em !important; line-height:1.1 !important; }
+h1,.h0,.h1{ letter-spacing:.05em !important; }
+p,li{ line-height:1.7; }
+
+/* ---- Refined buttons: pill, no glow, violet or ink. Kills any promo-gradient ---- */
+.button, .btn, button.button, [class*="vibe-btn"], .shopify-payment-button__button,
+[class*="__btn"], a[class*="button"]{
+  border-radius:999px !important;
+  box-shadow:none !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase;
+  transition:all .5s var(--lx-ease) !important;
+}
+/* solid primary -> violet, ghost -> outline; strip warm gradients */
+.button--primary, .btn-primary, [class*="primary"].button, .shopify-payment-button__button--unbranded{
+  background:rgb(var(--lx-violet)) !important; background-image:none !important; color:rgb(var(--lx-cream)) !important;
+}
+.button--primary:hover, .btn-primary:hover{ background:rgb(var(--lx-ink)) !important; letter-spacing:.2em !important; }
+
+/* ---- Links pick up the violet ---- */
+a{ transition:color .3s; }
+
+/* ---- Whitespace: give sections room to breathe ---- */
+.shopify-section{ position:relative; }
+.section, .page-width, [class*="__inner"]{ }
+main .shopify-section + .shopify-section{ }
+
+/* ---- Ambient ripple (sound made visible) — injected into hero/CTA regions only ---- */
+.lx-ripple{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+.lx-ripple > i{
+  position:absolute; left:50%; top:50%; width:140vmax; height:140vmax; margin:-70vmax 0 0 -70vmax;
+  border-radius:50%; transform:scale(.6); opacity:0; will-change:transform,opacity;
+  background:radial-gradient(circle,
+    rgb(var(--lx-violet)/.10) 0%, rgb(var(--lx-violet)/.045) 38%,
+    rgb(var(--lx-violet-soft)/.03) 46%, transparent 60%);
+  animation:lxRipple 7.5s cubic-bezier(.37,0,.63,1) infinite;
+}
+.lx-ripple.on-light > i{
+  background:radial-gradient(circle,
+    rgb(var(--lx-violet)/.06) 0%, rgb(var(--lx-violet)/.03) 40%, transparent 58%);
+}
+.lx-ripple > i:nth-child(2){ animation-delay:2.5s; }
+.lx-ripple > i:nth-child(3){ animation-delay:5s; }
+@keyframes lxRipple{ 0%{transform:scale(.6);opacity:0} 18%{opacity:.10} 100%{transform:scale(1.6);opacity:0} }
+/* keep the ripple host's own content above the ripple */
+.lx-ripple-host{ position:relative; }
+.lx-ripple-host > *:not(.lx-ripple){ position:relative; z-index:1; }
+
+/* ---- Settle reveal-on-scroll ---- */
+.lx-reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s var(--lx-ease), transform .8s var(--lx-ease); }
+.lx-reveal.in{ opacity:1; transform:none; }
+
+/* ---- Count-up underline for stat numbers ---- */
+.lx-count{ position:relative; display:inline-block; }
+
+@media (prefers-reduced-motion: reduce){
+  .lx-ripple > i{ animation:none; opacity:.06; transform:scale(1.15); }
+  .lx-reveal{ opacity:1; transform:none; transition:none; }
+  .button,.btn{ transition:none !important; }
+}
