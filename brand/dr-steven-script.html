@@ -1,0 +1,263 @@
+<title>The Right Frequency — On-Camera Script for Dr. Steven Schwartz</title>
+<style>
+  :root{
+    --void:#0B0713; --void2:#140B22; --void3:#1B1030;
+    --ink:#EDE7F7; --ink-dim:#A99FC2; --ink-faint:#6E6389;
+    --violet:#8B5CF6; --violet-br:#B79BFA; --champagne:#E9C89A; --champ-dim:#C7A877;
+    --hair:rgba(233,200,154,.22); --panel:rgba(139,92,246,.06); --panel-bd:rgba(167,130,246,.18);
+    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --maxw:720px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --void:#F6F2FB; --void2:#FFFFFF; --void3:#F0E9FA;
+      --ink:#1C1233; --ink-dim:#5A4E76; --ink-faint:#8A7EA6;
+      --violet:#6D3BE0; --violet-br:#5A29C9; --champagne:#9A7B3E; --champ-dim:#B0904E;
+      --hair:rgba(122,86,40,.24); --panel:rgba(109,59,224,.05); --panel-bd:rgba(109,59,224,.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --void:#0B0713; --void2:#140B22; --void3:#1B1030;
+    --ink:#EDE7F7; --ink-dim:#A99FC2; --ink-faint:#6E6389;
+    --violet:#8B5CF6; --violet-br:#B79BFA; --champagne:#E9C89A; --champ-dim:#C7A877;
+    --hair:rgba(233,200,154,.22); --panel:rgba(139,92,246,.06); --panel-bd:rgba(167,130,246,.18);
+  }
+  :root[data-theme="light"]{
+    --void:#F6F2FB; --void2:#FFFFFF; --void3:#F0E9FA;
+    --ink:#1C1233; --ink-dim:#5A4E76; --ink-faint:#8A7EA6;
+    --violet:#6D3BE0; --violet-br:#5A29C9; --champagne:#9A7B3E; --champ-dim:#B0904E;
+    --hair:rgba(122,86,40,.24); --panel:rgba(109,59,224,.05); --panel-bd:rgba(109,59,224,.16);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 60% at 50% -10%, rgba(139,92,246,.10), transparent 60%);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--violet-br)}
+
+  /* ---- masthead ---- */
+  header{padding:88px 0 48px;text-align:center}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--champagne);margin:0 0 22px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,8vw,68px);line-height:1.02;
+    margin:0;letter-spacing:-.01em;text-wrap:balance}
+  h1 em{font-style:italic;color:var(--violet-br)}
+  .sub{margin:22px auto 0;max-width:44ch;color:var(--ink-dim);font-size:16.5px}
+  .meta{margin-top:30px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-dim);border:1px solid var(--hair);border-radius:100px;padding:6px 13px}
+
+  /* ---- legend ---- */
+  .legend{margin:8px auto 60px;border:1px solid var(--panel-bd);background:var(--panel);
+    border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px}
+  @media(max-width:560px){.legend{grid-template-columns:1fr}}
+  .legend div{font-size:13.5px;color:var(--ink-dim)}
+  .legend b{color:var(--ink);font-weight:600}
+  .lg-dir{font-family:var(--mono);color:var(--champ-dim);font-style:italic}
+  .lg-say{font-family:var(--serif);color:var(--ink);font-size:15px}
+
+  /* ---- act blocks ---- */
+  .act{padding:44px 0;border-top:1px solid var(--hair)}
+  .act:first-of-type{border-top:none}
+  .rail{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .num{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--champagne);
+    text-transform:uppercase}
+  .tc{font-family:var(--mono);font-size:12px;color:var(--ink-faint);
+    font-variant-numeric:tabular-nums;margin-left:auto}
+  .title{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.02em;color:var(--ink)}
+  .dir{font-family:var(--mono);font-size:13px;line-height:1.55;color:var(--champ-dim);
+    font-style:italic;margin:0 0 20px;padding-left:16px;border-left:2px solid var(--hair)}
+  .say{font-family:var(--serif);font-size:clamp(21px,3.6vw,27px);line-height:1.42;
+    color:var(--ink);margin:0 0 14px;letter-spacing:-.005em;text-wrap:pretty}
+  .say + .say{margin-top:18px}
+  .say .hl{color:var(--violet-br);font-style:italic}
+  .beat{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);margin:16px 0}
+  .screen{margin-top:22px;display:flex;gap:12px;align-items:flex-start;
+    background:var(--void2);border:1px solid var(--hair);border-radius:12px;padding:14px 16px}
+  .screen .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--champagne);white-space:nowrap;padding-top:2px}
+  .screen p{margin:0;font-size:14px;color:var(--ink-dim)}
+
+  /* ---- finale ---- */
+  .finale{text-align:center;padding:70px 0 40px;border-top:1px solid var(--hair)}
+  .finale .say{font-size:clamp(24px,4.4vw,34px)}
+  .finale .stamp{font-family:var(--serif);font-style:italic;font-size:clamp(30px,6vw,48px);
+    color:var(--champagne);margin-top:26px}
+
+  /* ---- storyboard ---- */
+  .board{padding:64px 0 40px;border-top:1px solid var(--hair)}
+  .board h2{font-family:var(--serif);font-weight:500;font-size:30px;margin:0 0 6px;text-wrap:balance}
+  .board .h2sub{color:var(--ink-dim);font-size:14.5px;margin:0 0 30px}
+  .shot{display:grid;grid-template-columns:80px 1fr;gap:6px 18px;padding:16px 0;
+    border-top:1px solid var(--hair)}
+  .shot .sc{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--champ-dim);
+    text-transform:uppercase;padding-top:3px}
+  .shot .st{font-weight:600;font-size:14.5px;color:var(--ink)}
+  .shot .sd{grid-column:2;font-size:13.5px;color:var(--ink-dim);margin-top:2px}
+
+  footer{padding:40px 0 90px;text-align:center;color:var(--ink-faint);font-size:12.5px;
+    font-family:var(--mono);letter-spacing:.06em}
+  footer a{color:var(--champ-dim);text-decoration:none;border-bottom:1px solid var(--hair)}
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">The Right Frequency · On-Camera Script</p>
+    <h1>Dr. Steven, <em>to camera</em></h1>
+    <p class="sub">Everything Dr. Steven Schwartz reads on screen — beat by beat, matched to the storyboard for “The Right Frequency.”</p>
+    <div class="meta">
+      <span class="tag">Runtime ≈ 3:10</span>
+      <span class="tag">14 beats</span>
+      <span class="tag">VIBE · Bioharmonic</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="legend">
+    <div><span class="lg-dir">[ like this ]</span> &nbsp;— direction &amp; tone (not spoken)</div>
+    <div><span class="lg-say">“Like this.”</span> &nbsp;— <b>spoken on camera</b></div>
+    <div><b>ON SCREEN</b> — what the audience sees under the line</div>
+    <div><b>Timecode</b> — approximate; pace to the edit, never rush</div>
+  </div>
+
+  <!-- 1 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 1</span><span class="title">The Montage</span><span class="tc">0:00</span></div>
+    <p class="dir">[ V.O. over the faces. Unhurried. Let three or four people land before the first word. ]</p>
+    <p class="say">Ask a hundred people how they are, and almost all of them will say <span class="hl">“fine.”</span></p>
+    <p class="say">But watch the body. The held breath. The shoulders that never quite come down.</p>
+    <div class="screen"><span class="lab">On screen</span><p>A mix of humanity, one face after another — each quietly says, “I feel numb.”</p></div>
+  </section>
+
+  <!-- 1.5 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 1.5</span><span class="title">The Circle of Recognition</span><span class="tc">0:15</span></div>
+    <p class="dir">[ Move to camera. Gentle, sure. You’ve seen this thousands of times. ]</p>
+    <p class="say">Numbness isn’t the absence of feeling. It’s a nervous system that’s been on guard so long it forgot how to stand down.</p>
+    <p class="say">And here is the part no one tells you — <span class="hl">you are not the only one.</span></p>
+    <div class="screen"><span class="lab">On screen</span><p>One man steps forward from the ring. Others step in. They kneel with him, hands on him. Grey light warms to gold.</p></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 2</span><span class="title">The Turn</span><span class="tc">0:35</span></div>
+    <p class="say">What if the way back was never in your head at all?</p>
+    <p class="say">What if it began <span class="hl">in the body?</span></p>
+  </section>
+
+  <!-- 3 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 3</span><span class="title">Origin</span><span class="tc">0:45</span></div>
+    <p class="dir">[ This is your credibility. Warm, not boastful — you’re stating a fact you’ve lived. ]</p>
+    <p class="say">I’ve spent twenty-five years on that one question. And the answer wasn’t more noise. It was the <span class="hl">right frequency</span> — the precise vibration that tells the body it’s safe to let go.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 4</span><span class="title">What It Is</span><span class="tc">1:00</span></div>
+    <p class="say">This is VIBE. A vibroacoustic bed that turns sound you can <span class="hl">feel</span> into a language your nervous system already speaks.</p>
+    <p class="say">You don’t have to try. You just have to lie down.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 5</span><span class="title">The Proof</span><span class="tc">1:15</span></div>
+    <p class="say">Can precisely engineered sound do the work we usually ask of medication?</p>
+    <p class="say">For thousands of people now, the honest answer is — it does <span class="hl">more</span> than we hoped.</p>
+  </section>
+
+  <!-- 5.5 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 5.5</span><span class="title">The Coherence Collective — the full stack</span><span class="tc">1:28</span></div>
+    <p class="dir">[ Slightly more matter-of-fact. This beat quietly speaks to practitioners and operators, too. ]</p>
+    <p class="say">VIBE doesn’t stand alone. It sits at the centre of a stack — red light, molecular hydrogen, light and sound — layered into one session.</p>
+    <p class="say">For a practitioner, that’s the difference between a treatment room and a <span class="hl">destination.</span></p>
+    <div class="screen"><span class="lab">On screen</span><p>The professional sequence: opens tight in red — mask on, nasal cannula from the Axiom H₂ — then pulls wide to the VIBE resting on a standard massage table, red-light mat over the body, a practitioner attending.</p></div>
+  </section>
+
+  <!-- 5.8 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 5.8</span><span class="title">The Energy of Mexico</span><span class="tc">1:45</span></div>
+    <p class="say">Every VIBE is assembled and tuned by hand in <span class="hl">[CITY]</span>, Mexico — in the kind of place that reminds you the body was never meant to live in a hurry.</p>
+    <div class="screen"><span class="lab">Note</span><p>Confirm [CITY] before the shoot — the line locks the “made by hand” claim.</p></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 6</span><span class="title">Made by Hand</span><span class="tc">1:55</span></div>
+    <p class="say">Birch, shaped by hand. A quilt, stitched in a spiral. Built by people who lie down on the very thing they make.</p>
+  </section>
+
+  <!-- 6.5 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 6.5</span><span class="title">The Flagship</span><span class="tc">2:08</span></div>
+    <p class="say">This is the one that ships today.</p>
+  </section>
+
+  <!-- 6.8 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 6.8</span><span class="title">The Founding 50</span><span class="tc">2:14</span></div>
+    <p class="dir">[ Direct. Personal. Eyes in the lens. This is the ask — don’t soften it. ]</p>
+    <p class="say">The first ten VIBEs were a Limited Black Edition — hand-numbered, black on black. <span class="hl">They’re gone.</span></p>
+    <p class="say">What’s left is rarer than a product. We’re completing a Founding 50 — the people who help shape what this becomes.</p>
+    <p class="say">Members receive the cream edition. And every founding member joins us in Mexico, for a mastermind retreat with the people building the future of the nervous system.</p>
+    <p class="say">This isn’t a checkout. <span class="hl">It’s an application.</span></p>
+    <div class="screen"><span class="lab">On screen</span><p>Dr. Steven to camera → the black edition (sold out) → the cream edition → the Mexico retreat villa at golden hour.</p></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 7</span><span class="title">Testimonial</span><span class="tc">2:45</span></div>
+    <p class="dir">[ V.O. over real creator footage. ]</p>
+    <p class="say">You’ll know within one session. Your body will tell you before your mind catches up.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="act">
+    <div class="rail"><span class="num">Act 8</span><span class="title">The Invitation</span><span class="tc">2:55</span></div>
+    <p class="say">So here’s my invitation. Get on a call with our founding team. Come <span class="hl">feel</span> it.</p>
+  </section>
+
+  <!-- finale -->
+  <section class="finale">
+    <div class="rail" style="justify-content:center"><span class="num">Act 9</span><span class="title">Tagline</span></div>
+    <p class="dir" style="border:none;text-align:center;padding:0">[ Slow. Let the first line breathe. Then the stamp, almost a whisper. ]</p>
+    <p class="say">You were never broken.<br>You were only waiting for the right frequency.</p>
+    <p class="beat">— beat —</p>
+    <p class="stamp">Peace is a vibe.</p>
+  </section>
+
+  <!-- storyboard -->
+  <section class="board">
+    <h2>Storyboard — shot map</h2>
+    <p class="h2sub">The beats above, in order, as the audience sees them. Full rendered frames live in the storyboard document.</p>
+
+    <div class="shot"><span class="sc">Act 1</span><span class="st">The Montage</span><p class="sd">Mixed faces, one at a time — “I feel numb.” Cold, held.</p></div>
+    <div class="shot"><span class="sc">Act 1.5</span><span class="st">Circle of Recognition</span><p class="sd">Steps forward · his feet · one circle broken (telephoto) · feet stepping in · recognition · to his knees · gathered around him. Grey → purple → gold.</p></div>
+    <div class="shot"><span class="sc">Act 2</span><span class="st">The Turn</span><p class="sd">Into the body — the wave.</p></div>
+    <div class="shot"><span class="sc">Act 3</span><span class="st">Origin</span><p class="sd">The lab; the current made visible (Chladni).</p></div>
+    <div class="shot"><span class="sc">Act 4</span><span class="st">What It Is</span><p class="sd">The VIBE bed; exhale; press-play on the coral tablet.</p></div>
+    <div class="shot"><span class="sc">Act 5</span><span class="st">The Proof</span><p class="sd">The bed in the field; the nervous system, lit.</p></div>
+    <div class="shot"><span class="sc">Act 5.5</span><span class="st">The full stack</span><p class="sd">Red close-up → applied by hand → H₂ + cannula → pull up: VIBE on a massage table. Practitioner beat.</p></div>
+    <div class="shot"><span class="sc">Act 5.8</span><span class="st">Energy of Mexico</span><p class="sd">Drone land · crystals · cenote · sacred light.</p></div>
+    <div class="shot"><span class="sc">Act 6</span><span class="st">Made by Hand</span><p class="sd">Birch shaped · spiral quilt stitched · it powers on · the maker lies on it.</p></div>
+    <div class="shot"><span class="sc">Act 6.5</span><span class="st">The Flagship</span><p class="sd">Active glow · at rest · Founders Edition №101.</p></div>
+    <div class="shot"><span class="sc">Act 6.8</span><span class="st">The Founding 50</span><p class="sd">Dr. Steven · Black Edition (sold out) · cream for the 50 · Mexico mastermind.</p></div>
+    <div class="shot"><span class="sc">Act 7</span><span class="st">Testimonial</span><p class="sd">Selfie-POV / real creator footage.</p></div>
+    <div class="shot"><span class="sc">Act 8</span><span class="st">The Invitation</span><p class="sd">Resonance call with the founding team.</p></div>
+    <div class="shot"><span class="sc">Act 9</span><span class="st">Tagline</span><p class="sd">You were never broken → Peace is a vibe.</p></div>
+  </section>
+</div>
+
+<footer>
+  VIBE · “The Right Frequency” · on-camera script v1 &nbsp;·&nbsp; storyboard: <a href="https://ajschlender1983.github.io/vibe-luxury/storyboard/">ajschlender1983.github.io/vibe-luxury/storyboard</a>
+</footer>
+
+<script>
+  // respect the viewer's explicit theme toggle over the media query (both directions handled by tokens)
+  (function(){ try{ var t=document.documentElement.getAttribute('data-theme'); }catch(e){} })();
+</script>
