@@ -26,6 +26,7 @@
   --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1); --ease-settle:cubic-bezier(.2,.7,.2,1);
   --maxw:1200px; --textw:720px;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --gold-line:227 193 105;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -123,10 +124,20 @@ header.solid{background:rgb(var(--aubergine-2)/.82);backdrop-filter:blur(14px);
 
 /* scarcity / proof */
 .scar{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:1rem}
-.soldbox{text-align:center;border:1px solid rgb(var(--amber)/.4);border-radius:16px;padding:2rem 2.4rem;background:rgb(var(--amber)/.05)}
-.soldbox .big{font-family:var(--display);font-size:clamp(3rem,7vw,5.2rem);line-height:1;color:rgb(var(--amber-soft))}
-.soldbox .lab{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:rgb(var(--amber-soft));margin-top:.8rem}
-.soldbox .lab b{color:rgb(var(--cream))}
+.soldbox{position:relative;text-align:center;padding:2.6rem 2.8rem;border-radius:5px;
+  background:linear-gradient(160deg,#150f0a,#0b0810 78%);
+  border:1px solid rgb(var(--gold-line)/.32);
+  box-shadow:0 0 0 1px rgb(0 0 0/.5) inset,0 22px 54px rgb(0 0 0/.45)}
+.soldbox::before{content:"";position:absolute;inset:6px;border:1px solid rgb(var(--gold-line)/.26);border-radius:3px;pointer-events:none}
+.soldbox .sb-eyebrow{font-family:var(--body);font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:rgb(var(--gold-line)/.85);margin-bottom:1.1rem}
+.soldbox .big{font-family:var(--display);font-size:clamp(3.2rem,7vw,5.4rem);line-height:1;letter-spacing:.06em;
+  font-variant-numeric:tabular-nums;
+  background:linear-gradient(100deg,var(--gold-1),var(--gold-2) 46%,var(--gold-3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.soldbox .sb-rule{width:46px;height:1px;margin:1.1rem auto;background:linear-gradient(90deg,transparent,rgb(var(--gold-line)/.75),transparent)}
+.soldbox .sb-lab{font-size:.74rem;letter-spacing:.38em;text-transform:uppercase;
+  background:linear-gradient(100deg,var(--gold-1),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.soldbox .sb-serial{font-family:var(--body);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:rgb(var(--cream)/.4);margin-top:.8rem;font-variant-numeric:tabular-nums}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,4vw,3rem)}
 .stat .n{font-family:var(--display);font-size:clamp(2.4rem,5vw,3.8rem);color:rgb(var(--violet-soft));line-height:1}
 .stat .l{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream)/.55);margin-top:.8rem;max-width:22ch}
@@ -279,7 +290,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
       <a class="btn btn-ghost" href="#film">Watch the film</a>
     </div>
     <div class="hero-trust">
-      <span class="sold">Black Edition — 10 of 10 claimed</span>
+      <span class="sold">Black Edition — 10 of 10 delivered</span>
       <span>25 years of clinical research</span>
       <span>Made by hand in Mexico</span>
     </div>
@@ -309,12 +320,15 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
   <div class="wrap">
     <div class="shead reveal">
       <p class="kicker">Proof</p>
-      <h2>The first ten were <em>gone</em> in days.</h2>
+      <h2>The first ten are <em>delivered</em>.</h2>
     </div>
     <div class="scar reveal">
       <div class="soldbox">
+        <div class="sb-eyebrow">Limited Black Edition</div>
         <div class="big">10 / 10</div>
-        <div class="lab"><b>Black Edition</b><br>claimed · sold out</div>
+        <div class="sb-rule"></div>
+        <div class="sb-lab">Delivered</div>
+        <div class="sb-serial">Nº 001 — 010</div>
       </div>
       <div class="stats">
         <div class="stat"><div class="n">25 yrs</div><div class="l">Clinical research behind the frequency</div></div>
@@ -371,7 +385,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
           <span class="tag">Founders 1–10</span>
           <h3>The Black Edition</h3>
           <p>Hand-numbered. Black on black on black. The ten who moved first.</p>
-          <span class="status gone">Sold out</span>
+          <span class="status gone">Delivered</span>
         </div>
       </div>
       <div class="edition">
@@ -453,7 +467,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
 
 <div class="sticky-cta" id="sticky">
   <div class="wrap in">
-    <div class="t"><b>The Founding 50</b> — 40 places remain. The Black Edition is gone.</div>
+    <div class="t"><b>The Founding 50</b> — 40 places remain. The Black Edition is delivered.</div>
     <a class="btn btn-solid" href="#founding"><span class="dot"></span>Apply now</a>
   </div>
 </div>
