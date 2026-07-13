@@ -86,9 +86,10 @@ header.solid{background:rgb(var(--aubergine-2)/.82);backdrop-filter:blur(14px);
 .hero-inner{position:relative;z-index:2;width:100%;max-width:760px;padding-top:6rem}
 #hero h1{font-size:clamp(2.9rem,7.4vw,6.2rem);margin:1.4rem 0;color:rgb(var(--cream))}
 #hero h1 em{font-style:normal;color:rgb(var(--violet-soft))}
-.rotator{display:inline-block;height:1.05em;line-height:1.05;overflow:hidden;vertical-align:bottom}
+.rotator{display:block;height:1.05em;line-height:1.05;overflow:hidden}
 .rot-track{display:flex;flex-direction:column;will-change:transform;animation:rotWords 15s cubic-bezier(.7,0,.2,1) infinite}
-.rot-track>span{height:1.05em;line-height:1.05;display:block;white-space:nowrap;color:rgb(var(--amber-soft))}
+.rot-track>span{height:1.05em;line-height:1.05;display:block;white-space:nowrap;color:rgb(var(--cream))}
+.rot-track .w{font-style:normal;color:rgb(var(--amber-soft))}
 @keyframes rotWords{0%,15%{transform:translateY(0)}20%,35%{transform:translateY(-1.05em)}
   40%,55%{transform:translateY(-2.1em)}60%,75%{transform:translateY(-3.15em)}80%,95%{transform:translateY(-4.2em)}100%{transform:translateY(-5.25em)}}
 @media (prefers-reduced-motion:reduce){.rot-track,.dark::before{animation:none}}
@@ -269,8 +270,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
     <p class="kicker">The Right Frequency</p>
     <h1>It all begins<br>in the <em>body</em>.<br>
       <span class="rotator"><span class="rot-track">
-        <span>Peace</span><span>Sleep</span><span>Clarity</span><span>Presence</span><span>Peace</span><span>Peace</span>
-      </span></span> is a vibe.</h1>
+        <span><em class="w">Peace</em> is a vibe.</span><span><em class="w">Sleep</em> is a vibe.</span><span><em class="w">Clarity</em> is a vibe.</span><span><em class="w">Presence</em> is a vibe.</span><span><em class="w">Peace</em> is a vibe.</span><span><em class="w">Peace</em> is a vibe.</span>
+      </span></span></h1>
     <p class="hero-sub">VIBE is a vibroacoustic bed that speaks to your nervous system in a language it already knows — the right frequency, felt through the body. You don't have to try. You just have to lie down.</p>
     <div class="freqline" aria-hidden="true"></div>
     <div class="hero-actions">
