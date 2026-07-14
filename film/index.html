@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Right Frequency — Film Production Hub | VIBE</title>
+<meta name="description" content="The Right Frequency — VIBE's launch film. Shooting script and storyboard, in one place.">
+<meta name="theme-color" content="#0F0918">
+<meta property="og:title" content="The Right Frequency — Film Production Hub">
+<meta property="og:description" content="VIBE's launch film: the shooting script and the full storyboard, in one shareable link.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-style:normal;font-weight:400;font-display:swap;
+  src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:400;font-display:swap;
+  src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:700;font-display:swap;
+  src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --amber:255 154 77; --amber-soft:255 186 130;
+  --cream:255 250 247; --aubergine:27 15 46; --aubergine-2:15 9 24; --metal:203 185 160;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --gold-line:227 193 105;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1); --bar:60px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:var(--body);color:rgb(var(--cream));background:rgb(var(--aubergine-2));
+  -webkit-font-smoothing:antialiased;line-height:1.6;overflow:hidden}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;line-height:1.04;letter-spacing:.03em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:20;display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;padding:0 clamp(16px,4vw,32px);
+  background:rgb(var(--aubergine-2)/.86);backdrop-filter:blur(14px);border-bottom:1px solid rgb(var(--cream)/.08)}
+.brand{display:flex;align-items:baseline;gap:.7rem;white-space:nowrap}
+.brand b{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;font-weight:400}
+.brand span{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:rgb(var(--cream)/.5)}
+@media(max-width:640px){.brand span{display:none}}
+.tabs{display:flex;gap:.35rem;background:rgb(var(--cream)/.05);border:1px solid rgb(var(--cream)/.1);
+  border-radius:100px;padding:4px}
+.tab{font-family:var(--body);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--cream)/.7);
+  background:transparent;border:0;padding:.55em 1.05em;border-radius:100px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap}
+.tab[aria-selected="true"]{background:rgb(var(--violet));color:rgb(var(--cream))}
+.tab:focus-visible{outline:2px solid rgb(var(--violet-soft));outline-offset:2px}
+@media(max-width:520px){.tab{font-size:.6rem;letter-spacing:.08em;padding:.55em .8em}}
+.share{font-family:var(--body);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgb(var(--cream)/.8);background:transparent;border:1px solid rgb(var(--cream)/.22);
+  border-radius:100px;padding:.6em 1.1em;cursor:pointer;transition:all .3s;white-space:nowrap}
+.share:hover{border-color:rgb(var(--violet-soft));color:rgb(var(--violet-soft))}
+@media(max-width:760px){.share{display:none}}
+
+/* panels */
+main{position:absolute;inset:var(--bar) 0 0 0}
+.panel{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .4s var(--ease)}
+.panel.active{opacity:1;visibility:visible}
+.panel iframe{width:100%;height:100%;border:0;display:block;background:rgb(var(--aubergine-2))}
+
+/* overview */
+#overview{overflow-y:auto}
+.hero{position:relative;min-height:100%;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,8vh,90px) clamp(20px,6vw,72px) clamp(40px,7vh,80px);overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgb(var(--aubergine-2)/.94),rgb(var(--aubergine)/.7) 55%,rgb(var(--aubergine)/.35)),
+  linear-gradient(0deg,rgb(var(--aubergine-2)/.95),transparent 55%)}
+.hero-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%}
+.kick{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:rgb(var(--violet-soft)/.9)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);margin:1rem 0 0;color:rgb(var(--cream))}
+.hero h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.logline{margin-top:1.3rem;max-width:56ch;font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:rgb(var(--cream)/.82)}
+.meta{margin-top:1.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.chip{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream)/.65);
+  border:1px solid rgb(var(--cream)/.16);border-radius:100px;padding:.5em 1em}
+.chip.sold{color:var(--gold-2);border-color:rgb(var(--gold-line)/.4)}
+
+.cards{margin-top:clamp(2.2rem,5vh,3.4rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.5vw,1.6rem);max-width:1080px}
+@media(max-width:720px){.cards{grid-template-columns:1fr}}
+.card{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgb(var(--cream)/.12);
+  min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;
+  text-align:left;background:rgb(var(--aubergine));transition:transform .5s var(--ease),border-color .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-5px);border-color:rgb(var(--violet)/.5);box-shadow:0 24px 60px rgb(0 0 0/.45)}
+.card .bg{position:absolute;inset:0;z-index:0}
+.card .bg img{width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform 1.1s var(--ease),opacity .5s}
+.card:hover .bg img{transform:scale(1.06);opacity:.7}
+.card .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgb(10 6 18/.94),rgb(10 6 18/.35) 60%,transparent)}
+.card .body{position:relative;z-index:1;padding:1.8rem}
+.card .tag{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgb(var(--violet-soft))}
+.card h3{font-size:1.9rem;margin:.5rem 0 .4rem;color:rgb(var(--cream))}
+.card p{font-size:.94rem;color:rgb(var(--cream)/.72);max-width:38ch}
+.card .go{margin-top:1rem;display:inline-flex;align-items:center;gap:.5em;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgb(var(--cream))}
+.card .go::after{content:"→";transition:transform .4s var(--ease)}
+.card:hover .go::after{transform:translateX(5px)}
+
+.foot{position:relative;z-index:2;max-width:1080px;margin:clamp(2rem,5vh,3rem) auto 0;
+  padding-top:1.6rem;border-top:1px solid rgb(var(--cream)/.1);
+  font-size:.78rem;color:rgb(var(--cream)/.5);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.foot a{color:rgb(var(--metal))}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);z-index:40;
+  background:rgb(var(--violet));color:rgb(var(--cream));font-size:.8rem;letter-spacing:.06em;
+  padding:.7em 1.4em;border-radius:100px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+  box-shadow:0 10px 30px rgb(0 0 0/.4)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="#overview" data-tab="overview"><b>VIBE</b><span>The Right Frequency</span></a>
+  <div class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button class="tab" role="tab" data-tab="script" aria-selected="false">Shooting Script</button>
+    <button class="tab" role="tab" data-tab="storyboard" aria-selected="false">Storyboard</button>
+  </div>
+  <button class="share" id="shareBtn">Copy link</button>
+</div>
+
+<main>
+  <!-- OVERVIEW -->
+  <section class="panel active" id="overview" role="tabpanel">
+    <div class="hero">
+      <video autoplay muted loop playsinline poster="../storyboard/gen/refs/vibe-active.jpg">
+        <source src="../assets/video/vibe-hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-in">
+        <p class="kick">Launch Film · Production Hub</p>
+        <h1>The Right <em>Frequency</em></h1>
+        <p class="logline">VIBE's launch film — from numbness, to recognition, to the body, to peace. Everything the crew needs, in one place: the shooting script Dr. Steven reads to camera, and the full rendered storyboard.</p>
+        <div class="meta">
+          <span class="chip">Runtime ≈ 3:10</span>
+          <span class="chip">9 acts · 14 beats</span>
+          <span class="chip sold">Black Edition · delivered</span>
+          <span class="chip">VIBE · Bioharmonic</span>
+        </div>
+
+        <div class="cards">
+          <button class="card" data-tab="script">
+            <div class="bg"><img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt=""></div>
+            <div class="body">
+              <span class="tag">Read to camera</span>
+              <h3>The Shooting Script</h3>
+              <p>Every line Dr. Steven reads, beat by beat. Two cards — text-only for the teleprompter, or in context with the frame behind each line.</p>
+              <span class="go">Open the script</span>
+            </div>
+          </button>
+          <button class="card" data-tab="storyboard">
+            <div class="bg"><img loading="lazy" src="../storyboard/gen/hf/CIRC-OVERHEAD-tele.png" alt=""></div>
+            <div class="body">
+              <span class="tag">Shot by shot</span>
+              <h3>The Storyboard</h3>
+              <p>All nine acts, rendered — the montage, the circle, the full stack, the Founding 50, the testimonial, and the close.</p>
+              <span class="go">Open the storyboard</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="foot">
+          <span>“You were never broken. You were only waiting for the right frequency.” &nbsp;·&nbsp; Peace is a vibe.</span>
+          <a href="../">VIBE home →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <section class="panel" id="script" role="tabpanel">
+    <iframe data-src="script.html" title="The Right Frequency — shooting script"></iframe>
+  </section>
+
+  <!-- STORYBOARD -->
+  <section class="panel" id="storyboard" role="tabpanel">
+    <iframe data-src="../storyboard/" title="The Right Frequency — storyboard"></iframe>
+  </section>
+</main>
+
+<div class="toast" id="toast">Link copied</div>
+
+<script>
+  var tabs = document.querySelectorAll('[data-tab]');
+  var panels = { overview:document.getElementById('overview'), script:document.getElementById('script'), storyboard:document.getElementById('storyboard') };
+  var loaded = {};
+
+  function show(name){
+    if(!panels[name]) name = 'overview';
+    // lazy-load the iframe the first time its panel opens
+    var ifr = panels[name].querySelector('iframe');
+    if(ifr && !loaded[name]){ ifr.src = ifr.getAttribute('data-src'); loaded[name] = true; }
+    Object.keys(panels).forEach(function(k){ panels[k].classList.toggle('active', k===name); });
+    document.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-selected', t.dataset.tab===name ? 'true':'false'); });
+    if(location.hash.slice(1) !== name) history.replaceState(null,'','#'+name);
+  }
+  tabs.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); show(el.dataset.tab); }); });
+
+  // deep-link support: #script / #storyboard
+  var start = location.hash.slice(1);
+  show(['script','storyboard'].indexOf(start) >= 0 ? start : 'overview');
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1) || 'overview'); });
+
+  // copy shareable link
+  var toast = document.getElementById('toast');
+  document.getElementById('shareBtn').addEventListener('click', function(){
+    var url = location.origin + location.pathname;
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){
+      toast.classList.add('show'); setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+    }).catch(function(){ prompt('Copy this link:', url); });
+  });
+</script>
+</body>
+</html>
