@@ -190,6 +190,25 @@ footer a{color:var(--champ)}
 .scard p{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6}
 .scard p b{color:var(--cream)}
 .guard{border-left:2px solid var(--warn);padding-left:14px;margin-top:16px;font-size:13px;color:var(--warn)}
+
+/* --- advisor cards: avatars + click-to-expand --- */
+button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;width:100%}
+.mem img{width:58px;height:58px;border-radius:50%;object-fit:cover;margin:0 auto 10px;display:block;border:1px solid var(--hair);background:#efe6d2}
+.mem{cursor:pointer;transition:border-color .25s,transform .25s,background .25s}
+.mem:hover{border-color:var(--gold-2);transform:translateY(-2px)}
+.mem.sel{border-color:var(--gold-2);background:rgba(233,200,154,.07)}
+.mem .tap{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px;opacity:.7}
+.adv-detail{margin-top:16px;border:1px solid var(--hair);border-radius:14px;padding:22px 24px;
+  background:linear-gradient(165deg,rgba(233,200,154,.06),rgba(255,250,247,.01));animation:ccfade .3s ease both}
+.adv-detail[hidden]{display:none}
+.adv-detail .adh{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.adv-detail .adh img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:1px solid var(--hair)}
+.adv-detail .anm{font-family:var(--display);font-size:23px;line-height:1.1}
+.adv-detail .arl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--champ);margin-top:2px}
+.adv-detail .aseat{margin-left:auto;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap}
+.adv-detail h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--champ);margin:14px 0 5px}
+.adv-detail p{font-size:14px;color:rgba(255,250,247,.85);line-height:1.6}
+@keyframes ccfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .status{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-left:8px}
 .st-live{background:rgba(143,227,176,.14);color:var(--good)}
 .st-draft{background:rgba(232,180,90,.14);color:var(--warn)}
@@ -216,6 +235,7 @@ footer a{color:var(--champ)}
     <a href="#overview">Overview</a>
     <a href="#strategy">Strategy</a>
     <a href="#science">The Science</a>
+    <a href="#ptsd">PTSD Lens</a>
     <a href="#package">The Package</a>
     <a href="#brand">Brand &amp; GTM</a>
     <a href="#raise">The Raise</a>
@@ -232,23 +252,24 @@ footer a{color:var(--champ)}
   <!-- EXPERT PANEL -->
   <section id="panel" class="reveal">
     <div class="sec-h"><span class="n">01</span><h2>The panel</h2></div>
-    <p class="sec-sub">Two advisory councils reviewed this package — ten distinct minds. The brand council pressure-tests the story and the funnel; the fundraising board pressure-tests the raise, with a 5th seat chosen for wellness hardware.</p>
+    <p class="sec-sub">Two advisory councils reviewed this package — ten distinct minds. Tap any advisor for their lens and what they see in VIBE. <span style="color:var(--muted)">These are simulated advisory personas for a strategy exercise, not statements from the real individuals.</span></p>
     <div class="roster-h">Brand &amp; Go-To-Market council</div>
     <div class="roster">
-      <div class="mem vio"><div class="av">H</div><div class="nm">Hormozi</div><div class="rl">Offer &amp; value</div><div class="ex">Is it obviously worth applying for?</div></div>
-      <div class="mem vio"><div class="av">G</div><div class="nm">Godin</div><div class="rl">Tribe &amp; remarkable</div><div class="ex">Who is this deliberately not for?</div></div>
-      <div class="mem vio"><div class="av">W</div><div class="nm">Watts</div><div class="rl">Meaning</div><div class="ex">What is this really about?</div></div>
-      <div class="mem vio"><div class="av">J</div><div class="nm">Jobs</div><div class="rl">Simplicity</div><div class="ex">One sentence, one action.</div></div>
-      <div class="mem vio"><div class="av">S</div><div class="nm">Sutherland</div><div class="rl">Perceived value</div><div class="ex">What does it signal?</div></div>
+      <button class="mem" data-adv="hormozi"><img loading="lazy" src="../storyboard/gen/avatars/hormozi.png" alt="Alex Hormozi"><div class="nm">Hormozi</div><div class="rl">Offer &amp; value</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="godin"><img loading="lazy" src="../storyboard/gen/avatars/godin.png" alt="Seth Godin"><div class="nm">Godin</div><div class="rl">Tribe</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="watts"><img loading="lazy" src="../storyboard/gen/avatars/watts.png" alt="Alan Watts"><div class="nm">Watts</div><div class="rl">Meaning</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="jobs"><img loading="lazy" src="../storyboard/gen/avatars/jobs.png" alt="Steve Jobs"><div class="nm">Jobs</div><div class="rl">Simplicity</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="sutherland"><img loading="lazy" src="../storyboard/gen/avatars/sutherland.png" alt="Rory Sutherland"><div class="nm">Sutherland</div><div class="rl">Perceived value</div><div class="tap">Tap →</div></button>
     </div>
-    <div class="roster-h">Fundraising board</div>
+    <div class="roster-h">Fundraising board — the funders</div>
     <div class="roster">
-      <div class="mem"><div class="av">A</div><div class="nm">Andreessen</div><div class="rl">Market &amp; why-now</div><div class="ex">Is the outcome $1B+?</div></div>
-      <div class="mem"><div class="av">M</div><div class="nm">Musk</div><div class="rl">First-principles cost</div><div class="ex">Defend your own numbers.</div></div>
-      <div class="mem"><div class="av">N</div><div class="nm">Naval</div><div class="rl">Founder &amp; leverage</div><div class="ex">Why you? Where's the leverage?</div></div>
-      <div class="mem"><div class="av">C</div><div class="nm">Chamath</div><div class="rl">Unit economics</div><div class="ex">Do the numbers compound?</div></div>
-      <div class="mem"><div class="av">KG</div><div class="nm">Kirsten Green</div><div class="rl">5th · wellness HW</div><div class="ex">Led Oura — brand, LTV, belonging.</div></div>
+      <button class="mem" data-adv="andreessen"><img loading="lazy" src="../storyboard/gen/avatars/andreessen.png" alt="Marc Andreessen"><div class="nm">Andreessen</div><div class="rl">Market &amp; why-now</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="musk"><img loading="lazy" src="../storyboard/gen/avatars/musk.png" alt="Elon Musk"><div class="nm">Musk</div><div class="rl">First-principles cost</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="naval"><img loading="lazy" src="../storyboard/gen/avatars/naval.png" alt="Naval Ravikant"><div class="nm">Naval</div><div class="rl">Founder &amp; leverage</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="chamath"><img loading="lazy" src="../storyboard/gen/avatars/chamath.png" alt="Chamath Palihapitiya"><div class="nm">Chamath</div><div class="rl">Unit economics</div><div class="tap">Tap →</div></button>
+      <button class="mem" data-adv="kirsten"><img loading="lazy" src="../storyboard/gen/avatars/kirsten.png" alt="Kirsten Green"><div class="nm">Kirsten Green</div><div class="rl">5th · wellness HW</div><div class="tap">Tap →</div></button>
     </div>
+    <div class="adv-detail" id="advDetail" hidden></div>
   </section>
 
   <!-- OVERVIEW -->
@@ -315,9 +336,34 @@ footer a{color:var(--champ)}
     <p class="guard">Guardrail: present as "in our mitochondrial testing," and keep wellness (not medical) claims until the study + counsel are in place. The honesty is part of the brand.</p>
   </section>
 
+  <!-- THE TRAUMA LENS / PTSD -->
+  <section id="ptsd" class="reveal">
+    <div class="sec-h"><span class="n">05</span><h2>The trauma lens — PTSD &amp; the mitochondria</h2></div>
+    <p class="sec-sub">The "nervous system on guard" the film opens with is, at its extreme, trauma. A growing research line ties chronic stress and PTSD to mitochondrial dysfunction, which is exactly where VIBE's measured effect sits. It's a large, underserved, emotionally urgent story, told honestly.</p>
+    <div class="sci">
+      <div class="scard"><h4>The scale</h4><div class="big" style="color:var(--violet-br)">~13M</div>
+        <p>U.S. adults with PTSD in a given year (about 5%); roughly 6% will have it in their lifetime, and rates run far higher among veterans and first responders. <span style="color:var(--muted)">Source: U.S. National Center for PTSD.</span></p></div>
+      <div class="scard"><h4>The link</h4><div class="big">Body-first</div>
+        <p>Trauma keeps the body in hyperarousal. Researchers (Picard, Mellon and others) increasingly associate PTSD and chronic stress with altered mitochondrial bioenergetics. VIBE works at that body level: nervous-system regulation plus the mitochondrial effect Steven measured.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="blk"><h4>Why it matters to the story</h4><ul>
+        <li><b>It completes the arc.</b> Numbness → recognition → regulation is the trauma-recovery arc, told without hype.</li>
+        <li><b>Underserved and urgent.</b> Veterans, first responders, trauma survivors — a group money and apps haven't solved.</li>
+        <li><b>Partnership surface.</b> Veteran programs, trauma-informed clinics, nonprofits: mission-aligned distribution.</li>
+      </ul></div>
+      <div class="blk"><h4>The guardrail (non-negotiable)</h4><ul>
+        <li><b>Not a medical claim.</b> VIBE is wellness, not a PTSD treatment. Tell the story; never promise a cure.</li>
+        <li><b>Validate before you claim.</b> The PTSD–mitochondria link is emerging research; cite it as such, and run the study before any clinical language.</li>
+        <li><b>Counsel first.</b> Trauma and medical-adjacent language get legal review before anything goes public.</li>
+      </ul></div>
+    </div>
+    <p class="guard">This is a story and a market, not a clinical claim. Keep it wellness-framed and honest until the research and counsel are in place.</p>
+  </section>
+
   <!-- THE PACKAGE / BUILDS -->
   <section id="package" class="reveal">
-    <div class="sec-h"><span class="n">05</span><h2>The package</h2></div>
+    <div class="sec-h"><span class="n">06</span><h2>The package</h2></div>
     <p class="sec-sub">Six live builds on one brand system. Everything below is shareable; the Film Hub bundles the two most important pieces behind a single link.</p>
     <div class="builds">
       <a class="bcard" href="../film/"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt=""></div>
@@ -339,7 +385,7 @@ footer a{color:var(--champ)}
 
   <!-- BRAND & GTM COUNCIL -->
   <section id="brand" class="reveal">
-    <div class="sec-h"><span class="n">06</span><h2>Brand &amp; Go-To-Market Council</h2></div>
+    <div class="sec-h"><span class="n">07</span><h2>Brand &amp; Go-To-Market Council</h2></div>
     <p class="sec-sub">Five brand minds pressure-test the story and the funnel. Consensus: book (authority) → film (emotion) → Founding-50 application (scarcity) → Mexico (belonging) → practitioner path (secondary). One action throughout: <b>Apply</b>.</p>
 
     <div class="panel"><div class="panel-top"><div class="role">Alex Hormozi<small>Offer &amp; the value equation</small></div><span class="verdict v-yes">Strong</span></div>
@@ -365,7 +411,7 @@ footer a{color:var(--champ)}
 
   <!-- THE RAISE / FUNDRAISING BOARD -->
   <section id="raise" class="reveal">
-    <div class="sec-h"><span class="n">07</span><h2>The Fundraising Board</h2></div>
+    <div class="sec-h"><span class="n">08</span><h2>The Fundraising Board</h2></div>
     <p class="sec-sub">Four permanent members + a 5th seat: <b>Kirsten Green (Forerunner)</b> — seated for premium consumer-wellness hardware; she led Oura, the closest comp. Read at pre-seed / founder-led, judged against an angel-seed target, not a hyperscale yardstick.</p>
 
     <h3 style="font-size:20px;margin:6px 0 12px;color:var(--champ)">The arc — nascent → very successful</h3>
@@ -414,13 +460,13 @@ footer a{color:var(--champ)}
 
   <!-- MARKET -->
   <section id="market" class="reveal">
-    <div class="sec-h"><span class="n">08</span><h2>Market &amp; audience</h2></div>
+    <div class="sec-h"><span class="n">09</span><h2>Market &amp; audience</h2></div>
     <p class="sec-sub">Per Steven's direction: one B2C ICP and one B2B ICP, both anchored on <b>measurable</b> mitochondrial benefit, on the mid-2026 longevity wave (Casey Means / <i>Good Energy</i>, Huberman, red-light/PBM, Urolithin A).</p>
     <div class="personas">
       <div class="pc">
         <span class="ptag ptag-b2c">Primary · B2C</span>
-        <h3>The Optimizer</h3>
-        <div class="who">40–60, affluent, already tracks HRV / sleep / glucose. Reads Attia &amp; Huberman; owns red-light + supplements.</div>
+        <h3>The HNW Biohacker</h3>
+        <div class="who">High-net-worth, 40–60. Spends freely on optimization, tracks HRV / sleep / glucose, reads Attia &amp; Huberman, already owns red-light + supplements.</div>
         <div class="prow"><div class="k">Pain</div><div class="val">Plateaued. Relaxation apps don't move the needle. Wants cellular gains he can measure.</div></div>
         <div class="prow"><div class="k">Trigger</div><div class="val">The mito data (−25% free radicals, ↑OCR) + the TED talk. "This actually changes the cell."</div></div>
         <div class="prow"><div class="k">Objection</div><div class="val">"Isn't this just another vibration bed?" — the exact pigeonhole to break.</div></div>
@@ -449,11 +495,29 @@ footer a{color:var(--champ)}
         <li><small style="color:var(--muted)">Full mitochondrial-partner target list held in team reference memory.</small></li>
       </ul></div>
     </div>
+
+    <h3 style="font-size:20px;margin:28px 0 6px;color:var(--champ)">Acquiring the HNW biohacker</h3>
+    <p class="sec-sub" style="margin-bottom:14px">This customer isn't won on paid social. High price, high trust — the motion is referral-led, practitioner-fed, and demonstration-first.</p>
+    <div class="grid2">
+      <div class="blk"><h4>Where they already are</h4><ul>
+        <li><b>Longevity clinics</b> — Fountain Life, Next Health, Human Longevity. The B2B path feeds B2C.</li>
+        <li><b>The events</b> — Biohacker Summit, A4M, RAADfest; Asprey, Attia and Huberman audiences.</li>
+        <li><b>Private worlds</b> — high-end recovery studios, members' clubs, family-office wellness networks.</li>
+        <li><b>Warm OPUS leads</b> — commercial buyers already in the ecosystem.</li>
+      </ul></div>
+      <div class="blk"><h4>The acquisition motion</h4><ul>
+        <li><b>Practitioner referral</b> — clinics refer their HNW clients; the room becomes the demo.</li>
+        <li><b>KOL + the book</b> — longevity podcast and newsletter placements; <i>Primal Resonance</i> as the lead magnet, the film as proof.</li>
+        <li><b>The retreat as the hook</b> — invite-only Mexico is the aspiration that pulls the application.</li>
+        <li><b>Members recruit members</b> — the founding-referral flywheel. Track the %; it's the whole thesis.</li>
+        <li><b>White-glove</b> — personal outreach, in-home or in-clinic demos, concierge onboarding.</li>
+      </ul></div>
+    </div>
   </section>
 
   <!-- BOOK -->
   <section id="book" class="reveal">
-    <div class="sec-h"><span class="n">09</span><h2>Primal Resonance — the founder's authority</h2></div>
+    <div class="sec-h"><span class="n">10</span><h2>Primal Resonance — the founder's authority</h2></div>
     <p class="sec-sub">The book is the top of the funnel: it makes Dr. Steven the category author, and reframes VIBE from "an expensive bed" to "the object the man who wrote the book makes."</p>
     <div class="bookrow">
       <img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt="Primal Resonance">
@@ -467,7 +531,7 @@ footer a{color:var(--champ)}
 
   <!-- DECK -->
   <section id="deck" class="reveal">
-    <div class="sec-h"><span class="n">10</span><h2>Pitch deck — concise</h2></div>
+    <div class="sec-h"><span class="n">11</span><h2>Pitch deck — concise</h2></div>
     <p class="sec-sub">A 10-card investor deck, deliberately short. Built to be generated in Gamma so it reads standardized and templated.</p>
     <div class="deck">
       <ol>
@@ -488,7 +552,7 @@ footer a{color:var(--champ)}
 
   <!-- ROADMAP -->
   <section id="road" class="reveal">
-    <div class="sec-h"><span class="n">11</span><h2>Roadmap — what turns 60 into 80</h2></div>
+    <div class="sec-h"><span class="n">12</span><h2>Roadmap — what turns 60 into 80</h2></div>
     <p class="sec-sub">The councils agree on the sequence. Everything here moves real votes and real customers, in order.</p>
     <div class="grid2">
       <div class="blk"><h4>Now → next quarter</h4><ul>
@@ -510,7 +574,7 @@ footer a{color:var(--champ)}
 
   <!-- FINAL RATINGS -->
   <section id="ratings" class="reveal">
-    <div class="sec-h"><span class="n">12</span><h2>Council ratings — this pass</h2></div>
+    <div class="sec-h"><span class="n">13</span><h2>Council ratings — this pass</h2></div>
     <p class="sec-sub">Where each council rates the <i>package</i> right now. Target: 8/10 across the board. Brand and assets are there; the raise gets there once the engine is proven.</p>
     <div class="finalscores">
       <div class="score"><div class="lbl">Brand council</div><div class="v">8<small>/10</small></div><div class="d">Story + funnel coherent.</div></div>
@@ -533,6 +597,42 @@ footer a{color:var(--champ)}
 <script>
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // advisor detail — lens/focus + what they see in VIBE
+  var ADV = {
+    hormozi:{n:"Alex Hormozi",r:"Brand council · offer & value",seat:"Verdict: Strong",thesis:"Runs everything through dream outcome ÷ (effort × time × risk). The offer has to be obviously worth it.",sees:"The Founding-50 offer is finally worth applying for — bed, founding status, Mexico, founder access. Make the value stack explicit and reverse risk on the application. The book is your best free lead magnet."},
+    godin:{n:"Seth Godin",r:"Brand council · tribe",seat:"Verdict: Strong",thesis:"Is it remarkable? Who is this deliberately NOT for? Please everyone and you're ignored by everyone.",sees:"‘Founding 50’ and ‘delivered, not sold out’ are the remark. Sell a belief to recruit around, not a product. Keep the refusal — who this is not for — up front."},
+    watts:{n:"Alan Watts",r:"Brand council · meaning",seat:"Verdict: Watch",thesis:"What is this really about, underneath the pitch? Meaning can't be manufactured by trying to sound meaningful.",sees:"Lead body-first and honest; let scarcity arrive after the person feels understood. The calm is the moat — don't let ‘mastermind / biohacking’ tip it into striving."},
+    jobs:{n:"Steve Jobs",r:"Brand council · simplicity",seat:"Verdict: Strong",thesis:"What's the one sentence? What gets deleted? Judge everything by the felt experience, not the spec sheet.",sees:"One page, one action: Apply. The book is a credibility beat, not a bookstore. Keep Apply the only filled button anywhere; delete whatever turns the film into a checkout."},
+    sutherland:{n:"Rory Sutherland",r:"Brand council · perceived value",seat:"Verdict: Strong",thesis:"Value is psychological. What does it signal, and what emotional job is the price doing?",sees:"Hand-numbered, ‘delivered,’ the gold serial plate — real status work; keep pushing costly-signal cues. The book reframes the price from ‘expensive bed’ to ‘the object the man who wrote the book makes.’"},
+    andreessen:{n:"Marc Andreessen",r:"Fundraising · market & why-now",seat:"Enters at A+",thesis:"Is the market big enough, and why now? Bets on inevitability, not incrementalism.",sees:"Enters only if there's a credible path to $1B+ — a recurring or network layer, not a $20M hardware boutique. The longevity why-now is real; the network is what he needs to see."},
+    musk:{n:"Elon Musk",r:"Fundraising · first-principles cost",seat:"Likely pass",thesis:"Defend your own numbers. Strip it to the physics. Is it 10x, not 10%?",sees:"Passes on hardware alone — he'd tear down the idiot index (bed cost ÷ raw birch + transducers). The mitochondrial data gives him a defensible tech claim to test; the biometric mirror is the 10x."},
+    naval:{n:"Naval Ravikant",r:"Fundraising · founder & leverage",seat:"Enters now (angel)",thesis:"Why you? Where's the non-permissioned leverage? Play long-term games with long-term people.",sees:"Writes a small angel check on the person today — the founder, the book, and a founding circle that could compound if members recruit members. Bets on the line, not the dot."},
+    chamath:{n:"Chamath Palihapitiya",r:"Fundraising · unit economics",seat:"Enters at seed/A",thesis:"Do the numbers compound? Is there a real moat and real economics?",sees:"Needs contribution margin per unit + CAC payback under 6–9 months on ≥50 non-network buyers, and the retreat proven accretive. The mitochondrial data finally gives him a moat to underwrite."},
+    kirsten:{n:"Kirsten Green",r:"Fundraising · 5th seat · wellness hardware",seat:"Enters at seed",thesis:"Led Oura. In consumer wellness the moat is emotional — brand, repeat/LTV, and whether people belong to it.",sees:"Enters once it's a brand, not a founder: ≥30–40% of the Founding 50 sourced by members (not Steven), early NPS, and a real second transaction. VIBE could be Oura-with-a-room."}
+  };
+  var AV = {hormozi:"hormozi",godin:"godin",watts:"watts",jobs:"jobs",sutherland:"sutherland",andreessen:"andreessen",musk:"musk",naval:"naval",chamath:"chamath",kirsten:"kirsten"};
+  var detail = document.getElementById('advDetail');
+  function showAdv(key){
+    var a = ADV[key]; if(!a) return;
+    document.querySelectorAll('.mem').forEach(function(m){ m.classList.toggle('sel', m.dataset.adv===key); });
+    detail.textContent='';
+    var head=document.createElement('div'); head.className='adh';
+    var im=document.createElement('img'); im.src='../storyboard/gen/avatars/'+AV[key]+'.png'; im.alt='';
+    var box=document.createElement('div');
+    var nm=document.createElement('div'); nm.className='anm'; nm.textContent=a.n;
+    var rl=document.createElement('div'); rl.className='arl'; rl.textContent=a.r;
+    box.appendChild(nm); box.appendChild(rl);
+    var seat=document.createElement('div'); seat.className='aseat'; seat.textContent=a.seat;
+    head.appendChild(im); head.appendChild(box); head.appendChild(seat);
+    var h1=document.createElement('h5'); h1.textContent='Their lens';
+    var p1=document.createElement('p'); p1.textContent=a.thesis;
+    var h2=document.createElement('h5'); h2.textContent='What they see in VIBE';
+    var p2=document.createElement('p'); p2.textContent=a.sees;
+    detail.appendChild(head); detail.appendChild(h1); detail.appendChild(p1); detail.appendChild(h2); detail.appendChild(p2);
+    detail.hidden=false;
+  }
+  document.querySelectorAll('.mem').forEach(function(m){ m.addEventListener('click', function(){ showAdv(m.dataset.adv); }); });
 </script>
 </body>
 </html>
