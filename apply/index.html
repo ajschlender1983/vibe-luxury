@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply — The Founding 50 | VIBE</title>
+<meta name="description" content="Apply to the VIBE Founding 50. This is an application, not a checkout. If it isn't a fit, we'll tell you kindly.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --amber-soft:255 186 130;
+  --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24; --metal:203 185 160;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));min-height:100vh;line-height:1.6;
+  background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;align-items:center;padding:28px 20px 60px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.08}
+a{color:rgb(var(--violet-soft))}
+.top{width:100%;max-width:620px;display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.top .back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(var(--cream)/.55);text-decoration:none}
+.top .back:hover{color:rgb(var(--violet-soft))}
+
+.card{width:100%;max-width:620px;background:linear-gradient(165deg,rgba(255,250,247,.05),rgba(255,250,247,.015));
+  border:1px solid rgba(233,200,154,.18);border-radius:20px;padding:clamp(26px,5vw,42px);
+  box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.kicker{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2)}
+.card h1{font-size:clamp(2rem,6vw,3rem);margin:12px 0 6px}
+.card h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.lead{color:rgb(var(--cream)/.78);font-size:1rem;font-weight:300;margin-top:10px}
+.promise{margin-top:18px;border-left:2px solid rgba(233,200,154,.4);padding-left:14px;font-size:.92rem;color:rgb(var(--cream)/.7);font-style:italic}
+
+.meter{margin:22px 0 4px}
+.meter .row{display:flex;justify-content:space-between;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--cream)/.6);margin-bottom:.6rem}
+.meter .row b{color:var(--gold-2)}
+.meter .bar{height:7px;border-radius:999px;background:rgb(var(--cream)/.1);overflow:hidden}
+.meter .fill{height:100%;width:20%;border-radius:999px;background:linear-gradient(90deg,rgb(var(--violet)),rgb(var(--amber-soft)));box-shadow:0 0 14px rgb(var(--violet)/.5)}
+
+.progress{display:flex;gap:6px;margin-bottom:26px}
+.progress .dot{flex:1;height:4px;border-radius:999px;background:rgb(var(--cream)/.12);transition:background .4s}
+.progress .dot.on{background:rgb(var(--violet-soft))}
+.progress .dot.done{background:var(--gold-2)}
+
+.step{display:none;animation:fade .4s var(--ease) both}
+.step.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.step,.step.on{animation:none}}
+.q{font-family:var(--display);font-size:clamp(1.4rem,3.5vw,1.9rem);margin-bottom:4px}
+.help{color:rgb(var(--cream)/.6);font-size:.9rem;margin-bottom:20px}
+
+label.fld{display:block;margin-bottom:16px}
+label.fld .l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(var(--cream)/.62);margin-bottom:7px;display:block}
+.inp,textarea,select{width:100%;background:rgb(var(--aub2)/.6);border:1px solid rgb(var(--cream)/.16);color:rgb(var(--cream));
+  border-radius:12px;padding:.85em 1em;font:400 1rem/1.5 var(--body);transition:border-color .3s}
+textarea{min-height:104px;resize:vertical}
+.inp:focus,textarea:focus,select:focus{outline:0;border-color:rgb(var(--violet-soft))}
+.inp::placeholder,textarea::placeholder{color:rgb(var(--cream)/.35)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgb(var(--cream)/.5) 50%),linear-gradient(135deg,rgb(var(--cream)/.5) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 1.3em,calc(100% - 15px) 1.3em;background-size:5px 5px;background-repeat:no-repeat}
+
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+@media(max-width:520px){.choices{grid-template-columns:1fr}}
+.choice{border:1px solid rgb(var(--cream)/.16);border-radius:14px;padding:20px;cursor:pointer;text-align:left;
+  background:rgb(var(--cream)/.02);transition:all .3s;color:rgb(var(--cream))}
+.choice:hover{border-color:rgb(var(--violet-soft)/.6)}
+.choice.sel{border-color:rgb(var(--violet));background:rgb(var(--violet)/.12)}
+.choice .ct{font-family:var(--display);font-size:1.25rem;margin-bottom:4px}
+.choice .cd{font-size:.84rem;color:rgb(var(--cream)/.66)}
+.chk{display:flex;gap:.7em;align-items:flex-start;font-size:.92rem;color:rgb(var(--cream)/.8);cursor:pointer;margin-top:6px}
+.chk input{margin-top:4px;accent-color:rgb(var(--violet))}
+
+.err{color:var(--amber-soft);font-size:.82rem;margin-top:-8px;margin-bottom:14px;min-height:1em}
+
+.nav{display:flex;gap:12px;align-items:center;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 2em;border-radius:999px;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border:1px solid transparent;transition:all .4s var(--ease);font-family:var(--body)}
+.btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}
+.btn-solid:hover{background:rgb(var(--violet-soft));color:rgb(var(--aub2))}
+.btn-ghost{background:transparent;border-color:rgb(var(--cream)/.28);color:rgb(var(--cream))}
+.btn-ghost:hover{border-color:rgb(var(--violet-soft));color:rgb(var(--violet-soft))}
+.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));outline-offset:3px}
+.nav .spacer{flex:1}
+.stepcount{font-size:.72rem;letter-spacing:.1em;color:rgb(var(--cream)/.45)}
+
+.review{border:1px solid rgb(var(--cream)/.12);border-radius:12px;padding:6px 18px;margin-bottom:8px}
+.review .r{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid rgb(var(--cream)/.08);font-size:.9rem}
+.review .r:last-child{border-bottom:0}
+.review .r .k{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--cream)/.5);padding-top:2px}
+.review .r .v{color:rgb(var(--cream)/.9)}
+
+#done{display:none;text-align:center;animation:fade .5s var(--ease) both}
+#done.on{display:block}
+#done .seal{width:70px;height:70px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--gold-1),var(--gold-3));color:rgb(var(--aub2));font-size:30px}
+#done h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:12px}
+#done p{color:rgb(var(--cream)/.76);max-width:44ch;margin:0 auto 8px}
+#done .actions{margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.foot{max-width:620px;margin-top:22px;text-align:center;font-size:.74rem;color:rgb(var(--cream)/.4)}
+.foot em{color:var(--gold-3);font-style:normal}
+</style>
+</head>
+<body>
+  <div class="top">
+    <a class="logo" href="../index-v3.html">VIBE</a>
+    <a class="back" href="../index-v3.html">← Back</a>
+  </div>
+
+  <div class="card" id="card">
+    <div class="step on" data-step="0">
+      <p class="kicker">By application</p>
+      <h1>Apply to the <em>Founding&nbsp;50</em></h1>
+      <p class="lead">The first ten — the Black Edition — are delivered. Forty places remain in the founding circle. This isn't a checkout; it's an application, and we read every one.</p>
+      <div class="meter">
+        <div class="row"><span>Founding memberships</span><span><b>10 of 50</b> claimed</span></div>
+        <div class="bar"><div class="fill"></div></div>
+      </div>
+      <p class="promise">Takes about 90 seconds. If it isn't a fit, we'll tell you kindly — no pressure, no hard sell.</p>
+      <div class="nav">
+        <button class="btn btn-solid" data-next>Begin the application</button>
+        <div class="spacer"></div>
+      </div>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="progress" id="prog"></div>
+
+      <div class="step" data-step="1">
+        <div class="q">First — how are you applying?</div>
+        <p class="help">It shapes what we'll want to talk about.</p>
+        <div class="choices">
+          <button type="button" class="choice" data-path="Individual">
+            <div class="ct">For myself</div>
+            <div class="cd">An individual founding member — the bed in your own space.</div>
+          </button>
+          <button type="button" class="choice" data-path="Practitioner">
+            <div class="ct">For my practice</div>
+            <div class="cd">A clinic, longevity center, or studio — a treatment room that becomes a destination.</div>
+          </button>
+        </div>
+        <div class="err" id="err1"></div>
+        <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><span class="stepcount"></span></div>
+      </div>
+
+      <div class="step" data-step="2">
+        <div class="q">Who are you?</div>
+        <p class="help">So we can address you properly.</p>
+        <label class="fld"><span class="l">Full name</span><input class="inp" name="name" autocomplete="name" placeholder="Your name"></label>
+        <label class="fld"><span class="l">Email</span><input class="inp" name="email" type="email" autocomplete="email" placeholder="you@email.com"></label>
+        <label class="fld"><span class="l">City &amp; country</span><input class="inp" name="city" autocomplete="address-level2" placeholder="Where you are"></label>
+        <label class="fld" id="bizFld" style="display:none"><span class="l">Practice / business name &amp; type</span><input class="inp" name="business" placeholder="e.g. North Longevity Clinic — functional medicine"></label>
+        <div class="err" id="err2"></div>
+        <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><button type="button" class="btn btn-solid" data-next>Continue</button></div>
+      </div>
+
+      <div class="step" data-step="3">
+        <div class="q">What are you hoping VIBE changes?</div>
+        <p class="help">Be honest — this is the part we actually read.</p>
+        <label class="fld"><span class="l">What you're looking to shift</span><textarea name="why" placeholder="Sleep, stress, recovery, focus, longevity, your clients' outcomes…"></textarea></label>
+        <label class="fld"><span class="l">What you've already tried <span style="opacity:.5">(optional)</span></span><textarea name="tried" placeholder="Red light, cold, meditation, supplements, other beds…" style="min-height:78px"></textarea></label>
+        <div class="err" id="err3"></div>
+        <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><button type="button" class="btn btn-solid" data-next>Continue</button></div>
+      </div>
+
+      <div class="step" data-step="4">
+        <div class="q">How did you find us?</div>
+        <p class="help">The founding circle grows by word of mouth — if a member sent you, tell us who.</p>
+        <label class="fld"><span class="l">How you heard about VIBE</span>
+          <select class="inp" name="source">
+            <option value="">Choose one…</option>
+            <option>A current member / friend referred me</option>
+            <option>Dr. Steven / Primal Resonance (the book)</option>
+            <option>The film — "The Right Frequency"</option>
+            <option>A podcast / longevity community</option>
+            <option>Instagram / social</option>
+            <option>I was an OPUS customer</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label class="fld"><span class="l">Who referred you? <span style="opacity:.5">(if a member)</span></span><input class="inp" name="referrer" placeholder="Their name — so we can thank them"></label>
+        <label class="chk"><input type="checkbox" name="retreat"> <span>I'd like to be considered for the founding <b>Mexico mastermind retreat</b>.</span></label>
+        <label class="chk" id="opusChk" style="display:none"><input type="checkbox" name="opus"> <span>I placed a deposit or order with <b>OPUS</b> — I understand founding members can apply it as credit.</span></label>
+        <div class="err" id="err4"></div>
+        <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><button type="button" class="btn btn-solid" data-next>Review</button></div>
+      </div>
+
+      <div class="step" data-step="5">
+        <div class="q">One look before you send.</div>
+        <p class="help">We'll reply personally within a few days.</p>
+        <div class="review" id="review"></div>
+        <div class="err" id="err5"></div>
+        <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><button type="submit" class="btn btn-solid">Send application</button></div>
+      </div>
+    </form>
+
+    <div id="done">
+      <div class="seal">✦</div>
+      <h2>Application received.</h2>
+      <p>Thank you — we read every application by hand. If you're a fit for the Founding 50, you'll hear from us within a few days.</p>
+      <p style="font-style:italic;color:rgb(var(--cream)/.55);margin-top:14px">You were never broken. You were only waiting for the right frequency.</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="../film/">Watch the film</a>
+        <a class="btn btn-ghost" href="../index-v3.html">Back to VIBE</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">VIBE · Bioharmonic — the Founding 50 · <em>Peace is a vibe.</em></p>
+
+<script>
+  var APPLY_EMAIL = "apply@healwithvibe.com"; // change to your real intake address
+  var steps = [].slice.call(document.querySelectorAll('.step'));
+  var formSteps = steps.filter(function(s){ return +s.dataset.step >= 1; });
+  var prog = document.getElementById('prog');
+  formSteps.forEach(function(){ var d=document.createElement('div'); d.className='dot'; prog.appendChild(d); });
+  var dots = [].slice.call(prog.children);
+  var cur = 0, data = { path:'' };
+
+  function showStep(i){
+    steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === i); });
+    cur = i;
+    dots.forEach(function(d,idx){ d.classList.toggle('on', idx === i-1); d.classList.toggle('done', idx < i-1); });
+    document.querySelectorAll('.stepcount').forEach(function(el){ el.textContent = i>=1 ? ('Step '+i+' of '+formSteps.length) : ''; });
+    var top = document.getElementById('card').getBoundingClientRect().top + scrollY - 20;
+    if(top < scrollY) scrollTo({ top: top, behavior:'smooth' });
+  }
+  function setErr(id,msg){ var e=document.getElementById(id); if(e) e.textContent = msg||''; }
+  function val(n){ var el=document.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; }
+  function checked(n){ var el=document.querySelector('[name="'+n+'"]'); return !!(el && el.checked); }
+
+  document.querySelectorAll('.choice').forEach(function(c){
+    c.addEventListener('click', function(){
+      document.querySelectorAll('.choice').forEach(function(x){ x.classList.remove('sel'); });
+      c.classList.add('sel'); data.path = c.dataset.path;
+      document.getElementById('bizFld').style.display = data.path==='Practitioner' ? 'block' : 'none';
+      setErr('err1','');
+    });
+  });
+  document.querySelector('[name="source"]').addEventListener('change', function(e){
+    document.getElementById('opusChk').style.display = /OPUS/.test(e.target.value) ? 'flex' : 'none';
+  });
+
+  function validate(step){
+    if(step===1 && !data.path){ setErr('err1','Please choose one.'); return false; }
+    if(step===2){
+      if(!val('name')){ setErr('err2','Please tell us your name.'); return false; }
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('email'))){ setErr('err2','A valid email, please.'); return false; }
+    }
+    if(step===3 && val('why').length < 4){ setErr('err3','A sentence or two is plenty.'); return false; }
+    if(step===4 && !val('source')){ setErr('err4','How did you find us?'); return false; }
+    setErr('err'+step,''); return true;
+  }
+
+  function rowsData(){
+    var rows = [
+      ['Applying', data.path==='Practitioner' ? 'For my practice' : 'For myself'],
+      ['Name', val('name')],
+      ['Email', val('email')],
+      ['Location', val('city') || '—']
+    ];
+    if(data.path==='Practitioner') rows.push(['Practice', val('business') || '—']);
+    rows.push(['Looking to shift', val('why')]);
+    if(val('tried')) rows.push(['Already tried', val('tried')]);
+    rows.push(['Heard via', val('source')]);
+    if(val('referrer')) rows.push(['Referred by', val('referrer')]);
+    rows.push(['Mexico retreat', checked('retreat') ? 'Yes, consider me' : 'No']);
+    if(document.getElementById('opusChk').style.display==='flex' && checked('opus')) rows.push(['OPUS credit', 'Wants to apply OPUS credit']);
+    return rows;
+  }
+  // safe DOM build — no innerHTML with user content
+  function buildReview(){
+    var r = document.getElementById('review');
+    r.textContent = '';
+    rowsData().forEach(function(x){
+      var row = document.createElement('div'); row.className='r';
+      var k = document.createElement('div'); k.className='k'; k.textContent = x[0];
+      var v = document.createElement('div'); v.className='v'; v.textContent = x[1] || '—';
+      row.appendChild(k); row.appendChild(v); r.appendChild(row);
+    });
+  }
+
+  document.querySelectorAll('[data-next]').forEach(function(b){
+    b.addEventListener('click', function(){
+      if(cur>=1 && !validate(cur)) return;
+      var next = cur + 1;
+      if(next===5) buildReview();
+      showStep(next);
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(function(b){
+    b.addEventListener('click', function(){ showStep(Math.max(0, cur-1)); });
+  });
+
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var body = "New Founding 50 application\n\n" + rowsData().map(function(x){ return x[0] + ': ' + (x[1]||'—'); }).join('\n') + "\n\n— Sent from the VIBE application flow";
+    try{ localStorage.setItem('vibe_application', body); }catch(_){}
+    var mailto = "mailto:" + APPLY_EMAIL + "?subject=" + encodeURIComponent("Founding 50 Application — " + val('name')) + "&body=" + encodeURIComponent(body);
+    window.open(mailto, "_self");
+    document.getElementById('form').style.display = 'none';
+    document.querySelector('.step[data-step="0"]').classList.remove('on');
+    document.getElementById('done').classList.add('on');
+    scrollTo({ top:0, behavior:'smooth' });
+  });
+</script>
+</body>
+</html>
