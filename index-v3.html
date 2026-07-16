@@ -114,13 +114,24 @@ header.solid{background:rgb(var(--aubergine-2)/.82);backdrop-filter:blur(14px);
 .breath p{margin-top:1.4rem;font-size:clamp(1rem,1.6vw,1.2rem);color:rgb(var(--cream)/.6);max-width:46ch;margin-left:auto;margin-right:auto}
 
 /* film strip */
-.filmstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(2.4rem,5vw,3.6rem)}
-.fframe{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10;border:1px solid rgb(var(--cream)/.1)}
-.fframe img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
-.fframe:hover img{transform:scale(1.06)}
-.fframe span{position:absolute;left:10px;bottom:8px;z-index:2;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(var(--cream)/.9);text-shadow:0 1px 6px #000}
-.fframe::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgb(10 6 18/.7),transparent 55%)}
-@media(max-width:760px){.filmstrip{grid-template-columns:1fr 1fr}}
+/* film poster — presented like a video, not yet produced */
+.film-poster{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;margin-top:clamp(2.2rem,5vw,3.4rem);
+  cursor:pointer;border:1px solid rgb(var(--cream)/.12);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.film-poster img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.film-poster:hover img{transform:scale(1.04)}
+.film-poster::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 60% at 50% 46%,transparent,rgba(10,6,18,.45)),linear-gradient(0deg,rgba(10,6,18,.6),transparent 55%)}
+.film-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:82px;height:82px;border-radius:50%;
+  background:rgb(var(--cream)/.14);backdrop-filter:blur(4px);border:1px solid rgb(var(--cream)/.55);display:grid;place-items:center;transition:all .4s var(--ease)}
+.film-poster:hover .film-play{background:rgb(var(--violet)/.6);border-color:rgb(var(--cream));transform:translate(-50%,-50%) scale(1.06)}
+.film-play::before{content:"";border-left:20px solid rgb(var(--cream));border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.film-meta{position:absolute;left:20px;bottom:15px;z-index:2;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream)/.88);text-shadow:0 1px 6px #000}
+.film-poster:focus-visible{outline:2px solid rgb(var(--violet-soft));outline-offset:3px}
+.film-msg{position:absolute;inset:0;z-index:3;background:rgb(var(--aubergine-2)/.92);backdrop-filter:blur(8px);
+  display:grid;place-items:center;text-align:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.film-msg.show{opacity:1;visibility:visible}
+.film-msg .fm-t{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,2.5rem);color:rgb(var(--cream))}
+.film-msg .fm-d{color:rgb(var(--cream)/.72);margin:.6rem auto 1.5rem;max-width:38ch;font-size:.98rem}
 
 /* scarcity / proof */
 .scar{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:1rem}
@@ -305,13 +316,18 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
       <h2>Most of us aren't sad. We're <em>numb</em>.</h2>
       <p class="lead">A nervous system on guard for years forgets how to stand down. The way back was never in your head — it began in the body. This is the story of the frequency that lets it let go.</p>
     </div>
-    <div class="filmstrip reveal">
-      <a class="fframe" href="storyboard/#" title="Recognition"><img loading="lazy" decoding="async" src="storyboard/gen/hf/CIRC-OVERHEAD-tele.png" alt="A circle of people, one at the centre"><span>Recognition</span></a>
-      <a class="fframe" href="storyboard/#" title="The body"><img loading="lazy" decoding="async" src="storyboard/gen/refs/vibe-daylight.jpg" alt="The VIBE bed"><span>The body</span></a>
-      <a class="fframe" href="storyboard/#" title="The full stack"><img loading="lazy" decoding="async" src="storyboard/gen/stack/FS1-red-closeup.png" alt="A client in the light-and-sound mask under red light"><span>The stack</span></a>
-      <a class="fframe" href="storyboard/#" title="Made by hand"><img loading="lazy" decoding="async" src="storyboard/gen/founding/RETREAT-mexico.png" alt="A wellness retreat in Mexico"><span>The circle</span></a>
+    <div class="film-poster reveal" id="filmPoster" role="button" tabindex="0" aria-label="Play the film">
+      <img loading="lazy" decoding="async" src="storyboard/gen/hf/CIRC-OVERHEAD-tele.png" alt="The Right Frequency — a film">
+      <div class="film-play" aria-hidden="true"></div>
+      <div class="film-meta">The Right Frequency · 3:10</div>
+      <div class="film-msg" id="filmMsg">
+        <div>
+          <p class="fm-t">Film not yet produced.</p>
+          <p class="fm-d">The shooting script and the full shot-by-shot storyboard live in the Production Hub.</p>
+          <a class="btn btn-solid" href="film/"><span class="dot"></span>Enter Production Hub</a>
+        </div>
+      </div>
     </div>
-    <div style="margin-top:2rem" class="reveal"><a class="link-u" href="storyboard/">Watch the full storyboard →</a></div>
   </div>
 </section>
 
@@ -503,6 +519,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));out
     io.unobserve(e.target);
   }})},{threshold:.14});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // film poster — reveal the "not yet produced → Production Hub" state on click
+  var poster=document.getElementById('filmPoster'), fmsg=document.getElementById('filmMsg');
+  if(poster && fmsg){
+    var toggleFilm=function(e){ if(e.target.closest && e.target.closest('a')) return; fmsg.classList.toggle('show'); };
+    poster.addEventListener('click', toggleFilm);
+    poster.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fmsg.classList.toggle('show'); } });
+  }
 
   // scroll-spy: highlight the section you're in
   var secs=['film','stack','founding','founder'].map(function(id){return document.getElementById(id)}).filter(Boolean);
