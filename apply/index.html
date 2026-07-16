@@ -105,6 +105,42 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
 #done .actions{margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .foot{max-width:620px;margin-top:22px;text-align:center;font-size:.74rem;color:rgb(var(--cream)/.4)}
 .foot em{color:var(--gold-3);font-style:normal}
+
+/* --- richer intro (hero image · editions · seats · perks) --- */
+.hero-img{position:relative;border-radius:14px;overflow:hidden;margin:-6px 0 20px;aspect-ratio:16/8}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,9,24,.94),rgba(15,9,24,.15) 58%,transparent)}
+.hero-cap{position:absolute;left:20px;right:20px;bottom:15px;z-index:2}
+.hero-cap .hk{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-1)}
+.hero-cap .ht{font-family:var(--display);font-size:clamp(1.3rem,4vw,1.7rem);color:rgb(var(--cream));margin-top:3px;line-height:1.1}
+
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 16px}
+.ed{border:1px solid rgb(var(--cream)/.14);border-radius:12px;overflow:hidden;background:rgb(var(--cream)/.02)}
+.ed img{width:100%;height:92px;object-fit:cover;display:block}
+.ed.ed-black{border-color:rgba(233,200,154,.4);background:linear-gradient(160deg,#141018,#0a0710)}
+.ed-b{padding:11px 13px 13px}
+.ed-tag{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--metal)}
+.ed-b b{display:block;font-family:var(--display);font-size:1.1rem;margin:2px 0 7px;color:rgb(var(--cream))}
+.ed-st{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.45em}
+.st-done{color:var(--gold-2)} .st-done::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-2)}
+.st-open{color:rgb(var(--violet-soft))} .st-open::before{content:"";width:6px;height:6px;border-radius:50%;background:rgb(var(--violet-soft));box-shadow:0 0 8px rgb(var(--violet)/.8)}
+
+.seats{margin:4px 0 18px}
+.dots{display:grid;grid-template-columns:repeat(25,1fr);gap:4px;margin-bottom:11px}
+.dots .d{aspect-ratio:1;border-radius:3px}
+.dots .d.black{background:#0a0710;border:1px solid rgba(233,200,154,.55);box-shadow:inset 0 0 4px rgba(233,200,154,.25)}
+.dots .d.open{background:rgb(var(--cream)/.015);border:1px solid rgb(var(--cream)/.16)}
+.seats-lab{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(var(--cream)/.6);display:flex;gap:1.4em;flex-wrap:wrap}
+.seats-lab span{display:inline-flex;align-items:center;gap:.5em}
+.seats-lab .sw{width:11px;height:11px;border-radius:3px}
+.seats-lab .sw.k{background:#0a0710;border:1px solid rgba(233,200,154,.55)}
+.seats-lab .sw.o{border:1px solid rgb(var(--cream)/.22)}
+.seats-lab b{color:rgb(var(--cream))}
+
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin:0 0 20px}
+@media(max-width:480px){.perks{grid-template-columns:1fr}.editions{grid-template-columns:1fr 1fr}}
+.perk{font-size:.88rem;color:rgb(var(--cream)/.82);display:flex;align-items:flex-start;gap:.55em;line-height:1.4}
+.perk .pk{color:var(--gold-2);font-size:.66rem;margin-top:.25em}
 </style>
 </head>
 <body>
@@ -115,14 +151,41 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
 
   <div class="card" id="card">
     <div class="step on" data-step="0">
-      <p class="kicker">By application</p>
-      <h1>Apply to the <em>Founding&nbsp;50</em></h1>
-      <p class="lead">The first ten — the Black Edition — are delivered. Forty places remain in the founding circle. This isn't a checkout; it's an application, and we read every one.</p>
-      <div class="meter">
-        <div class="row"><span>Founding memberships</span><span><b>10 of 50</b> claimed</span></div>
-        <div class="bar"><div class="fill"></div></div>
+      <div class="hero-img">
+        <img src="../storyboard/gen/founding/RETREAT-mexico.png" alt="The founding circle gathered at the retreat in Mexico">
+        <div class="hero-cap"><span class="hk">By application · A founding circle</span><div class="ht">Fifty people, one room, in Mexico.</div></div>
       </div>
-      <p class="promise">Takes about 90 seconds. If it isn't a fit, we'll tell you kindly — no pressure, no hard sell.</p>
+      <p class="kicker">The Founding 50</p>
+      <h1>Apply to the <em>Founding&nbsp;50</em></h1>
+      <p class="lead">This isn't a checkout — it's an application to a circle of fifty who help shape what VIBE becomes. Founding members receive the bed, hand-numbered founding status, and a place at the mastermind retreat.</p>
+
+      <div class="editions">
+        <div class="ed ed-black">
+          <img src="../storyboard/gen/founding/FE-BLACK-hero.png" alt="The black-on-black Founders Black Edition VIBE">
+          <div class="ed-b"><span class="ed-tag">Founders 1–10</span><b>Black Edition</b><span class="ed-st st-done">Delivered · black on black</span></div>
+        </div>
+        <div class="ed">
+          <img src="../storyboard/gen/refs/vibe-daylight.jpg" alt="The cream swirl-quilt VIBE">
+          <div class="ed-b"><span class="ed-tag">Founders 11–50</span><b>Cream Edition</b><span class="ed-st st-open">Applications open</span></div>
+        </div>
+      </div>
+
+      <div class="seats">
+        <div class="dots" id="seatdots" aria-hidden="true"></div>
+        <div class="seats-lab">
+          <span><i class="sw k"></i><b>10</b> Black Edition, delivered</span>
+          <span><i class="sw o"></i><b>40</b> places open</span>
+        </div>
+      </div>
+
+      <div class="perks">
+        <div class="perk"><span class="pk">✦</span> The Cream Edition VIBE — hand-numbered, yours</div>
+        <div class="perk"><span class="pk">✦</span> The Mexico mastermind retreat</div>
+        <div class="perk"><span class="pk">✦</span> A direct line to Dr. Steven</div>
+        <div class="perk"><span class="pk">✦</span> A founding number, never issued again</div>
+      </div>
+
+      <p class="promise">About 90 seconds. If it isn't a fit, we'll tell you kindly — no pressure, no hard sell.</p>
       <div class="nav">
         <button class="btn btn-solid" data-next>Begin the application</button>
         <div class="spacer"></div>
@@ -222,6 +285,9 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
   formSteps.forEach(function(){ var d=document.createElement('div'); d.className='dot'; prog.appendChild(d); });
   var dots = [].slice.call(prog.children);
   var cur = 0, data = { path:'' };
+
+  // render the 50 founding seats — first 10 are the delivered Black Edition, 40 open
+  (function(){ var sd=document.getElementById('seatdots'); if(sd){ for(var i=0;i<50;i++){ var d=document.createElement('div'); d.className='d '+(i<10?'black':'open'); sd.appendChild(d); } } })();
 
   function showStep(i){
     steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === i); });
