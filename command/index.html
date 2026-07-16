@@ -148,6 +148,48 @@ footer{padding:44px 0 90px;text-align:center;color:rgba(255,250,247,.4);font-siz
 footer a{color:var(--champ)}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
+
+/* --- depth layer (roster · personas · findings · science) --- */
+.roster-h{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--champ);margin:22px 0 12px}
+.roster{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:820px){.roster{grid-template-columns:repeat(2,1fr)}}
+.mem{border:1px solid var(--faint);border-radius:12px;padding:16px 14px;background:rgba(255,250,247,.025);text-align:center}
+.mem .av{width:46px;height:46px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;
+  font-family:var(--display);font-size:18px;color:var(--ink);background:linear-gradient(140deg,var(--gold-1),var(--gold-3))}
+.mem.vio .av{background:linear-gradient(140deg,var(--violet-br),var(--violet))}
+.mem .nm{font-family:var(--display);font-size:16px;line-height:1.1}
+.mem .rl{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--champ);margin-top:4px}
+.mem .ex{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.45}
+.personas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.personas{grid-template-columns:1fr}}
+.pc{border:1px solid var(--faint);border-radius:14px;padding:20px 22px;background:linear-gradient(165deg,rgba(255,250,247,.045),rgba(255,250,247,.01))}
+.pc .ptag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:999px;display:inline-block}
+.ptag-b2c{background:rgba(139,92,246,.16);color:var(--violet-br)}
+.ptag-b2b{background:rgba(143,227,176,.14);color:var(--good)}
+.ptag-adj{background:rgba(232,180,90,.14);color:var(--warn)}
+.pc h3{font-family:var(--display);font-size:22px;margin:9px 0 2px}
+.pc .who{font-size:13px;color:var(--muted);margin-bottom:10px}
+.pc .prow{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:8px 0;border-top:1px solid var(--faint);font-size:13px}
+.pc .prow .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--champ);padding-top:2px}
+.pc .prow .val{color:rgba(255,250,247,.84)}
+.find{border:1px solid var(--hair);border-radius:12px;padding:4px 20px;background:rgba(233,200,154,.03);margin-top:14px}
+.find .row{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--faint);align-items:start}
+.find .row:last-child{border-bottom:0}
+.prio{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;width:fit-content}
+.p-high{background:rgba(224,115,107,.16);color:var(--bad)}
+.p-med{background:rgba(232,180,90,.14);color:var(--warn)}
+.p-low{background:rgba(143,166,196,.14);color:#8fa6c4}
+.find .ft{font-size:13.5px;color:var(--muted);line-height:1.55}
+.find .ft b{color:var(--cream)}
+.find .ft i{color:var(--good);font-style:normal}
+.sci{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.sci{grid-template-columns:1fr}}
+.scard{border:1px solid var(--faint);border-radius:14px;padding:22px;background:rgba(255,250,247,.02)}
+.scard h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--champ);margin-bottom:12px}
+.scard .big{font-family:var(--display);font-size:34px;color:var(--good);line-height:1.05}
+.scard p{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.scard p b{color:var(--cream)}
+.guard{border-left:2px solid var(--warn);padding-left:14px;margin-top:16px;font-size:13px;color:var(--warn)}
 .status{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-left:8px}
 .st-live{background:rgba(143,227,176,.14);color:var(--good)}
 .st-draft{background:rgba(232,180,90,.14);color:var(--warn)}
@@ -163,19 +205,21 @@ footer a{color:var(--champ)}
     <p>One place for everything we've built for the VIBE launch — the film, the story, the site, the offer, and the raise — reviewed by two advisory councils and staged as one coherent package.</p>
     <p class="addressed">Prepared for Dr. Steven Schwartz — founder, <em>Primal Resonance</em>.</p>
     <div class="meta-row">
-      <span class="pill">Status: <b>v1 — in review</b></span>
+      <span class="pill">Status: <b>v2 — council-reviewed</b></span>
       <span class="pill">Builds: <b>5 shipped</b></span>
-      <span class="pill">Councils: <b>2</b></span>
+      <span class="pill">Councils: <b>2 · 10 advisors</b></span>
       <span class="pill">Updated: <b>Jul 2026</b></span>
     </div>
   </div>
   <nav class="sticky"><div class="in">
+    <a href="#panel">The Panel</a>
     <a href="#overview">Overview</a>
     <a href="#strategy">Strategy</a>
+    <a href="#science">The Science</a>
     <a href="#package">The Package</a>
     <a href="#brand">Brand &amp; GTM</a>
     <a href="#raise">The Raise</a>
-    <a href="#market">Market</a>
+    <a href="#market">Personas</a>
     <a href="#book">The Book</a>
     <a href="#deck">Pitch Deck</a>
     <a href="#road">Roadmap</a>
@@ -185,9 +229,31 @@ footer a{color:var(--champ)}
 
 <div class="wrap">
 
+  <!-- EXPERT PANEL -->
+  <section id="panel" class="reveal">
+    <div class="sec-h"><span class="n">01</span><h2>The panel</h2></div>
+    <p class="sec-sub">Two advisory councils reviewed this package — ten distinct minds, not ten paraphrases. The brand council pressure-tests the story and the funnel; the fundraising board pressure-tests the raise, with a 5th seat chosen for wellness hardware.</p>
+    <div class="roster-h">Brand &amp; Go-To-Market council</div>
+    <div class="roster">
+      <div class="mem vio"><div class="av">H</div><div class="nm">Hormozi</div><div class="rl">Offer &amp; value</div><div class="ex">Is it obviously worth applying for?</div></div>
+      <div class="mem vio"><div class="av">G</div><div class="nm">Godin</div><div class="rl">Tribe &amp; remarkable</div><div class="ex">Who is this deliberately not for?</div></div>
+      <div class="mem vio"><div class="av">W</div><div class="nm">Watts</div><div class="rl">Meaning</div><div class="ex">What is this really about?</div></div>
+      <div class="mem vio"><div class="av">J</div><div class="nm">Jobs</div><div class="rl">Simplicity</div><div class="ex">One sentence, one action.</div></div>
+      <div class="mem vio"><div class="av">S</div><div class="nm">Sutherland</div><div class="rl">Perceived value</div><div class="ex">What does it signal?</div></div>
+    </div>
+    <div class="roster-h">Fundraising board</div>
+    <div class="roster">
+      <div class="mem"><div class="av">A</div><div class="nm">Andreessen</div><div class="rl">Market &amp; why-now</div><div class="ex">Is the outcome $1B+?</div></div>
+      <div class="mem"><div class="av">M</div><div class="nm">Musk</div><div class="rl">First-principles cost</div><div class="ex">Defend your own numbers.</div></div>
+      <div class="mem"><div class="av">N</div><div class="nm">Naval</div><div class="rl">Founder &amp; leverage</div><div class="ex">Why you? Where's the leverage?</div></div>
+      <div class="mem"><div class="av">C</div><div class="nm">Chamath</div><div class="rl">Unit economics</div><div class="ex">Do the numbers compound?</div></div>
+      <div class="mem"><div class="av">KG</div><div class="nm">Kirsten Green</div><div class="rl">5th · wellness HW</div><div class="ex">Led Oura — brand, LTV, belonging.</div></div>
+    </div>
+  </section>
+
   <!-- OVERVIEW -->
   <section id="overview" class="reveal">
-    <div class="sec-h"><span class="n">01</span><h2>Where we stand</h2></div>
+    <div class="sec-h"><span class="n">02</span><h2>Where we stand</h2></div>
     <p class="sec-sub">An honest readout across the dimensions both councils scored. The story and the assets are strong; the gap is proof of a repeatable engine behind the scarcity — which is exactly what the roadmap targets.</p>
     <div class="scores">
       <div class="score"><div class="lbl">Brand &amp; Story</div><div class="v">8<small>/10</small></div><div class="d">Clear POV, film, "delivered" scarcity.</div></div>
@@ -200,7 +266,7 @@ footer a{color:var(--champ)}
 
   <!-- STRATEGY / WEDGE -->
   <section id="strategy" class="reveal">
-    <div class="sec-h"><span class="n">01·5</span><h2>The wedge, the moat, the proof</h2></div>
+    <div class="sec-h"><span class="n">03</span><h2>The wedge, the moat, the proof</h2></div>
     <p class="sec-sub">Direction from Dr. Steven, now the spine of the package: focus ruthlessly on <b>one product</b> (HyperVIBE + accessories), win on <b>longevity + mitochondria</b>, and defend it with the <b>frequency</b> — the thing generic sound beds can't replicate.</p>
     <div class="scores" style="grid-template-columns:repeat(3,1fr)">
       <div class="score"><div class="lbl">Free radicals</div><div class="v" style="color:var(--good)">−25%</div><div class="d">after one 20-min session (our mitochondrial testing)</div></div>
@@ -224,9 +290,34 @@ footer a{color:var(--champ)}
     </div>
   </section>
 
+  <!-- THE SCIENCE -->
+  <section id="science" class="reveal">
+    <div class="sec-h"><span class="n">04</span><h2>The science — why this is the moat</h2></div>
+    <p class="sec-sub">Steven's mitochondrial testing is the difference between "another relaxation bed" and a defensible category. Presented honestly: these are VIBE's own findings (the subject of his TED talk), not yet a peer-reviewed head-to-head — which is exactly the study to run.</p>
+    <div class="sci">
+      <div class="scard"><h4>What we measured</h4><div class="big">−25%</div>
+        <p><b>Free radicals</b>, after a single 20-minute session. Oxidative stress sits upstream of the chronic inflammation <i>Primal Resonance</i> is about.</p></div>
+      <div class="scard"><h4>What changed over time</h4><div class="big">↑ OCR · 7 days</div>
+        <p><b>Oxygen-consumption rate</b> rose in the mitochondria after seven days of VIBING — the cell making more usable energy, not just the user feeling calmer.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="blk"><h4>Why it's defensible (the moat)</h4><ul>
+        <li><b>Specific frequencies, not "vibration."</b> Generic beds don't shift mitochondria or HRV — the tuning is the secret sauce.</li>
+        <li><b>Founder IP + 25 years.</b> Knowing which frequencies do what is the non-permissioned leverage.</li>
+        <li><b>A measurable outcome</b> gives Musk and Chamath a real claim to test — not a marketing story.</li>
+      </ul></div>
+      <div class="blk"><h4>What closes the gap</h4><ul>
+        <li><b>Run the head-to-head baseline study</b> vs. other vibroacoustics — turns "our testing" into a citation.</li>
+        <li><b>Lean on the TED talk</b> as the top-of-funnel proof asset.</li>
+        <li><b>Engage claims counsel</b> before scaling medical-adjacent language.</li>
+      </ul></div>
+    </div>
+    <p class="guard">Guardrail: present as "in our mitochondrial testing," and keep wellness (not medical) claims until the study + counsel are in place. The honesty is part of the brand.</p>
+  </section>
+
   <!-- THE PACKAGE / BUILDS -->
   <section id="package" class="reveal">
-    <div class="sec-h"><span class="n">02</span><h2>The package</h2></div>
+    <div class="sec-h"><span class="n">05</span><h2>The package</h2></div>
     <p class="sec-sub">Five shipped builds, one consistent brand system. Everything below is live and shareable — the Film Hub bundles the two most important pieces behind a single link.</p>
     <div class="builds">
       <a class="bcard" href="../film/"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt=""></div>
@@ -246,7 +337,7 @@ footer a{color:var(--champ)}
 
   <!-- BRAND & GTM COUNCIL -->
   <section id="brand" class="reveal">
-    <div class="sec-h"><span class="n">03</span><h2>Brand &amp; Go-To-Market Council</h2></div>
+    <div class="sec-h"><span class="n">06</span><h2>Brand &amp; Go-To-Market Council</h2></div>
     <p class="sec-sub">Five brand minds pressure-test the story and the funnel. Consensus: book (authority) → film (emotion) → Founding-50 application (scarcity) → Mexico (belonging) → practitioner path (secondary). One action throughout: <b>Apply</b>.</p>
 
     <div class="panel"><div class="panel-top"><div class="role">Alex Hormozi<small>Offer &amp; the value equation</small></div><span class="verdict v-yes">Strong</span></div>
@@ -259,11 +350,20 @@ footer a{color:var(--champ)}
       <p>One page, one action — <b>Apply</b>. The book is a credibility beat, not a bookstore. Delete anything that turns the film into a checkout. Keep <b>Apply</b> the only filled button anywhere.</p></div>
     <div class="panel"><div class="panel-top"><div class="role">Rory Sutherland<small>Behavioral science &amp; perceived value</small></div><span class="verdict v-yes">Strong</span></div>
       <p>Hand-numbered, "delivered," the gold serial plate — these do real status work; keep pushing costly-signal cues. The book reframes the price from "expensive bed" to <b>"the object the man who wrote the book makes."</b></p></div>
+
+    <h3 style="font-size:18px;margin:24px 0 4px;color:var(--champ)">Priority actions — brand &amp; funnel</h3>
+    <div class="find">
+      <div class="row"><span class="prio p-high">High</span><div class="ft"><b>Lead the site with the mito proof, not scarcity.</b> "Not all vibration is equal" + the −25% / OCR data breaks the "just another bed" objection. <i>Done — V3 Proof section.</i></div></div>
+      <div class="row"><span class="prio p-high">High</span><div class="ft"><b>One action everywhere — Apply.</b> Keep it the only filled button; the book is a credibility beat, not a store. <i>Done.</i></div></div>
+      <div class="row"><span class="prio p-med">Med</span><div class="ft"><b>Stand up a real application flow</b> — qualifying questions, not a checkout, with risk-reversal beside the CTA.</div></div>
+      <div class="row"><span class="prio p-med">Med</span><div class="ft"><b>Book as lead magnet</b> — <i>Primal Resonance</i> at the top of the funnel; book → film → apply.</div></div>
+      <div class="row"><span class="prio p-low">Low</span><div class="ft"><b>Keep the practitioner path a side door</b> — a different tribe; don't let it compete with the hero.</div></div>
+    </div>
   </section>
 
   <!-- THE RAISE / FUNDRAISING BOARD -->
   <section id="raise" class="reveal">
-    <div class="sec-h"><span class="n">04</span><h2>The Fundraising Board</h2></div>
+    <div class="sec-h"><span class="n">07</span><h2>The Fundraising Board</h2></div>
     <p class="sec-sub">Four permanent members + a 5th seat: <b>Kirsten Green (Forerunner)</b> — seated for premium consumer-wellness hardware; she led Oura, the closest comp. Read at pre-seed / founder-led, judged against an angel-seed target, not a hyperscale yardstick.</p>
 
     <h3 style="font-size:20px;margin:6px 0 12px;color:var(--champ)">The arc — nascent → very successful</h3>
@@ -312,27 +412,46 @@ footer a{color:var(--champ)}
 
   <!-- MARKET -->
   <section id="market" class="reveal">
-    <div class="sec-h"><span class="n">05</span><h2>Market &amp; audience</h2></div>
-    <p class="sec-sub">VIBE rides a real mid-2026 wave: nervous-system regulation + mitochondrial health + longevity (Casey Means / <i>Good Energy</i>, Huberman, red-light / PBM, Urolithin A). The stack (red-light, H2, light-and-sound) sits squarely in the fastest-growing device category.</p>
-    <div class="grid2">
-      <div class="blk"><h4>Who applies to the Founding 50</h4><ul>
-        <li><b>The regulated seeker</b> — done with apps and pills; wants something the body does <i>to</i> them, not another task.</li>
-        <li><b>The practitioner / operator</b> — turns a treatment room into a destination; re-orders; refers clients.</li>
+    <div class="sec-h"><span class="n">08</span><h2>Market &amp; audience</h2></div>
+    <p class="sec-sub">Per Steven's direction — one B2C ICP and one B2B ICP, both anchored on <b>measurable</b> mitochondrial benefit, riding the mid-2026 longevity wave (Casey Means / <i>Good Energy</i>, Huberman, red-light/PBM, Urolithin A).</p>
+    <div class="personas">
+      <div class="pc">
+        <span class="ptag ptag-b2c">Primary · B2C</span>
+        <h3>The Optimizer</h3>
+        <div class="who">40–60, affluent, already tracks HRV / sleep / glucose. Reads Attia &amp; Huberman; owns red-light + supplements.</div>
+        <div class="prow"><div class="k">Pain</div><div class="val">Plateaued. Relaxation apps don't move the needle. Wants cellular gains he can measure.</div></div>
+        <div class="prow"><div class="k">Trigger</div><div class="val">The mito data (−25% free radicals, ↑OCR) + the TED talk. "This actually changes the cell."</div></div>
+        <div class="prow"><div class="k">Objection</div><div class="val">"Isn't this just another vibration bed?" — the exact pigeonhole to break.</div></div>
+        <div class="prow"><div class="k">Message</div><div class="val">Not all vibration is equal. Measurable mitochondrial change, tuned by frequency.</div></div>
+        <div class="prow"><div class="k">Reach</div><div class="val">Longevity/biohacking podcasts, the book as lead magnet, Founding-50 application.</div></div>
+      </div>
+      <div class="pc">
+        <span class="ptag ptag-b2b">Primary · B2B</span>
+        <h3>The Practitioner</h3>
+        <div class="who">Owns a longevity clinic, functional-medicine practice, or high-end wellness spa. Sells outcomes + experience.</div>
+        <div class="prow"><div class="k">Pain</div><div class="val">Needs a differentiated, measurable modality that raises per-visit value and retention.</div></div>
+        <div class="prow"><div class="k">Trigger</div><div class="val">"Treatment room → destination." VIBE on a standard massage table; a measurable protocol to sell.</div></div>
+        <div class="prow"><div class="k">Objection</div><div class="val">Utilization, ROI, will it re-order — economics before story.</div></div>
+        <div class="prow"><div class="k">Message</div><div class="val">The stack that raises what a room is worth — with a mitochondrial outcome clients can feel and you can cite.</div></div>
+        <div class="prow"><div class="k">Reach</div><div class="val">OPUS Facebook groups (commercial leads), practitioner networks — DM + honor OPUS deposit as credit.</div></div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="blk"><h4>Secondary (warm, not the focus)</h4><ul>
         <li><b>The connector-collector</b> — buys founding status + the Mexico room; recruits the next members.</li>
-        <li><b>The biohacker</b> — already owns red-light + H2; VIBE is the centerpiece the stack orbits.</li>
+        <li><b>The stacked biohacker</b> — already owns red-light + H2; VIBE becomes the centerpiece the stack orbits.</li>
       </ul></div>
       <div class="blk"><h4>Natural partners (Coherence Collective)</h4><ul>
-        <li><b>Device:</b> Mito Red Light, Joovv, Vielight, Axiom H2 — the stack, co-marketed.</li>
-        <li><b>Voices:</b> longevity / nervous-system influencers who value calm over hype.</li>
+        <li><b>Device:</b> Mito Red Light, Joovv, Vielight, Axiom H2 — co-market the stack.</li>
         <li><b>Supplement:</b> Timeline (Urolithin A) &amp; NAD+ brands — bundle the biology.</li>
-        <li><small style="color:var(--muted)">Full target list held in the team's reference memory.</small></li>
+        <li><small style="color:var(--muted)">Full mitochondrial-partner target list held in team reference memory.</small></li>
       </ul></div>
     </div>
   </section>
 
   <!-- BOOK -->
   <section id="book" class="reveal">
-    <div class="sec-h"><span class="n">06</span><h2>Primal Resonance — the founder's authority</h2></div>
+    <div class="sec-h"><span class="n">09</span><h2>Primal Resonance — the founder's authority</h2></div>
     <p class="sec-sub">The book is the top of the funnel: it makes Dr. Steven the category author, and reframes VIBE from "an expensive bed" to "the object the man who wrote the book makes."</p>
     <div class="bookrow">
       <img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt="Primal Resonance">
@@ -346,7 +465,7 @@ footer a{color:var(--champ)}
 
   <!-- DECK -->
   <section id="deck" class="reveal">
-    <div class="sec-h"><span class="n">07</span><h2>Pitch deck — concise</h2></div>
+    <div class="sec-h"><span class="n">10</span><h2>Pitch deck — concise</h2></div>
     <p class="sec-sub">A 10-card investor deck, deliberately short. Built to be generated in Gamma so it reads standardized and templated.</p>
     <div class="deck">
       <ol>
@@ -367,7 +486,7 @@ footer a{color:var(--champ)}
 
   <!-- ROADMAP -->
   <section id="road" class="reveal">
-    <div class="sec-h"><span class="n">08</span><h2>Roadmap — what turns 46 into 80</h2></div>
+    <div class="sec-h"><span class="n">11</span><h2>Roadmap — what turns 46 into 80</h2></div>
     <p class="sec-sub">The councils agree on the sequence. Everything here is designed to move real votes and real customers, in order.</p>
     <div class="grid2">
       <div class="blk"><h4>Now → next quarter</h4><ul>
@@ -389,7 +508,7 @@ footer a{color:var(--champ)}
 
   <!-- FINAL RATINGS -->
   <section id="ratings" class="reveal">
-    <div class="sec-h"><span class="n">09</span><h2>Council ratings — this pass</h2></div>
+    <div class="sec-h"><span class="n">12</span><h2>Council ratings — this pass</h2></div>
     <p class="sec-sub">Where each council rates the <i>package</i> right now. Target: 8/10 across the board — brand and assets are there; the raise gets there when the engine is proven.</p>
     <div class="finalscores">
       <div class="score"><div class="lbl">Brand council</div><div class="v">8<small>/10</small></div><div class="d">Story + funnel coherent.</div></div>
