@@ -86,7 +86,7 @@ footer em{color:var(--gold-3);font-style:normal}
 </head>
 <body>
   <div class="top">
-    <a class="logo" href="../index-v3.html">VIBE</a>
+    <a class="logo" href="../">VIBE</a>
     <a class="cta" href="../apply/">Apply · practitioner</a>
   </div>
 
@@ -103,18 +103,44 @@ footer em{color:var(--gold-3);font-style:normal}
         </div>
       </div>
       <div class="img reveal in">
-        <img loading="lazy" src="../storyboard/gen/stack/FS4-wide-reveal.png" alt="A VIBE bed on a standard massage table with the full regulation stack, a practitioner attending">
+        <style>
+          .xpp{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.45);border:1px solid rgba(128,60,238,.18)}
+          .xpp img{display:block;width:100%;height:auto;margin:0}
+          .xpp .pin{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;
+            display:flex;align-items:center;justify-content:center;font:600 13px/1 Roboto,sans-serif;color:#1b0f2e;
+            background:linear-gradient(180deg,#f7e8b4,#e4c56b);box-shadow:0 0 0 3px rgba(27,15,46,.55),0 6px 16px rgba(0,0,0,.5)}
+          .xpp-legend{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.9rem}
+          .xpp-legend li{list-style:none;display:flex;gap:.6rem;font-size:.82rem;line-height:1.35;color:rgba(255,250,247,.72)}
+          .xpp-legend .n{flex:none;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+            font:600 12px/1 Roboto,sans-serif;color:#1b0f2e;background:linear-gradient(180deg,#f7e8b4,#e4c56b)}
+          .xpp-legend b{color:rgb(var(--cream));font-weight:600}
+          @media(max-width:560px){.xpp-legend{grid-template-columns:1fr}}
+        </style>
+        <figure class="xpp">
+          <img loading="lazy" src="../storyboard/gen/stack/EXPLAINER-system.png" alt="A full VIBE session on a standard massage table: the vibroacoustic bed, a red-light mat over the body, a light-and-sound mask, and a hydrogen machine with nasal cannula">
+          <span class="pin" style="left:69%;top:53%">1</span>
+          <span class="pin" style="left:45%;top:47%">2</span>
+          <span class="pin" style="left:60%;top:40%">3</span>
+          <span class="pin" style="left:19%;top:50%">4</span>
+        </figure>
+        <ul class="xpp-legend">
+          <li><span class="n">1</span><span><b>HyperVIBE</b> — engineered vibroacoustic frequencies, five channels. The session.</span></li>
+          <li><span class="n">2</span><span><b>Red-light mat</b> — red + near-infrared, laid over the body.</span></li>
+          <li><span class="n">3</span><span><b>Light + sound mask</b> — synchronized at the eyes.</span></li>
+          <li><span class="n">4</span><span><b>Hydrogen + oxygen</b> — molecular H₂ via soft cannula.</span></li>
+        </ul>
       </div>
     </div>
 
     <div class="sec reveal">
       <h2>Not another relaxation table. A <em>measurable</em> one.</h2>
-      <p class="sub">Generic sound beds relax the client. In our mitochondrial testing, VIBE changes the cell — which is the difference between a nice add-on and a modality you can build a protocol and a price around.</p>
+      <p class="sub">Generic sound beds relax the client. In our own preliminary lab testing, VIBE moved markers at the cellular level — which is the difference between a nice add-on and a modality you can build a protocol and a price around.</p>
       <div class="proof">
-        <div class="pcard"><div class="v">−25%</div><div class="l">Free radicals after one 20-minute session</div></div>
-        <div class="pcard"><div class="v">↑ OCR</div><div class="l">Rising mitochondrial output over 7 days of use</div></div>
+        <div class="pcard"><div class="v">−25%</div><div class="l">Free-radical markers after one 20-minute session (cellular assay)</div></div>
+        <div class="pcard"><div class="v">↑ OCR</div><div class="l">Rising oxygen-consumption rate over 7 days (cellular assay)</div></div>
         <div class="pcard"><div class="v">0</div><div class="l">Extra square footage — it fits your existing table</div></div>
       </div>
+      <p style="font-size:.76rem;color:rgb(var(--cream)/.5);margin-top:1rem;max-width:64ch">Preliminary, internal, cellular-level findings — not yet independently replicated or peer-reviewed. A controlled human study is the next milestone.</p>
     </div>
 
     <div class="sec reveal" id="roi">
