@@ -243,13 +243,11 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
             <option>The film — "The Right Frequency"</option>
             <option>A podcast / longevity community</option>
             <option>Instagram / social</option>
-            <option>I was an OPUS customer</option>
             <option>Other</option>
           </select>
         </label>
         <label class="fld"><span class="l">Who referred you? <span style="opacity:.5">(if a member)</span></span><input class="inp" name="referrer" placeholder="Their name — so we can thank them"></label>
         <label class="chk"><input type="checkbox" name="retreat"> <span>I'd like to be considered for the founding <b>Mexico mastermind retreat</b>.</span></label>
-        <label class="chk" id="opusChk" style="display:none"><input type="checkbox" name="opus"> <span>I placed a deposit or order with <b>OPUS</b> — I understand founding members can apply it as credit.</span></label>
         <div class="err" id="err4"></div>
         <div class="nav"><button type="button" class="btn btn-ghost" data-back>Back</button><div class="spacer"></div><button type="button" class="btn btn-solid" data-next>Review</button></div>
       </div>
@@ -310,10 +308,6 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
       setTimeout(function(){ showStep(2); }, 220); // auto-advance after choosing a path
     });
   });
-  document.querySelector('[name="source"]').addEventListener('change', function(e){
-    document.getElementById('opusChk').style.display = /OPUS/.test(e.target.value) ? 'flex' : 'none';
-  });
-
   function validate(step){
     if(step===1 && !data.path){ setErr('err1','Please choose one.'); return false; }
     if(step===2){
@@ -338,7 +332,6 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rg
     rows.push(['Heard via', val('source')]);
     if(val('referrer')) rows.push(['Referred by', val('referrer')]);
     rows.push(['Mexico retreat', checked('retreat') ? 'Yes, consider me' : 'No']);
-    if(document.getElementById('opusChk').style.display==='flex' && checked('opus')) rows.push(['OPUS credit', 'Wants to apply OPUS credit']);
     return rows;
   }
   // safe DOM build — no innerHTML with user content

@@ -36,7 +36,7 @@ Everything below keeps new work matching what's already shipped.
 | Storyboard | `/storyboard/` | Rendered acts. Only reachable *inside* the Production Hub. |
 | Book landing | `/learn/` | Free-chapter lead capture (top of funnel). |
 | Practitioner one-pager | `/practitioners/` | B2B: ROI calculator + protocol + massage-table fit. |
-| Sales scripts | `/scripts/` | Resonance call, practitioner outreach, OPUS-credit DM. |
+| Sales scripts | `/scripts/` | Resonance call, practitioner outreach, warm-referral DM. |
 | Command Center | `/command/` | Internal package for Steven: digest, councils, funnel, download. `noindex`. |
 
 ## Brand system (match exactly)
@@ -56,9 +56,9 @@ Everything below keeps new work matching what's already shipped.
 - **B2C — the HNW biohacker**: longevity clinics, biohacking events, Attia/Huberman audiences,
   Oura/Whoop communities, family offices. Motion: book (lead magnet) → nurture on the proof →
   Mexico retreat as the hook → application → resonance call.
-- **B2B — the practitioner**: functional-med/longevity networks, practitioner groups, the warm
-  **OPUS commercial groups**. Motion: one-pager + ROI → DM OPUS leads with the deposit-credit
-  offer → demo → pilot. Frame: treatment room → destination.
+- **B2B — the practitioner**: functional-med/longevity networks, practitioner groups, warm
+  referrals from the delivered founders. Motion: one-pager + ROI → DM practitioner leads with
+  the founding offer → demo → pilot. Frame: treatment room → destination.
 - Cold traffic never applies on first touch — every ICP gets a top and middle of funnel.
 
 ## Sales principles (apply to all collateral, scripts & flows)
