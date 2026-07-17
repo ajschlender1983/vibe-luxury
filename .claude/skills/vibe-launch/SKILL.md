@@ -11,9 +11,13 @@ description: >
 # VIBE Launch — build system
 
 VIBE is Dr. Steven Schwartz's vibroacoustic wellness bed (the **HyperVIBE**). Positioning:
-**"It all begins in the body"** and **"Peace is a vibe."** The wedge is **longevity + the
+lead with the founder's **question** — *"Can precisely engineered sound do the work we've asked
+medication to do?"* — kept open, never answered. Thesis line **"It all begins in the body."**
+Signature **"Engineered resonance. Measurable repair."** The wedge is **longevity + the
 mitochondria**; the moat is **the frequency** (specific tuning that generic sound beds can't
-replicate). Everything below keeps new work matching what's already shipped.
+replicate). **Retired (Jul 2026):** the "___ is a vibe" wordplay/rotator — it read as wellness-lite
+to the longevity-first ICPs. Frame is precision + longevity, not the category's tired keywords.
+Everything below keeps new work matching what's already shipped.
 
 ## Repo & deploy
 - Repo: `github.com/ajschlender1983/vibe-luxury` → GitHub Pages (a **project** site). Local: `/Users/adamschlenderwork/dev/vibe-luxury`.
@@ -26,7 +30,7 @@ replicate). Everything below keeps new work matching what's already shipped.
 ## The surfaces (all live)
 | Surface | Path | What it is |
 |---|---|---|
-| Landing (V3) | `/index-v3.html` | The Founding-50 site. One action: **Apply**. |
+| Landing | `/` (index.html) | The Founding-50 site — promoted to the root Jul 2026. `/index-v3.html` now redirects here. One action: **Apply**. |
 | Application flow | `/apply/` | Multi-step application (not checkout), B2C/B2B split, referral-tracked. |
 | Production Hub | `/film/` | One link bundling the shooting script + full storyboard (tabs). |
 | Storyboard | `/storyboard/` | Rendered acts. Only reachable *inside* the Production Hub. |
@@ -88,6 +92,16 @@ Fundability is milestone-gated (member-sourced demand, margins, the baseline stu
 ## Guardrails
 - Wellness claims only until the study + counsel are in place; the PTSD–mitochondria angle is a story and
   a market, never a medical claim.
+- **The medication line stays a question.** Ask whether engineered sound can do what medication does — never
+  answer it, never name a disease or a drug beside it, never say "replace/instead of/get off your meds." Every
+  health-adjacent number is our own *preliminary, internal, cellular-level lab finding, not yet peer-reviewed.*
+  Say "repair," "cellular vitality," "inspired by mitochondrial research"; **avoid "cellular rejuvenation,"**
+  "reverses aging," "extends lifespan." Longevity is territory, not a promise. A wellness disclaimer sits near
+  the line ("not a medical device… not a substitute for medical care or prescribed medication"). Legal review
+  (LEXIS) verdict on file: yellow-light — proceed, gated on these. Route health-adjacent copy past counsel.
+- **The system explainer** (`storyboard/gen/stack/EXPLAINER-system.png`) is the canonical full-stack visual:
+  the modern-treatment-room render + HTML numbered callouts (1 HyperVIBE · 2 red-light mat · 3 light+sound mask ·
+  4 hydrogen+oxygen). Replaced the old `FS4-wide-reveal.png` on the homepage, practitioners, storyboard, command.
 - Payment/lead capture: build the UI, but the founder wires the real Stripe/Gumroad + email endpoint
   (placeholders are flagged in-file: `PAYMENT_URL`, `LEAD_ENDPOINT`).
 - Progressive disclosure on dense internal pages: a 2-minute executive digest on top, deep sections folded.
