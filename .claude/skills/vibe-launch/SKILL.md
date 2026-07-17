@@ -16,7 +16,8 @@ mitochondria**; the moat is **the frequency** (specific tuning that generic soun
 replicate). Everything below keeps new work matching what's already shipped.
 
 ## Repo & deploy
-- Repo: `github.com/ajschlender1983/vibe-luxury` → GitHub Pages. Local: `/Users/adamschlenderwork/dev/vibe-luxury`.
+- Repo: `github.com/ajschlender1983/vibe-luxury` → GitHub Pages (a **project** site). Local: `/Users/adamschlenderwork/dev/vibe-luxury`.
+- **Live base URL is `https://ajschlender1983.github.io/vibe-luxury/`** (project path, not the account root). Verify e.g. `…/vibe-luxury/command/`. During a fresh deploy the CDN transiently serves GitHub's "Site not found" page — that's propagation, not a real 404; re-poll.
 - Deploy: `git add … && git commit && git push origin main`. Pages rebuilds in ~40–90s.
   Poll `gh api repos/ajschlender1983/vibe-luxury/pages/builds/latest`, then verify the live URL
   with `curl` (200) **and** cache-bust in the browser (`?v=…`) — Pages/CDN serves stale copies for a minute.
