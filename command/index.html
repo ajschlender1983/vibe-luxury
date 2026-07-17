@@ -357,18 +357,19 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 <header class="top">
   <div class="glow"></div>
   <div class="wrap">
-    <p class="eyebrow">VIBE · Bioharmonic — Launch Package</p>
-    <h1>The Right Frequency<br><em>Command Center</em></h1>
-    <p>Everything we've built for the VIBE launch, in one place: the film, the site, the offer, and the raise. Both advisory councils have reviewed it.</p>
-    <p class="addressed">Steven — this one’s yours. Your whole launch, in one place.</p>
+    <p class="eyebrow">The Campaign · Command Center</p>
+    <h1>BioHarmonix Brand Upgrade<br><em>&amp; HyperVIBE Launch</em></h1>
+    <p>The whole campaign in one place — the brand upgrade, the book, the film, the site, the offer, and the raise — laid out in the order it runs. Reviewed by your advisory agents.</p>
+    <p class="addressed">Steven — this one’s yours. Your whole campaign, in one place.</p>
     <div class="meta-row">
-      <span class="pill">Status: <b>v4 — collateral</b></span>
-      <span class="pill">Builds: <b>8 · one hub</b></span>
-      <span class="pill">Councils: <b>2 · 11 advisors</b></span>
+      <span class="pill">Brand upgrade: <b>BioHarmonix</b></span>
+      <span class="pill">Launch: <b>HyperVIBE · Founding 50</b></span>
+      <span class="pill">Agents: <b>3 · 11 advisors</b></span>
       <span class="pill">Updated: <b>Jul 2026</b></span>
     </div>
   </div>
   <nav class="sticky"><div class="in">
+    <a href="#campaign">The Campaign</a>
     <a href="#panel">The Panel</a>
     <a href="#overview">Overview</a>
     <a href="#strategy">Strategy</a>
@@ -417,9 +418,41 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
     </div>
   </section>
 
+  <!-- THE CAMPAIGN — STORY + ORDER OF OPERATIONS -->
+  <section id="campaign" class="reveal">
+    <div class="sec-h"><span class="n">01</span><h2>The campaign, in order</h2></div>
+    <p class="sec-sub"><b>BioHarmonix</b> is the brand upgrade; <b>HyperVIBE</b> is the launch. We moved the brand off wellness wordplay and onto precision, longevity, and the founder&rsquo;s question &mdash; then built the funnel that sells the next 100 units and opens the raise. Here is the order it runs.</p>
+    <style>
+      .ops{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:6px;counter-reset:op}
+      @media(max-width:900px){.ops{grid-template-columns:repeat(2,1fr)}}
+      @media(max-width:520px){.ops{grid-template-columns:1fr}}
+      .op{position:relative;display:block;border-radius:13px;padding:16px 14px 15px;text-decoration:none;
+        background:linear-gradient(180deg,rgba(27,15,46,.68),rgba(15,9,24,.5));border:1px solid rgba(168,130,246,.18);
+        transition:transform .25s,border-color .25s}
+      .op:hover{transform:translateY(-3px);border-color:rgba(168,130,246,.5)}
+      .op .step{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;letter-spacing:.14em;color:var(--champ,#cbb9a0)}
+      .op .step b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;
+        margin-right:7px;font-family:var(--body,Roboto,sans-serif);font-weight:600;color:#1b0f2e;
+        background:linear-gradient(180deg,#f7e8b4,#e4c56b);vertical-align:middle}
+      .op h4{margin:10px 0 4px;font-family:var(--display,'Abel',sans-serif);font-size:1.06rem;letter-spacing:.01em;color:#fff8f4;line-height:1.15}
+      .op p{margin:0;font-size:.79rem;line-height:1.4;color:rgba(255,250,247,.66)}
+      .op .arrow{position:absolute;right:-9px;top:50%;transform:translateY(-50%);z-index:2;color:rgba(168,130,246,.7);font-size:.9rem}
+      @media(max-width:900px){.op .arrow{display:none}}
+    </style>
+    <div class="ops">
+      <a class="op" href="#strategy"><div class="step"><b>1</b>UPGRADE</div><h4>The brand</h4><p>BioHarmonix reposition &mdash; precision, longevity, the medication question. Retire &ldquo;is a vibe.&rdquo;</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="#book"><div class="step"><b>2</b>AUTHORITY</div><h4>The book</h4><p><i>Primal Resonance</i> &mdash; the founder&rsquo;s thesis, the free-chapter lead magnet. Top of funnel.</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="../film/"><div class="step"><b>3</b>EMOTION</div><h4>The film</h4><p>&ldquo;The Right Frequency&rdquo; &mdash; the story that makes people feel it before they read a spec.</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="../"><div class="step"><b>4</b>CONVERT</div><h4>The site</h4><p>Founding-50 application &mdash; scarcity, one action: <b>Apply</b>. Not a checkout.</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="../practitioners/"><div class="step"><b>5</b>B2B</div><h4>Practitioners</h4><p>The measurable-modality one-pager &mdash; a side door for clinics and operators.</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="../scripts/"><div class="step"><b>6</b>ENABLE</div><h4>Sales</h4><p>Resonance call, practitioner outreach, the OPUS-credit recovery play.</p><span class="arrow">&rarr;</span></a>
+      <a class="op" href="../deck/"><div class="step"><b>7</b>RAISE</div><h4>The capital</h4><p>The 100 Vibes deck + the lead-investor move &mdash; fund the next 100 units.</p></a>
+    </div>
+  </section>
+
   <!-- EXPERT PANEL -->
   <section id="panel" class="reveal">
-    <div class="sec-h"><span class="n">01</span><h2>The panel</h2></div>
+    <div class="sec-h"><span class="n">02</span><h2>The panel</h2></div>
     <p class="sec-sub">Two advisory councils reviewed this package — ten distinct minds. Tap any advisor for their lens and what they see in VIBE. <span style="color:var(--muted)">These are simulated advisory personas for a strategy exercise, not statements from the real individuals.</span></p>
     <div class="roster-h">Brand &amp; Go-To-Market council</div>
     <div class="roster">
@@ -443,7 +476,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- OVERVIEW -->
   <section id="overview" class="reveal folded">
-    <div class="sec-h"><span class="n">02</span><h2>Where we stand</h2></div>
+    <div class="sec-h"><span class="n">03</span><h2>Where we stand</h2></div>
     <p class="sec-sub">An honest readout across the dimensions both councils scored. The story and the assets are strong. The gap is proof of a repeatable engine behind the scarcity, and that's what the roadmap targets.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -459,7 +492,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- STRATEGY / WEDGE -->
   <section id="strategy" class="reveal folded">
-    <div class="sec-h"><span class="n">03</span><h2>The wedge, the moat, the proof</h2></div>
+    <div class="sec-h"><span class="n">04</span><h2>The wedge, the moat, the proof</h2></div>
     <p class="sec-sub">Your direction, now the spine of the package: focus ruthlessly on <b>one product</b> (HyperVIBE + accessories), win on <b>longevity + mitochondria</b>, and defend it with the <b>frequency</b>, the thing generic sound beds can't replicate. You own what no one else in longevity has — 25 years of research, a TED talk, <i>Primal Resonance</i>, and your own mitochondrial data. That is a unique story for a booming market, and both ICPs are longevity-first.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -488,7 +521,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- THE SCIENCE -->
   <section id="science" class="reveal folded">
-    <div class="sec-h"><span class="n">04</span><h2>The science — why this is the moat</h2></div>
+    <div class="sec-h"><span class="n">05</span><h2>The science — why this is the moat</h2></div>
     <p class="sec-sub">Your mitochondrial testing is what separates VIBE from another relaxation bed. To be straight about it: these are VIBE's own findings (the subject of your TED talk), not a peer-reviewed head-to-head yet. That's the study to run.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -516,7 +549,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- THE TRAUMA LENS / PTSD -->
   <section id="ptsd" class="reveal folded">
-    <div class="sec-h"><span class="n">05</span><h2>The trauma lens — PTSD &amp; the mitochondria</h2></div>
+    <div class="sec-h"><span class="n">06</span><h2>The trauma lens — PTSD &amp; the mitochondria</h2></div>
     <p class="sec-sub">The "nervous system on guard" the film opens with is, at its extreme, trauma. A growing research line ties chronic stress and PTSD to mitochondrial dysfunction, which is exactly where VIBE's measured effect sits. It's a large, underserved, emotionally urgent story, told honestly.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -544,20 +577,20 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- THE PACKAGE / BUILDS -->
   <section id="package" class="reveal">
-    <div class="sec-h"><span class="n">06</span><h2>The package</h2></div>
+    <div class="sec-h"><span class="n">07</span><h2>The package</h2></div>
     <p class="sec-sub">One brand system across the board. Everything below is shareable; the Production Hub folds the film's shooting script and full storyboard behind a single link.</p>
     <div class="builds">
-      <a class="bcard" href="../film/"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt=""></div>
+      <a class="bcard" href="../film/"><div class="bg"><img loading="lazy" src="../storyboard/gen/refs/vibe-active.jpg" alt=""></div>
         <div class="b"><span class="tag">One shareable link</span><h3>Production Hub<span class="status st-live">live</span></h3><p>Everything for the film in one place: the shooting script and the full shot-by-shot storyboard.</p><span class="go">Open</span></div></a>
       <a class="bcard" href="../"><div class="bg"><img loading="lazy" src="../storyboard/gen/stack/EXPLAINER-system.png" alt=""></div>
         <div class="b"><span class="tag">Convert</span><h3>Landing Page (V3)<span class="status st-live">live</span></h3><p>The Founding-50 site — apply, not checkout.</p><span class="go">Open</span></div></a>
-      <a class="bcard" href="#book"><div class="bg"><img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt=""></div>
+      <a class="bcard" href="#book"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt=""></div>
         <div class="b"><span class="tag">Authority</span><h3>Primal Resonance<span class="status st-live">live</span></h3><p>The founder's book — top of the funnel.</p><span class="go">See</span></div></a>
       <a class="bcard" href="../apply/"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/FE-BLACK-hero.png" alt=""></div>
         <div class="b"><span class="tag">Convert</span><h3>Application Flow<span class="status st-live">live</span></h3><p>The real Founding-50 application — B2C/B2B split, referral-tracked.</p><span class="go">Open</span></div></a>
       <a class="bcard" href="../learn/"><div class="bg"><img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt=""></div>
         <div class="b"><span class="tag">Top of funnel</span><h3>Book Landing<span class="status st-live">live</span></h3><p>Free-chapter lead capture &mdash; the missing top of funnel.</p><span class="go">Open</span></div></a>
-      <a class="bcard" href="../practitioners/"><div class="bg"><img loading="lazy" src="../storyboard/gen/stack/EXPLAINER-system.png" alt=""></div>
+      <a class="bcard" href="../practitioners/"><div class="bg"><img loading="lazy" src="../storyboard/gen/stack/FS2-provider-hands.png" alt=""></div>
         <div class="b"><span class="tag">B2B</span><h3>Practitioner One-Pager<span class="status st-live">live</span></h3><p>ROI calculator + protocol + the massage-table fit.</p><span class="go">Open</span></div></a>
       <a class="bcard" href="../scripts/"><div class="bg"><img loading="lazy" src="../storyboard/gen/tr/TR-excited-gold.png" alt=""></div>
         <div class="b"><span class="tag">Sales enablement</span><h3>Sales Scripts<span class="status st-live">live</span></h3><p>Resonance call, practitioner outreach, OPUS-credit DM.</p><span class="go">Open</span></div></a>
@@ -568,8 +601,8 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- ADVISORY SYSTEM — the skills, as features -->
   <section id="councils" class="reveal">
-    <div class="sec-h"><span class="n">07</span><h2>Your advisory system</h2></div>
-    <p class="sec-sub">This launch wasn&rsquo;t written by one hand. Three standing advisory systems pressure-tested every call in it &mdash; and they don&rsquo;t retire when the launch ships. They&rsquo;re <b>part of what you own</b>: convene any of them again, on any future decision, and get the same multi-mind review in minutes.</p>
+    <div class="sec-h"><span class="n">08</span><h2>Your advisory agents</h2></div>
+    <p class="sec-sub">This launch wasn&rsquo;t written by one hand. Three standing advisory agents pressure-tested every call in it &mdash; and they don&rsquo;t retire when the launch ships. They&rsquo;re <b>part of what you own</b>: convene any of them again, on any future decision, and get the same multi-mind review in minutes.</p>
     <style>
       .asys{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
       @media(max-width:820px){.asys{grid-template-columns:1fr}}
@@ -631,7 +664,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- BRAND & GTM COUNCIL -->
   <section id="brand" class="reveal folded">
-    <div class="sec-h"><span class="n">08</span><h2>Brand &amp; Go-To-Market Council</h2></div>
+    <div class="sec-h"><span class="n">09</span><h2>Brand &amp; Go-To-Market Council</h2></div>
     <p class="sec-sub">Five brand minds pressure-test the story and the funnel. Consensus: book (authority) → film (emotion) → Founding-50 application (scarcity) → Mexico (belonging) → practitioner path (secondary). One action throughout: <b>Apply</b>.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -660,7 +693,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- THE RAISE / FUNDRAISING BOARD -->
   <section id="raise" class="reveal folded">
-    <div class="sec-h"><span class="n">09</span><h2>The Fundraising Board</h2></div>
+    <div class="sec-h"><span class="n">10</span><h2>The Fundraising Board</h2></div>
     <p class="sec-sub">Four permanent members + a 5th seat: <b>Kirsten Green (Forerunner)</b> — seated for premium consumer-wellness hardware; she led Oura, the closest comp. Read at pre-seed / founder-led, judged against an angel-seed target, not a hyperscale yardstick.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -712,7 +745,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- MARKET -->
   <section id="market" class="reveal folded">
-    <div class="sec-h"><span class="n">10</span><h2>Market &amp; audience</h2></div>
+    <div class="sec-h"><span class="n">11</span><h2>Market &amp; audience</h2></div>
     <p class="sec-sub">Per Steven's direction: one B2C ICP and one B2B ICP, both anchored on <b>measurable</b> mitochondrial benefit, on the mid-2026 longevity wave (Casey Means / <i>Good Energy</i>, Huberman, red-light/PBM, Urolithin A).</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -772,7 +805,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- THE FUNNEL -->
   <section id="funnel" class="reveal">
-    <div class="sec-h"><span class="n">11</span><h2>The funnel &mdash; step by step</h2></div>
+    <div class="sec-h"><span class="n">12</span><h2>The funnel &mdash; step by step</h2></div>
     <p class="sec-sub">Six stages. Each has its collateral built and embedded (tap a button), and each is annotated with the sales principle that governs it. Cold traffic moves one step at a time; warm traffic (referral, OPUS) skips to the application.</p>
     <div class="vfunnel">
       <div class="vstage"><div class="vnum">1</div><div class="vbody"><div class="vt">Awareness</div><div class="vd">They meet the idea, not the price &mdash; the book and the film.</div><div class="vprin">&ldquo;Sell the sizzle, not the steak. Don&rsquo;t over-educate.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../learn/">Book landing</a><a class="vbtn live" href="../film/">The film</a></div></div>
@@ -823,7 +856,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- BOOK -->
   <section id="book" class="reveal folded">
-    <div class="sec-h"><span class="n">12</span><h2>Primal Resonance — the founder's authority</h2></div>
+    <div class="sec-h"><span class="n">13</span><h2>Primal Resonance — the founder's authority</h2></div>
     <p class="sec-sub">The book is the top of the funnel: it makes Dr. Steven the category author, and reframes VIBE from "an expensive bed" to "the object the man who wrote the book makes."</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -840,7 +873,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- DECK -->
   <section id="deck" class="reveal">
-    <div class="sec-h"><span class="n">13</span><h2>The investor deck &mdash; 100 Vibes</h2></div>
+    <div class="sec-h"><span class="n">14</span><h2>The investor deck &mdash; 100 Vibes</h2></div>
     <p class="sec-sub">Council-hammered and deliberately simple. <a href="../deck/" style="color:var(--gold-2)">Open the live deck &rarr;</a></p>
     <div class="tldr">
       <div class="tk">Super TL;DR &mdash; the pitch &amp; the approach</div>
@@ -875,7 +908,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- YOUR MOVE: LEAD INVESTOR -->
   <section id="moves" class="reveal">
-    <div class="sec-h"><span class="n">14</span><h2>Your move &mdash; the lead investor</h2></div>
+    <div class="sec-h"><span class="n">15</span><h2>Your move &mdash; the lead investor</h2></div>
     <p class="sec-sub">You already have someone who wants to fund the whole round. Don&rsquo;t let her own it &mdash; let her <b>lead</b> it. A circle of founder-investors beats a single check, on your cap table and in your funnel.</p>
     <div class="grid2">
       <div class="blk"><h4>The play</h4><ul>
@@ -896,7 +929,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- ROADMAP -->
   <section id="road" class="reveal folded">
-    <div class="sec-h"><span class="n">15</span><h2>Roadmap — what turns 60 into 80</h2></div>
+    <div class="sec-h"><span class="n">16</span><h2>Roadmap — what turns 60 into 80</h2></div>
     <p class="sec-sub">The councils agree on the sequence. Everything here moves real votes and real customers, in order.</p>
     <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
     <div class="fold-body" hidden>
@@ -921,7 +954,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- DOWNLOAD THE BUILD -->
   <section id="build" class="reveal">
-    <div class="sec-h"><span class="n">16</span><h2>Download the build</h2></div>
+    <div class="sec-h"><span class="n">17</span><h2>Download the build</h2></div>
     <p class="sec-sub">The whole thing, productized: every asset in this Command Center plus the step-by-step instructions to run it yourself.</p>
     <div class="dl">
       <div class="dbg"><img loading="lazy" src="../storyboard/gen/founding/RETREAT-mexico.png" alt=""></div>
@@ -932,7 +965,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
         <ul class="incl">
           <li>The Production Hub (script + storyboard)</li>
           <li>The Founding-50 site &amp; application flow</li>
-          <li><b>Your advisory system</b> — the Brand Director, Brand Council &amp; Fundraising Board, re-runnable on any future decision</li>
+          <li><b>Your advisory agents</b> — the Brand Director, Brand Council &amp; Fundraising Board, re-runnable on any future decision</li>
           <li>The two-ICP funnel + first-sprint plan</li>
           <li>All source files &amp; image pipeline</li>
           <li>The step-by-step build instructions</li>
@@ -947,7 +980,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 
   <!-- FINAL RATINGS -->
   <section id="ratings" class="reveal">
-    <div class="sec-h"><span class="n">17</span><h2>Council ratings — this pass</h2></div>
+    <div class="sec-h"><span class="n">18</span><h2>Council ratings — this pass</h2></div>
     <p class="sec-sub">Where each council rates the <i>package</i> right now. Target: 8/10 across the board. Brand and assets are there; the raise gets there once the engine is proven.</p>
     <div class="finalscores">
       <div class="score"><div class="lbl">Brand council</div><div class="v">8<small>/10</small></div><div class="d">Story + funnel coherent.</div></div>
