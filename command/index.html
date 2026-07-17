@@ -257,6 +257,21 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
 .cart-close{position:absolute;top:14px;right:18px;color:var(--muted);cursor:pointer;font-size:22px;background:none;border:0;line-height:1}
 .cart-close:hover{color:var(--cream)}
 
+/* --- deck card: tldr + placeholders --- */
+.tldr{border:1px solid rgba(233,200,154,.28);border-radius:14px;padding:20px 22px;background:linear-gradient(160deg,rgba(233,200,154,.06),rgba(139,92,246,.04));margin:4px 0 6px}
+.tldr .tk{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:8px}
+.tldr p{font-size:14px;color:rgba(255,250,247,.86);line-height:1.6}
+.tldr p b{color:var(--cream)}
+.phc{display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--warn);
+  border:1px solid rgba(232,180,90,.5);border-radius:999px;padding:2px 7px;vertical-align:middle;margin-left:5px}
+.spec{border:1px solid var(--hair);border-radius:12px;padding:4px 20px;background:rgba(233,200,154,.03);margin-top:8px}
+.spec .r{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--faint);font-size:13.5px;align-items:start}
+.spec .r:last-child{border-bottom:0}
+.spec .r .sn{font-family:var(--display);color:var(--champ);font-size:14px}
+.spec .r .st{color:rgba(255,250,247,.82)}
+.spec .r .st b{color:var(--cream)}
+
+
 /* --- visual step-by-step funnel --- */
 .vfunnel{display:flex;flex-direction:column;align-items:center;margin-top:10px}
 .vstage{width:100%;border:1px solid var(--faint);border-radius:14px;padding:16px 20px;
@@ -759,27 +774,38 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
   </section>
 
   <!-- DECK -->
-  <section id="deck" class="reveal folded">
-    <div class="sec-h"><span class="n">12</span><h2>Pitch deck — concise</h2></div>
-    <p class="sec-sub">The <b>100 Vibes</b> round — deliberately simple, hammered by the fundraising board. Fund a working engine (10 delivered, sold out) and scale to 100. <a href="../deck/" style="color:var(--gold-2)">Open the live deck →</a></p>
-    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
-    <div class="fold-body" hidden>
-    <div class="deck">
-      <ol>
-        <li><b>Title</b> — VIBE. It all begins in the body. Peace is a vibe.</li>
-        <li><b>Problem</b> — Most of us aren't sad. We're numb. A nervous system on guard, and chronic inflammation underneath it.</li>
-        <li><b>Insight</b> — The way back isn't in your head. The right frequency tells the body it's safe to let go. (25 yrs / <i>Primal Resonance</i>.)</li>
-        <li><b>Product</b> — The VIBE bed + the regulation stack (red-light, H2, light-and-sound). Rested on, not operated.</li>
-        <li><b>Proof</b> — Measured mitochondrial effect: −25% free radicals in 20 min, rising OCR in 7 days (Steven's TED talk). First 10 delivered = real willingness-to-pay.</li>
-        <li><b>Market</b> — Nervous-system + mitochondrial + longevity wave (mid-2026). Category forming now.</li>
-        <li><b>Model</b> — Founding 50 (application, not checkout) → cream edition + Mexico retreat → practitioner network → recurring layer.</li>
-        <li><b>Traction &amp; plan</b> — Fill the 50, prove member-sourced demand + a second transaction.</li>
-        <li><b>Team</b> — Dr. Steven Schwartz (science/author) + operator (supply chain) + council.</li>
-        <li><b>The ask</b> — Angel/seed to prove the engine; use of funds; the trigger map above.</li>
-      </ol>
-      <p class="note">To auto-generate in Gamma: mark one deck in your Gamma workspace as a <b>Template</b>, then I can generate this into it in one call. Right now the workspace has no template, so this outline is deck-ready to paste or template.</p>
+  <section id="deck" class="reveal">
+    <div class="sec-h"><span class="n">12</span><h2>The investor deck &mdash; 100 Vibes</h2></div>
+    <p class="sec-sub">Council-hammered and deliberately simple. <a href="../deck/" style="color:var(--gold-2)">Open the live deck &rarr;</a></p>
+    <div class="tldr">
+      <div class="tk">Super TL;DR &mdash; the pitch &amp; the approach</div>
+      <p><b>The pitch:</b> VIBE already works. Ten hand-numbered beds sold and delivered at a premium, with zero paid marketing &mdash; the market has paid. This round is <b>inventory financing, not a bet</b>: raise the capital to build and sell the next 100 through a funnel that&rsquo;s already live.<br><br><b>The approach:</b> keep it small and personal. A <b>$250K minimum check</b>, and every investor gets their own customized VIBE and a founding seat &mdash; something no later money will get. One idea per slide, proof first.</p>
     </div>
-  </div>
+    <button class="fold-toggle" type="button" aria-expanded="false">Assumptions, placeholders &amp; the full slide spec</button>
+    <div class="fold-body" hidden>
+      <h3 style="font-size:18px;margin:18px 0 6px;color:var(--champ)">Numbers Steven must confirm <span class="phc">placeholders in the deck</span></h3>
+      <div class="find">
+        <div class="row"><span class="prio p-med">01</span><div class="ft"><b>Unit price</b> &mdash; used <b>$15K</b>. Sets the whole revenue and margin story (slides 2, 6, 7).</div></div>
+        <div class="row"><span class="prio p-med">02</span><div class="ft"><b>Qualified applicants</b> &mdash; used <b>&ldquo;40+&rdquo;</b> (slide 2). Replace with the real pipeline count.</div></div>
+        <div class="row"><span class="prio p-med">03</span><div class="ft"><b>Total raise</b> &mdash; used <b>$1.5M</b>, which sets 60/20/20 = $900K / $300K / $300K (slides 5, 6).</div></div>
+        <div class="row"><span class="prio p-high">04</span><div class="ft"><b>Landed cost + gross margin</b> &mdash; <b>blank</b> on the unit-economics slide (7). This is the number the board actually wants; fill it and the math closes.</div></div>
+        <div class="row"><span class="prio p-med">05</span><div class="ft"><b>Close date</b> &mdash; <b>blank</b> (slide 9). Set the specific funding date.</div></div>
+      </div>
+      <h3 style="font-size:18px;margin:24px 0 6px;color:var(--champ)">The full deck &mdash; every slide, placeholders marked</h3>
+      <div class="spec">
+        <div class="r"><span class="sn">01</span><span class="st"><b>Title.</b> 100 Vibes &mdash; the engine works; fund the next hundred.</span></div>
+        <div class="r"><span class="sn">02</span><span class="st"><b>Proof.</b> 10/10 delivered at $15K <span class="phc">price</span> &middot; 40+ applicants <span class="phc">count</span> &middot; $0 paid marketing.</span></div>
+        <div class="r"><span class="sn">03</span><span class="st"><b>Measured moat.</b> &minus;25% free radicals &middot; rising OCR &middot; the TED talk. Not relaxation.</span></div>
+        <div class="r"><span class="sn">04</span><span class="st"><b>The engine.</b> The 6-stage funnel, already running &mdash; you fund the scale, not the experiment.</span></div>
+        <div class="r"><span class="sn">05</span><span class="st"><b>The ask.</b> Raise $1.5M <span class="phc">raise</span>, sell the next 100.</span></div>
+        <div class="r"><span class="sn">06</span><span class="st"><b>Use of proceeds.</b> 60% inventory / 20% marketing / 20% team ($900K/$300K/$300K <span class="phc">tracks raise</span>).</span></div>
+        <div class="r"><span class="sn">07</span><span class="st"><b>Unit economics.</b> Price $15K <span class="phc">confirm</span> &middot; landed cost <span class="phc">blank</span> &middot; gross margin <span class="phc">blank</span>. The board&rsquo;s slide.</span></div>
+        <div class="r"><span class="sn">08</span><span class="st"><b>The invitation.</b> $250K minimum &mdash; your own customized VIBE, your color, a founding seat, the Mexico retreat.</span></div>
+        <div class="r"><span class="sn">09</span><span class="st"><b>Why now.</b> The engine is live today. This round closes <span class="phc">set date</span>.</span></div>
+        <div class="r"><span class="sn">10</span><span class="st"><b>Close.</b> Join the 100. &ldquo;You were never broken.&rdquo; Peace is a vibe.</span></div>
+      </div>
+      <p class="note" style="color:var(--warn);border-left:2px solid var(--warn);padding-left:12px;margin-top:16px;font-size:12.5px">Everything is pre-filled with a working placeholder so the deck reads finished. Amber tags mark exactly what to swap for real data before sending.</p>
+    </div>
   </section>
 
   <!-- ROADMAP -->

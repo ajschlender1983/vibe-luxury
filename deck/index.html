@@ -13,193 +13,233 @@
 @font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
 :root{
   --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
-  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --metal:203 185 160;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --metal:203 185 160; --warn:#e8b45a;
   --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:rgb(var(--cream));background:rgb(var(--aub2));-webkit-font-smoothing:antialiased;line-height:1.55}
-h1,h2,h3,.display{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.04}
+body{font-family:var(--body);color:rgb(var(--cream));background:rgb(var(--aub2));-webkit-font-smoothing:antialiased;line-height:1.5}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.03}
 a{color:inherit}
 .deck{scroll-snap-type:y mandatory;height:100vh;overflow-y:auto}
 .slide{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(40px,8vw,90px) clamp(24px,7vw,110px);position:relative;overflow:hidden;
+  padding:clamp(40px,8vw,96px) clamp(24px,7vw,110px);position:relative;overflow:hidden;
   background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e)}
-.slide::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(60% 50% at 80% 20%,rgba(139,92,246,.14),transparent 60%)}
-.slide > *{position:relative;z-index:1;max-width:960px}
+/* background image layer (hero slides) */
+.bg{position:absolute;inset:0;z-index:0}
+.bg img{width:100%;height:100%;object-fit:cover;opacity:.38}
+.bg.right img{object-position:right center}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,10,30,.96),rgba(13,10,30,.62) 55%,rgba(13,10,30,.35))}
+.slide::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(55% 45% at 82% 22%,rgba(139,92,246,.14),transparent 60%)}
+.slide > .in-c{position:relative;z-index:2;max-width:1000px}
 .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px}
-.snum{position:absolute;top:clamp(24px,4vw,44px);right:clamp(24px,5vw,60px);font-family:var(--display);font-size:14px;color:rgb(var(--cream)/.35);z-index:2}
-h1{font-size:clamp(3rem,11vw,8rem)}
-h2{font-size:clamp(2.2rem,6vw,4.2rem)}
+.snum{position:absolute;top:clamp(22px,4vw,44px);right:clamp(24px,5vw,60px);font-family:var(--display);font-size:14px;color:rgb(var(--cream)/.4);z-index:3}
+h1{font-size:clamp(3.2rem,12vw,9rem)}
+h2{font-size:clamp(2.3rem,6.4vw,4.6rem)}
 h1 em,h2 em{font-style:normal;color:rgb(var(--violet-soft))}
-.big-num{font-family:var(--display);font-size:clamp(4rem,15vw,11rem);color:var(--gold-1);line-height:.95}
-.sub{font-size:clamp(1.05rem,2.2vw,1.5rem);color:rgb(var(--cream)/.82);font-weight:300;max-width:44ch;margin-top:clamp(18px,3vw,28px)}
-.small{font-size:.95rem;color:rgb(var(--cream)/.6);margin-top:14px}
+.sub{font-size:clamp(1.05rem,2.2vw,1.55rem);color:rgb(var(--cream)/.84);font-weight:300;max-width:42ch;margin-top:clamp(18px,3vw,30px)}
+.small{font-size:.95rem;color:rgb(var(--cream)/.6);margin-top:14px;max-width:52ch}
+/* placeholder tag */
+.ph{display:inline-flex;align-items:center;gap:.4em;font-family:var(--body);font-size:.5em;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--warn);border:1px solid rgba(232,180,90,.5);border-radius:999px;padding:.35em .8em;vertical-align:middle;margin-left:.4em;white-space:nowrap;font-weight:400}
+.ph::before{content:"◆";font-size:.7em}
+.ph-line{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);margin-top:8px}
 /* stat rows */
-.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,4vw,3rem);margin-top:clamp(28px,5vw,44px)}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,4vw,3rem);margin-top:clamp(28px,5vw,46px)}
 @media(max-width:720px){.stats3{grid-template-columns:1fr;gap:1.6rem}}
 .stat .v{font-family:var(--display);font-size:clamp(2.6rem,6vw,4rem);color:var(--good);line-height:1}
 .stat .v.gold{color:var(--gold-1)}
-.stat .l{font-size:.85rem;letter-spacing:.06em;color:rgb(var(--cream)/.62);margin-top:8px;max-width:24ch}
-/* funnel chips */
-.chipflow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:clamp(24px,4vw,36px)}
-.fchip{border:1px solid rgba(233,200,154,.3);border-radius:999px;padding:.7em 1.3em;font-size:.9rem;color:rgb(var(--cream)/.9);background:rgba(233,200,154,.05)}
+.stat .l{font-size:.85rem;letter-spacing:.04em;color:rgb(var(--cream)/.64);margin-top:8px;max-width:24ch}
+/* funnel flow */
+.chipflow{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:clamp(24px,4vw,38px)}
+.fchip{border:1px solid rgba(233,200,154,.3);border-radius:999px;padding:.7em 1.25em;font-size:.92rem;color:rgb(var(--cream)/.92);background:rgba(233,200,154,.05)}
 .fchip b{color:var(--gold-1);font-weight:400}
 .farrow{color:rgb(var(--violet-soft));font-size:1.1rem}
-/* use of proceeds bars */
-.bars{margin-top:clamp(28px,5vw,44px);max-width:720px}
+/* proceeds bars */
+.bars{margin-top:clamp(26px,5vw,44px);max-width:760px}
 .bar{margin-bottom:22px}
-.bar .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-.bar .top .k{font-family:var(--display);font-size:1.3rem;color:rgb(var(--cream))}
+.bar .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:1rem}
+.bar .top .k{font-family:var(--display);font-size:1.35rem;color:rgb(var(--cream))}
 .bar .top .k small{display:block;font-family:var(--body);font-size:.82rem;color:rgb(var(--cream)/.6);letter-spacing:.02em;margin-top:2px}
-.bar .top .p{font-family:var(--display);font-size:1.6rem;color:var(--gold-1)}
-.bar .track{height:12px;border-radius:99px;background:rgba(255,250,247,.08);overflow:hidden}
+.bar .top .p{font-family:var(--display);font-size:1.7rem;color:var(--gold-1);white-space:nowrap}
+.bar .top .p small{font-family:var(--body);font-size:.72rem;color:rgb(var(--cream)/.5)}
+.bar .track{height:13px;border-radius:99px;background:rgba(255,250,247,.08);overflow:hidden}
 .bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--violet),var(--gold-2));width:0;transition:width 1.1s var(--ease)}
 .slide.in .bar .fill{width:var(--w)}
-/* invitation card */
-.invite{border:1px solid rgba(233,200,154,.4);border-radius:20px;padding:clamp(26px,5vw,44px);margin-top:clamp(24px,4vw,36px);
-  background:linear-gradient(160deg,rgba(233,200,154,.08),rgba(139,92,246,.06));max-width:760px}
-.invite .price{font-family:var(--display);font-size:clamp(3rem,8vw,5rem);color:var(--gold-1);line-height:1}
-.invite .price span{font-family:var(--body);font-size:1rem;color:rgb(var(--cream)/.6);letter-spacing:.04em}
-.perks{list-style:none;margin-top:18px;display:grid;gap:10px}
-.perks li{position:relative;padding-left:24px;font-size:1.05rem;color:rgb(var(--cream)/.86)}
+/* invitation */
+.invite{border:1px solid rgba(233,200,154,.45);border-radius:20px;padding:clamp(26px,5vw,44px);margin-top:clamp(22px,4vw,34px);
+  background:linear-gradient(160deg,rgba(233,200,154,.1),rgba(139,92,246,.06));max-width:760px;backdrop-filter:blur(2px)}
+.invite .price{font-family:var(--display);font-size:clamp(3rem,8vw,5rem);color:var(--gold-1);line-height:1;display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap}
+.invite .price span{font-family:var(--body);font-size:1rem;color:rgb(var(--cream)/.62);letter-spacing:.04em}
+.perks{list-style:none;margin-top:18px;display:grid;gap:11px}
+.perks li{position:relative;padding-left:26px;font-size:1.08rem;color:rgb(var(--cream)/.88)}
 .perks li::before{content:"✦";position:absolute;left:0;color:var(--gold-2)}
 /* date */
-.datebox{display:inline-block;border:1px solid rgba(233,200,154,.35);border-radius:14px;padding:18px 26px;margin-top:clamp(20px,4vw,30px)}
+.datebox{display:inline-block;border:1px dashed rgba(232,180,90,.5);border-radius:14px;padding:18px 28px;margin-top:clamp(20px,4vw,32px);background:rgba(232,180,90,.05)}
 .datebox .dk{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ)}
-.datebox .dv{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--gold-1);margin-top:4px}
-.cta{display:inline-flex;align-items:center;gap:.6em;margin-top:clamp(22px,4vw,32px);padding:1.05em 2.4em;border-radius:999px;
+.datebox .dv{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--warn);margin-top:4px}
+.cta{display:inline-flex;align-items:center;gap:.6em;margin-top:clamp(22px,4vw,34px);padding:1.05em 2.5em;border-radius:999px;
   background:linear-gradient(120deg,var(--gold-1),var(--gold-3));color:var(--aub2);font-weight:700;font-size:.82rem;
   letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:filter .3s,transform .3s}
 .cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
 .stamp{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--champ);margin-top:16px}
-/* progress dots */
-.dots{position:fixed;right:clamp(14px,2vw,26px);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:10px}
+/* dots + hint */
+.dots{position:fixed;right:clamp(14px,2vw,26px);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:11px}
 @media(max-width:640px){.dots{display:none}}
-.dots a{width:8px;height:8px;border-radius:50%;background:rgb(var(--cream)/.22);transition:all .3s;display:block}
-.dots a.on{background:var(--gold-1);transform:scale(1.35)}
+.dots a{width:9px;height:9px;border-radius:50%;background:rgb(var(--cream)/.22);transition:all .3s;display:block}
+.dots a.on{background:var(--gold-1);transform:scale(1.4)}
 .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:20;font-size:.7rem;letter-spacing:.14em;
-  text-transform:uppercase;color:rgb(var(--cream)/.4);animation:bob 2.4s ease-in-out infinite}
+  text-transform:uppercase;color:rgb(var(--cream)/.42);transition:opacity .4s;animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+.confirm{position:absolute;bottom:14px;left:clamp(24px,7vw,110px);font-size:.72rem;color:var(--warn);z-index:3;opacity:.75}
 @media(prefers-reduced-motion:reduce){.hint{animation:none}.bar .fill,.slide.in .bar .fill{transition:none;width:var(--w)}}
-.confirm{position:absolute;bottom:14px;left:clamp(24px,7vw,110px);font-size:.72rem;color:rgb(var(--cream)/.35);z-index:2}
 </style>
 </head>
 <body>
 <div class="deck" id="deck">
 
   <!-- 1 title -->
-  <section class="slide" id="s1">
+  <section class="slide" id="s1"><div class="bg"><img loading="eager" src="../storyboard/gen/refs/vibe-active.jpg" alt=""></div>
     <span class="snum">01</span>
-    <p class="eyebrow">VIBE · Bioharmonic — investor round</p>
-    <h1>100 <em>Vibes</em>.</h1>
-    <p class="sub">The engine is already working. We've sold ten. This is the capital to build and sell the next hundred.</p>
-    <p class="small">Dr. Steven Schwartz · founder, <em>Primal Resonance</em></p>
+    <div class="in-c">
+      <p class="eyebrow">VIBE · Bioharmonic — investor round</p>
+      <h1>100 <em>Vibes</em>.</h1>
+      <p class="sub">The engine already works. We've sold ten. This is the capital to build and sell the next hundred.</p>
+      <p class="small">Dr. Steven Schwartz · founder, <em>Primal Resonance</em></p>
+    </div>
   </section>
 
   <!-- 2 proof -->
-  <section class="slide" id="s2">
+  <section class="slide" id="s2"><div class="bg right"><img loading="lazy" src="../storyboard/gen/founding/FE-BLACK-hero.png" alt=""></div>
     <span class="snum">02</span>
-    <p class="eyebrow">This is not a bet on demand. The market already paid.</p>
-    <h2>Ten sold. <em>Delivered.</em> Sold out.</h2>
-    <div class="stats3">
-      <div class="stat"><div class="v gold">10 / 10</div><div class="l">hand-numbered Black Editions, delivered at $15K each</div></div>
-      <div class="stat"><div class="v">40+</div><div class="l">qualified applicants already in the pipeline</div></div>
-      <div class="stat"><div class="v">$0</div><div class="l">paid marketing — every sale by story and referral</div></div>
+    <div class="in-c">
+      <p class="eyebrow">This is not a bet on demand. The market already paid.</p>
+      <h2>Ten sold. <em>Delivered.</em> Sold out.</h2>
+      <div class="stats3">
+        <div class="stat"><div class="v gold">10 / 10</div><div class="l">Black Editions delivered at <b>$15K</b> each <span class="ph-line">◆ Placeholder — confirm actual price</span></div></div>
+        <div class="stat"><div class="v">40+</div><div class="l">qualified applicants in the pipeline <span class="ph-line">◆ Placeholder — confirm actual count</span></div></div>
+        <div class="stat"><div class="v">$0</div><div class="l">paid marketing — every sale by story and referral</div></div>
+      </div>
     </div>
-    <p class="small">The price point is proven. The product ships. The waitlist is real.</p>
-    <div class="confirm">Figures to confirm before send: unit price, applicant count.</div>
   </section>
 
-  <!-- 3 what it is + moat -->
-  <section class="slide" id="s3">
+  <!-- 3 measured moat -->
+  <section class="slide" id="s3"><div class="bg right"><img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt=""></div>
     <span class="snum">03</span>
-    <p class="eyebrow">Why it sells — and why generic beds can't</p>
-    <h2>Not relaxation. <em>Measured.</em></h2>
-    <p class="sub">A vibroacoustic bed tuned to a specific frequency. In our mitochondrial testing it changes the cell, not just the mood.</p>
-    <div class="stats3">
-      <div class="stat"><div class="v">−25%</div><div class="l">free radicals after one 20-minute session</div></div>
-      <div class="stat"><div class="v">↑ OCR</div><div class="l">rising mitochondrial output over 7 days</div></div>
-      <div class="stat"><div class="v gold">TED</div><div class="l">Dr. Steven's talk — 25 years behind the frequency</div></div>
+    <div class="in-c">
+      <p class="eyebrow">Why it sells — and why generic beds can't</p>
+      <h2>Not relaxation. <em>Measured.</em></h2>
+      <p class="sub">A bed tuned to a specific frequency. In our testing it changes the cell, not just the mood.</p>
+      <div class="stats3">
+        <div class="stat"><div class="v">−25%</div><div class="l">free radicals after one 20-min session</div></div>
+        <div class="stat"><div class="v">↑ OCR</div><div class="l">rising mitochondrial output over 7 days</div></div>
+        <div class="stat"><div class="v gold">TED</div><div class="l">Dr. Steven's talk — 25 years behind the frequency</div></div>
+      </div>
     </div>
   </section>
 
-  <!-- 4 the engine / funnel -->
+  <!-- 4 the engine -->
   <section class="slide" id="s4">
     <span class="snum">04</span>
-    <p class="eyebrow">You're funding the scale, not the experiment</p>
-    <h2>The engine is <em>already running</em>.</h2>
-    <p class="sub" style="max-width:60ch">A funnel that turns longevity attention into founding members — built, live, and proven on the first ten.</p>
-    <div class="chipflow">
-      <span class="fchip"><b>Book</b> + film</span><span class="farrow">→</span>
-      <span class="fchip">Proof <b>nurture</b></span><span class="farrow">→</span>
-      <span class="fchip"><b>Site</b> + one-pager</span><span class="farrow">→</span>
-      <span class="fchip"><b>Application</b></span><span class="farrow">→</span>
-      <span class="fchip">Resonance <b>call</b></span><span class="farrow">→</span>
-      <span class="fchip"><b>Founding member</b></span>
+    <div class="in-c">
+      <p class="eyebrow">You're funding the scale, not the experiment</p>
+      <h2>The engine is <em>already running</em>.</h2>
+      <p class="sub" style="max-width:58ch">A funnel that turns longevity attention into founding members — built, live, proven on the first ten.</p>
+      <div class="chipflow">
+        <span class="fchip"><b>Book</b> + film</span><span class="farrow">→</span>
+        <span class="fchip">Proof <b>nurture</b></span><span class="farrow">→</span>
+        <span class="fchip"><b>Site</b> + one-pager</span><span class="farrow">→</span>
+        <span class="fchip"><b>Application</b></span><span class="farrow">→</span>
+        <span class="fchip">Resonance <b>call</b></span><span class="farrow">→</span>
+        <span class="fchip"><b>Founding member</b></span>
+      </div>
+      <p class="small">Two ICPs — the high-net-worth biohacker and the practitioner. Warm channels (referral, OPUS) already converting.</p>
     </div>
-    <p class="small">Two ICPs: the high-net-worth biohacker and the practitioner. Warm channels (referral, OPUS) already converting.</p>
   </section>
 
   <!-- 5 the ask -->
   <section class="slide" id="s5">
     <span class="snum">05</span>
-    <p class="eyebrow">The ask</p>
-    <h2>Raise <em>$1.5M</em>. Sell the next <em>100</em>.</h2>
-    <p class="sub">Capital to build the inventory the waitlist is already asking for — and pour fuel on an engine that works.</p>
-    <p class="small">A proven price point × 100 units. This round is inventory financing against demand we can see.</p>
-    <div class="confirm">Confirm: total raise size &amp; unit count.</div>
+    <div class="in-c">
+      <p class="eyebrow">The ask</p>
+      <h2>Raise <em>$1.5M</em> <span class="ph">Placeholder</span><br>Sell the next <em>100</em>.</h2>
+      <p class="sub">Capital to build the inventory the waitlist is already asking for — and pour fuel on an engine that works.</p>
+      <p class="small">Inventory financing against demand we can see: a proven price point × 100 units.</p>
+    </div>
   </section>
 
   <!-- 6 use of proceeds -->
   <section class="slide" id="s6">
     <span class="snum">06</span>
-    <p class="eyebrow">Where it goes — simple</p>
-    <h2>Build. Market. <em>Team.</em></h2>
-    <div class="bars">
-      <div class="bar"><div class="top"><div class="k">Inventory<small>100 hand-made units, built to fill the waitlist</small></div><div class="p">60%</div></div><div class="track"><div class="fill" style="--w:60%"></div></div></div>
-      <div class="bar"><div class="top"><div class="k">Marketing<small>fuel the funnel: KOLs, content, the retreat</small></div><div class="p">20%</div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
-      <div class="bar"><div class="top"><div class="k">Team<small>the operator + hands to deliver at scale</small></div><div class="p">20%</div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
+    <div class="in-c">
+      <p class="eyebrow">Where it goes — simple</p>
+      <h2>Build. Market. <em>Team.</em></h2>
+      <div class="bars">
+        <div class="bar"><div class="top"><div class="k">Inventory<small>100 hand-made units, built to fill the waitlist</small></div><div class="p">60% <small>≈ $900K</small></div></div><div class="track"><div class="fill" style="--w:60%"></div></div></div>
+        <div class="bar"><div class="top"><div class="k">Marketing<small>fuel the funnel: KOLs, content, the retreat</small></div><div class="p">20% <small>≈ $300K</small></div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
+        <div class="bar"><div class="top"><div class="k">Team<small>the operator + hands to deliver at scale</small></div><div class="p">20% <small>≈ $300K</small></div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
+      </div>
+      <p class="ph-line">◆ Dollar splits track the $1.5M placeholder — they update when the raise size is set.</p>
     </div>
   </section>
 
-  <!-- 7 the invitation -->
-  <section class="slide" id="s7">
+  <!-- 6.5 unit economics -->
+  <section class="slide" id="s6b">
     <span class="snum">07</span>
-    <p class="eyebrow">This isn't a cap table. It's a founding circle.</p>
-    <h2>Come in as a <em>founder</em>.</h2>
-    <div class="invite">
-      <div class="price">$250K <span>minimum check</span></div>
-      <ul class="perks">
-        <li>Your own VIBE — <b>customized, your color</b>, hand-numbered.</li>
-        <li>A founding seat: named, and part of the hundred that scales this.</li>
-        <li>The Mexico mastermind retreat, with Steven and the circle.</li>
-        <li>Something no later investor will ever get.</li>
-      </ul>
+    <div class="in-c">
+      <p class="eyebrow">The one slide the board asks for</p>
+      <h2>The unit <em>economics</em>.</h2>
+      <div class="stats3">
+        <div class="stat"><div class="v gold">$15K</div><div class="l">price per unit <span class="ph-line">◆ Placeholder</span></div></div>
+        <div class="stat"><div class="v">$_,___</div><div class="l">landed cost per unit <span class="ph-line">◆ Placeholder — add real COGS</span></div></div>
+        <div class="stat"><div class="v">__%</div><div class="l">gross margin <span class="ph-line">◆ Placeholder — derive from the two above</span></div></div>
+      </div>
+      <p class="small">This is what turns the round from a story into a trade. Fill the two placeholders and the math closes itself.</p>
     </div>
-    <p class="small">We're keeping this small and personal. If you're in, you're not writing a check — you're joining the thing.</p>
   </section>
 
-  <!-- 8 why now / date -->
-  <section class="slide" id="s8">
+  <!-- 7 invitation -->
+  <section class="slide" id="s7"><div class="bg right"><img loading="lazy" src="../storyboard/gen/founding/FE-BLACK-hero.png" alt=""></div>
     <span class="snum">08</span>
-    <p class="eyebrow">Why now</p>
-    <h2>The engine is live <em>today</em>.</h2>
-    <p class="sub">Ten delivered, a waitlist forming, and a funnel that already works. This capital is the fuel, not the spark.</p>
-    <div class="datebox"><div class="dk">This round closes</div><div class="dv" id="closeDate">[ set close date ]</div></div>
-    <div class="confirm">Set the specific funding/close date here.</div>
+    <div class="in-c">
+      <p class="eyebrow">This isn't a cap table. It's a founding circle.</p>
+      <h2>Come in as a <em>founder</em>.</h2>
+      <div class="invite">
+        <div class="price">$250K <span>minimum check</span></div>
+        <ul class="perks">
+          <li>Your own VIBE — <b>customized, your color</b>, hand-numbered.</li>
+          <li>A founding seat: named, part of the hundred that scales this.</li>
+          <li>The Mexico mastermind retreat, with Steven and the circle.</li>
+          <li>Something no later investor will ever get.</li>
+        </ul>
+      </div>
+      <p class="small">We're keeping this small and personal. If you're in, you're not writing a check — you're joining the thing.</p>
+    </div>
+  </section>
+
+  <!-- 8 why now -->
+  <section class="slide" id="s8">
+    <span class="snum">09</span>
+    <div class="in-c">
+      <p class="eyebrow">Why now</p>
+      <h2>The engine is live <em>today</em>.</h2>
+      <p class="sub">Ten delivered, a waitlist forming, a funnel that already works. This capital is the fuel, not the spark.</p>
+      <div class="datebox"><div class="dk">This round closes</div><div class="dv" id="closeDate">Month DD, 2026</div></div>
+      <span class="ph-line">◆ Placeholder — set the specific close date</span>
+    </div>
   </section>
 
   <!-- 9 close -->
-  <section class="slide" id="s9">
-    <span class="snum">09</span>
-    <p class="eyebrow">The invitation</p>
-    <h2>Join the <em>100</em>.</h2>
-    <p class="sub">You were never broken. You were only waiting for the right frequency.</p>
-    <a class="cta" href="../apply/">Talk to Steven</a>
-    <p class="stamp">Peace is a vibe.</p>
+  <section class="slide" id="s9"><div class="bg"><img loading="lazy" src="../storyboard/gen/founding/RETREAT-mexico.png" alt=""></div>
+    <span class="snum">10</span>
+    <div class="in-c">
+      <p class="eyebrow">The invitation</p>
+      <h2>Join the <em>100</em>.</h2>
+      <p class="sub">You were never broken. You were only waiting for the right frequency.</p>
+      <a class="cta" href="../apply/">Talk to Steven</a>
+      <p class="stamp">Peace is a vibe.</p>
+    </div>
   </section>
 
 </div>
@@ -219,13 +259,11 @@ h1 em,h2 em{font-style:normal;color:rgb(var(--violet-soft))}
       dotEls.forEach(function(d,j){ d.classList.toggle('on', j===i); });
       var hint=document.getElementById('hint'); if(hint) hint.style.opacity = i===0 ? '1' : '0';
     }
-  })},{threshold:.55});
+  })},{threshold:.5});
   slides.forEach(function(s){ io.observe(s); });
-  // keyboard nav
-  var deck=document.getElementById('deck');
   addEventListener('keydown', function(e){
-    var cur=slides.findIndex(function(s){ return s.getBoundingClientRect().top >= -window.innerHeight/2 && s.getBoundingClientRect().top < window.innerHeight/2; });
-    if(cur<0) cur=0;
+    var cur=0, best=1e9;
+    slides.forEach(function(s,i){ var t=Math.abs(s.getBoundingClientRect().top); if(t<best){best=t;cur=i;} });
     if((e.key==='ArrowDown'||e.key==='PageDown'||e.key===' ')&&cur<slides.length-1){ e.preventDefault(); slides[cur+1].scrollIntoView(); }
     if((e.key==='ArrowUp'||e.key==='PageUp')&&cur>0){ e.preventDefault(); slides[cur-1].scrollIntoView(); }
   });
