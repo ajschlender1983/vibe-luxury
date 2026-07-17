@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>100 VIBES — investor deck</title>
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --metal:203 185 160;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:rgb(var(--cream));background:rgb(var(--aub2));-webkit-font-smoothing:antialiased;line-height:1.55}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.04}
+a{color:inherit}
+.deck{scroll-snap-type:y mandatory;height:100vh;overflow-y:auto}
+.slide{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,8vw,90px) clamp(24px,7vw,110px);position:relative;overflow:hidden;
+  background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e)}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 50% at 80% 20%,rgba(139,92,246,.14),transparent 60%)}
+.slide > *{position:relative;z-index:1;max-width:960px}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px}
+.snum{position:absolute;top:clamp(24px,4vw,44px);right:clamp(24px,5vw,60px);font-family:var(--display);font-size:14px;color:rgb(var(--cream)/.35);z-index:2}
+h1{font-size:clamp(3rem,11vw,8rem)}
+h2{font-size:clamp(2.2rem,6vw,4.2rem)}
+h1 em,h2 em{font-style:normal;color:rgb(var(--violet-soft))}
+.big-num{font-family:var(--display);font-size:clamp(4rem,15vw,11rem);color:var(--gold-1);line-height:.95}
+.sub{font-size:clamp(1.05rem,2.2vw,1.5rem);color:rgb(var(--cream)/.82);font-weight:300;max-width:44ch;margin-top:clamp(18px,3vw,28px)}
+.small{font-size:.95rem;color:rgb(var(--cream)/.6);margin-top:14px}
+/* stat rows */
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,4vw,3rem);margin-top:clamp(28px,5vw,44px)}
+@media(max-width:720px){.stats3{grid-template-columns:1fr;gap:1.6rem}}
+.stat .v{font-family:var(--display);font-size:clamp(2.6rem,6vw,4rem);color:var(--good);line-height:1}
+.stat .v.gold{color:var(--gold-1)}
+.stat .l{font-size:.85rem;letter-spacing:.06em;color:rgb(var(--cream)/.62);margin-top:8px;max-width:24ch}
+/* funnel chips */
+.chipflow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:clamp(24px,4vw,36px)}
+.fchip{border:1px solid rgba(233,200,154,.3);border-radius:999px;padding:.7em 1.3em;font-size:.9rem;color:rgb(var(--cream)/.9);background:rgba(233,200,154,.05)}
+.fchip b{color:var(--gold-1);font-weight:400}
+.farrow{color:rgb(var(--violet-soft));font-size:1.1rem}
+/* use of proceeds bars */
+.bars{margin-top:clamp(28px,5vw,44px);max-width:720px}
+.bar{margin-bottom:22px}
+.bar .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.bar .top .k{font-family:var(--display);font-size:1.3rem;color:rgb(var(--cream))}
+.bar .top .k small{display:block;font-family:var(--body);font-size:.82rem;color:rgb(var(--cream)/.6);letter-spacing:.02em;margin-top:2px}
+.bar .top .p{font-family:var(--display);font-size:1.6rem;color:var(--gold-1)}
+.bar .track{height:12px;border-radius:99px;background:rgba(255,250,247,.08);overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--violet),var(--gold-2));width:0;transition:width 1.1s var(--ease)}
+.slide.in .bar .fill{width:var(--w)}
+/* invitation card */
+.invite{border:1px solid rgba(233,200,154,.4);border-radius:20px;padding:clamp(26px,5vw,44px);margin-top:clamp(24px,4vw,36px);
+  background:linear-gradient(160deg,rgba(233,200,154,.08),rgba(139,92,246,.06));max-width:760px}
+.invite .price{font-family:var(--display);font-size:clamp(3rem,8vw,5rem);color:var(--gold-1);line-height:1}
+.invite .price span{font-family:var(--body);font-size:1rem;color:rgb(var(--cream)/.6);letter-spacing:.04em}
+.perks{list-style:none;margin-top:18px;display:grid;gap:10px}
+.perks li{position:relative;padding-left:24px;font-size:1.05rem;color:rgb(var(--cream)/.86)}
+.perks li::before{content:"✦";position:absolute;left:0;color:var(--gold-2)}
+/* date */
+.datebox{display:inline-block;border:1px solid rgba(233,200,154,.35);border-radius:14px;padding:18px 26px;margin-top:clamp(20px,4vw,30px)}
+.datebox .dk{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ)}
+.datebox .dv{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--gold-1);margin-top:4px}
+.cta{display:inline-flex;align-items:center;gap:.6em;margin-top:clamp(22px,4vw,32px);padding:1.05em 2.4em;border-radius:999px;
+  background:linear-gradient(120deg,var(--gold-1),var(--gold-3));color:var(--aub2);font-weight:700;font-size:.82rem;
+  letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:filter .3s,transform .3s}
+.cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.stamp{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--champ);margin-top:16px}
+/* progress dots */
+.dots{position:fixed;right:clamp(14px,2vw,26px);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:10px}
+@media(max-width:640px){.dots{display:none}}
+.dots a{width:8px;height:8px;border-radius:50%;background:rgb(var(--cream)/.22);transition:all .3s;display:block}
+.dots a.on{background:var(--gold-1);transform:scale(1.35)}
+.hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:20;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgb(var(--cream)/.4);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.hint{animation:none}.bar .fill,.slide.in .bar .fill{transition:none;width:var(--w)}}
+.confirm{position:absolute;bottom:14px;left:clamp(24px,7vw,110px);font-size:.72rem;color:rgb(var(--cream)/.35);z-index:2}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 title -->
+  <section class="slide" id="s1">
+    <span class="snum">01</span>
+    <p class="eyebrow">VIBE · Bioharmonic — investor round</p>
+    <h1>100 <em>Vibes</em>.</h1>
+    <p class="sub">The engine is already working. We've sold ten. This is the capital to build and sell the next hundred.</p>
+    <p class="small">Dr. Steven Schwartz · founder, <em>Primal Resonance</em></p>
+  </section>
+
+  <!-- 2 proof -->
+  <section class="slide" id="s2">
+    <span class="snum">02</span>
+    <p class="eyebrow">This is not a bet on demand. The market already paid.</p>
+    <h2>Ten sold. <em>Delivered.</em> Sold out.</h2>
+    <div class="stats3">
+      <div class="stat"><div class="v gold">10 / 10</div><div class="l">hand-numbered Black Editions, delivered at $15K each</div></div>
+      <div class="stat"><div class="v">40+</div><div class="l">qualified applicants already in the pipeline</div></div>
+      <div class="stat"><div class="v">$0</div><div class="l">paid marketing — every sale by story and referral</div></div>
+    </div>
+    <p class="small">The price point is proven. The product ships. The waitlist is real.</p>
+    <div class="confirm">Figures to confirm before send: unit price, applicant count.</div>
+  </section>
+
+  <!-- 3 what it is + moat -->
+  <section class="slide" id="s3">
+    <span class="snum">03</span>
+    <p class="eyebrow">Why it sells — and why generic beds can't</p>
+    <h2>Not relaxation. <em>Measured.</em></h2>
+    <p class="sub">A vibroacoustic bed tuned to a specific frequency. In our mitochondrial testing it changes the cell, not just the mood.</p>
+    <div class="stats3">
+      <div class="stat"><div class="v">−25%</div><div class="l">free radicals after one 20-minute session</div></div>
+      <div class="stat"><div class="v">↑ OCR</div><div class="l">rising mitochondrial output over 7 days</div></div>
+      <div class="stat"><div class="v gold">TED</div><div class="l">Dr. Steven's talk — 25 years behind the frequency</div></div>
+    </div>
+  </section>
+
+  <!-- 4 the engine / funnel -->
+  <section class="slide" id="s4">
+    <span class="snum">04</span>
+    <p class="eyebrow">You're funding the scale, not the experiment</p>
+    <h2>The engine is <em>already running</em>.</h2>
+    <p class="sub" style="max-width:60ch">A funnel that turns longevity attention into founding members — built, live, and proven on the first ten.</p>
+    <div class="chipflow">
+      <span class="fchip"><b>Book</b> + film</span><span class="farrow">→</span>
+      <span class="fchip">Proof <b>nurture</b></span><span class="farrow">→</span>
+      <span class="fchip"><b>Site</b> + one-pager</span><span class="farrow">→</span>
+      <span class="fchip"><b>Application</b></span><span class="farrow">→</span>
+      <span class="fchip">Resonance <b>call</b></span><span class="farrow">→</span>
+      <span class="fchip"><b>Founding member</b></span>
+    </div>
+    <p class="small">Two ICPs: the high-net-worth biohacker and the practitioner. Warm channels (referral, OPUS) already converting.</p>
+  </section>
+
+  <!-- 5 the ask -->
+  <section class="slide" id="s5">
+    <span class="snum">05</span>
+    <p class="eyebrow">The ask</p>
+    <h2>Raise <em>$1.5M</em>. Sell the next <em>100</em>.</h2>
+    <p class="sub">Capital to build the inventory the waitlist is already asking for — and pour fuel on an engine that works.</p>
+    <p class="small">A proven price point × 100 units. This round is inventory financing against demand we can see.</p>
+    <div class="confirm">Confirm: total raise size &amp; unit count.</div>
+  </section>
+
+  <!-- 6 use of proceeds -->
+  <section class="slide" id="s6">
+    <span class="snum">06</span>
+    <p class="eyebrow">Where it goes — simple</p>
+    <h2>Build. Market. <em>Team.</em></h2>
+    <div class="bars">
+      <div class="bar"><div class="top"><div class="k">Inventory<small>100 hand-made units, built to fill the waitlist</small></div><div class="p">60%</div></div><div class="track"><div class="fill" style="--w:60%"></div></div></div>
+      <div class="bar"><div class="top"><div class="k">Marketing<small>fuel the funnel: KOLs, content, the retreat</small></div><div class="p">20%</div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
+      <div class="bar"><div class="top"><div class="k">Team<small>the operator + hands to deliver at scale</small></div><div class="p">20%</div></div><div class="track"><div class="fill" style="--w:20%"></div></div></div>
+    </div>
+  </section>
+
+  <!-- 7 the invitation -->
+  <section class="slide" id="s7">
+    <span class="snum">07</span>
+    <p class="eyebrow">This isn't a cap table. It's a founding circle.</p>
+    <h2>Come in as a <em>founder</em>.</h2>
+    <div class="invite">
+      <div class="price">$250K <span>minimum check</span></div>
+      <ul class="perks">
+        <li>Your own VIBE — <b>customized, your color</b>, hand-numbered.</li>
+        <li>A founding seat: named, and part of the hundred that scales this.</li>
+        <li>The Mexico mastermind retreat, with Steven and the circle.</li>
+        <li>Something no later investor will ever get.</li>
+      </ul>
+    </div>
+    <p class="small">We're keeping this small and personal. If you're in, you're not writing a check — you're joining the thing.</p>
+  </section>
+
+  <!-- 8 why now / date -->
+  <section class="slide" id="s8">
+    <span class="snum">08</span>
+    <p class="eyebrow">Why now</p>
+    <h2>The engine is live <em>today</em>.</h2>
+    <p class="sub">Ten delivered, a waitlist forming, and a funnel that already works. This capital is the fuel, not the spark.</p>
+    <div class="datebox"><div class="dk">This round closes</div><div class="dv" id="closeDate">[ set close date ]</div></div>
+    <div class="confirm">Set the specific funding/close date here.</div>
+  </section>
+
+  <!-- 9 close -->
+  <section class="slide" id="s9">
+    <span class="snum">09</span>
+    <p class="eyebrow">The invitation</p>
+    <h2>Join the <em>100</em>.</h2>
+    <p class="sub">You were never broken. You were only waiting for the right frequency.</p>
+    <a class="cta" href="../apply/">Talk to Steven</a>
+    <p class="stamp">Peace is a vibe.</p>
+  </section>
+
+</div>
+
+<div class="dots" id="dots"></div>
+<div class="hint" id="hint">Scroll ↓</div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dots=document.getElementById('dots');
+  slides.forEach(function(s,i){ var a=document.createElement('a'); a.href='#'+s.id; a.setAttribute('aria-label','Slide '+(i+1)); dots.appendChild(a); });
+  var dotEls=[].slice.call(dots.children);
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      var i=slides.indexOf(e.target);
+      dotEls.forEach(function(d,j){ d.classList.toggle('on', j===i); });
+      var hint=document.getElementById('hint'); if(hint) hint.style.opacity = i===0 ? '1' : '0';
+    }
+  })},{threshold:.55});
+  slides.forEach(function(s){ io.observe(s); });
+  // keyboard nav
+  var deck=document.getElementById('deck');
+  addEventListener('keydown', function(e){
+    var cur=slides.findIndex(function(s){ return s.getBoundingClientRect().top >= -window.innerHeight/2 && s.getBoundingClientRect().top < window.innerHeight/2; });
+    if(cur<0) cur=0;
+    if((e.key==='ArrowDown'||e.key==='PageDown'||e.key===' ')&&cur<slides.length-1){ e.preventDefault(); slides[cur+1].scrollIntoView(); }
+    if((e.key==='ArrowUp'||e.key==='PageUp')&&cur>0){ e.preventDefault(); slides[cur-1].scrollIntoView(); }
+  });
+</script>
+</body>
+</html>
