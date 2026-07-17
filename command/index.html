@@ -256,6 +256,27 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
 .cart-box .co-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5}
 .cart-close{position:absolute;top:14px;right:18px;color:var(--muted);cursor:pointer;font-size:22px;background:none;border:0;line-height:1}
 .cart-close:hover{color:var(--cream)}
+
+/* --- visual step-by-step funnel --- */
+.vfunnel{display:flex;flex-direction:column;align-items:center;margin-top:10px}
+.vstage{width:100%;border:1px solid var(--faint);border-radius:14px;padding:16px 20px;
+  background:linear-gradient(165deg,rgba(139,92,246,.06),rgba(255,250,247,.012));
+  display:flex;gap:16px;align-items:center;flex-wrap:wrap;transition:border-color .3s,transform .3s}
+.vstage:hover{border-color:rgba(139,92,246,.5);transform:translateY(-2px)}
+.vnum{width:36px;height:36px;flex:0 0 auto;border-radius:50%;background:linear-gradient(135deg,var(--violet-br),var(--violet));
+  color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:17px}
+.vbody{flex:1;min-width:200px}
+.vt{font-family:var(--display);font-size:1.18rem;color:var(--cream);line-height:1.1}
+.vd{font-size:13px;color:var(--muted);margin-top:3px}
+.vprin{font-size:11.5px;color:var(--gold-2);font-style:italic;margin-top:6px}
+.vbtns{display:flex;gap:8px;flex-wrap:wrap}
+.vbtn{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);border:1px solid rgba(255,250,247,.24);
+  border-radius:999px;padding:.6em 1.05em;text-decoration:none;white-space:nowrap;transition:all .25s;display:inline-flex;align-items:center;gap:.4em}
+.vbtn:hover{border-color:var(--gold-2);color:var(--gold-1);background:rgba(233,200,154,.06)}
+.vbtn.live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--good)}
+.vconn{width:2px;height:18px;background:linear-gradient(var(--violet-br),rgba(139,92,246,.15))}
+@media(max-width:640px){.vstage{gap:12px}.vbtns{width:100%}}
+
 .status{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-left:8px}
 .st-live{background:rgba(143,227,176,.14);color:var(--good)}
 .st-draft{background:rgba(232,180,90,.14);color:var(--warn)}
@@ -670,32 +691,54 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
   </section>
 
   <!-- THE FUNNEL -->
-  <section id="funnel" class="reveal folded">
-    <div class="sec-h"><span class="n">10</span><h2>The funnel — two ICPs</h2></div>
-    <p class="sec-sub">Designed with the councils + strategic resolve. Cold traffic won't apply for a $10k+ bed on first touch, so each ICP gets a top and middle of funnel that earns the application. Warm traffic (referral, OPUS) skips straight to it.</p>
-    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+  <section id="funnel" class="reveal">
+    <div class="sec-h"><span class="n">10</span><h2>The funnel &mdash; step by step</h2></div>
+    <p class="sec-sub">Six stages. Each has its collateral built and embedded (tap a button), and each is annotated with the sales principle that governs it. Cold traffic moves one step at a time; warm traffic (referral, OPUS) skips to the application.</p>
+    <div class="vfunnel">
+      <div class="vstage"><div class="vnum">1</div><div class="vbody"><div class="vt">Awareness</div><div class="vd">They meet the idea, not the price &mdash; the book and the film.</div><div class="vprin">&ldquo;Sell the sizzle, not the steak. Don&rsquo;t over-educate.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../learn/">Book landing</a><a class="vbtn live" href="../film/">The film</a></div></div>
+      <div class="vconn"></div>
+      <div class="vstage"><div class="vnum">2</div><div class="vbody"><div class="vt">Interest</div><div class="vd">Nurture on the measured proof &mdash; &minus;25% free radicals, rising OCR, the TED talk.</div><div class="vprin">&ldquo;People buy because they feel understood, not because they understand you.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../learn/">Lead capture</a></div></div>
+      <div class="vconn"></div>
+      <div class="vstage"><div class="vnum">3</div><div class="vbody"><div class="vt">Consideration</div><div class="vd">The site and the practitioner one-pager &mdash; the gap between where they are and where they want to be.</div><div class="vprin">&ldquo;Sell the gap. Emotion buys; logic justifies.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../index-v3.html">Landing</a><a class="vbtn live" href="../practitioners/">Practitioner</a></div></div>
+      <div class="vconn"></div>
+      <div class="vstage"><div class="vnum">4</div><div class="vbody"><div class="vt">Application</div><div class="vd">An application, not a checkout. The friction qualifies; they sell themselves.</div><div class="vprin">&ldquo;Make them sell themselves. Whoever asks the questions controls it.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../apply/">The application</a></div></div>
+      <div class="vconn"></div>
+      <div class="vstage"><div class="vnum">5</div><div class="vbody"><div class="vt">The conversation</div><div class="vd">The resonance call. Understand the problem before you pitch; after you say the price, go quiet.</div><div class="vprin">&ldquo;80/20 &mdash; they talk, you ask. After the price, shut up.&rdquo;</div></div><div class="vbtns"><a class="vbtn live" href="../scripts/">Sales scripts</a></div></div>
+      <div class="vconn"></div>
+      <div class="vstage"><div class="vnum">6</div><div class="vbody"><div class="vt">Founding member</div><div class="vd">The circle and the Mexico retreat &mdash; who they&rsquo;re becoming, not what they bought.</div><div class="vprin">&ldquo;Identity: help them live up to who they want to become.&rdquo;</div></div><div class="vbtns"><a class="vbtn" href="#build">Download the build</a></div></div>
+    </div>
+    <button class="fold-toggle" type="button" aria-expanded="false">The two ICPs, the first sprint &amp; the principles</button>
     <div class="fold-body" hidden>
-    <div class="funnels">
-      <div class="fn"><h4>B2C · the HNW biohacker</h4>
-        <div class="fstage"><div class="fk">Where they are</div><div class="fv">Longevity clinics (Fountain Life, Next Health), events (Biohacker Summit, A4M, RAADfest), longevity media (Attia, Huberman, Kevin Rose), Oura/Whoop communities, family offices.</div></div>
-        <div class="fstage"><div class="fk">Lead gen</div><div class="fv"><b>Top:</b> the book (free chapter) + KOL podcasts + the TED clip + a 60-sec mito reel. <b>Mid:</b> email nurture on the proof. <b>Hook:</b> the Mexico retreat. <b>Close:</b> the application → resonance call.</div></div>
-        <div class="fstage"><div class="fk">The measured door</div><div class="fv">They buy proof, not vibe — every touch carries the −25% / OCR data.</div></div>
+      <div class="funnels" style="margin-top:14px">
+        <div class="fn"><h4>B2C &middot; the HNW biohacker</h4>
+          <div class="fstage"><div class="fk">Where they are</div><div class="fv">Longevity clinics (Fountain Life, Next Health), events (Biohacker Summit, A4M, RAADfest), longevity media (Attia, Huberman, Kevin Rose), Oura/Whoop communities, family offices.</div></div>
+          <div class="fstage"><div class="fk">Lead gen</div><div class="fv"><b>Top:</b> the book + KOL podcasts + the TED clip. <b>Mid:</b> email nurture on the proof. <b>Hook:</b> the Mexico retreat. <b>Close:</b> application &rarr; resonance call.</div></div></div>
+        <div class="fn"><h4>B2B &middot; the practitioner</h4>
+          <div class="fstage"><div class="fk">Where they are</div><div class="fv">Functional-med &amp; longevity networks (IFM, A4M), practitioner groups, the <b>OPUS commercial groups (warm)</b>, industry events.</div></div>
+          <div class="fstage"><div class="fk">Lead gen</div><div class="fv"><b>Top:</b> the one-pager + ROI calculator; LinkedIn. <b>Warm:</b> DM OPUS leads with the deposit-credit offer. <b>Close:</b> demo &rarr; pilot.</div></div></div>
       </div>
-      <div class="fn"><h4>B2B · the practitioner</h4>
-        <div class="fstage"><div class="fk">Where they are</div><div class="fv">Functional-med &amp; longevity networks (IFM, A4M), practitioner LinkedIn / Facebook groups, the <b>OPUS commercial groups (warm)</b>, industry events (A4M, IHS).</div></div>
-        <div class="fstage"><div class="fk">Lead gen</div><div class="fv"><b>Top:</b> a "treatment room → destination" one-pager + ROI calculator; LinkedIn content. <b>Warm:</b> DM OPUS commercial leads with the deposit-credit offer. <b>Close:</b> demo → pilot.</div></div>
-        <div class="fstage"><div class="fk">The economics door</div><div class="fv">Utilization, ROI, re-order — lead with per-room value, not story.</div></div>
+      <h3 style="font-size:19px;margin:24px 0 6px;color:var(--champ)">First sprint &mdash; two weeks to live</h3>
+      <div class="find">
+        <div class="row"><span class="prio p-high">Wk 1</span><div class="ft"><b><a href="../learn/" style="color:var(--cream)">Book landing</a></b> + 3-email nurture on the mito proof. <i>The missing top of funnel.</i></div></div>
+        <div class="row"><span class="prio p-high">Wk 1</span><div class="ft"><b><a href="../practitioners/" style="color:var(--cream)">Practitioner one-pager</a></b> + the <b><a href="../scripts/" style="color:var(--cream)">OPUS-credit DM script</a></b> &amp; lead list.</div></div>
+        <div class="row"><span class="prio p-med">Wk 2</span><div class="ft"><b>Content cuts</b> &mdash; a 60-sec mito reel + the TED clip; 3 LinkedIn posts.</div></div>
+        <div class="row"><span class="prio p-med">Wk 2</span><div class="ft"><b>KOL outreach</b> &mdash; a longevity shortlist + the pitch.</div></div>
+        <div class="row"><span class="prio p-low">Live</span><div class="ft"><b><a href="../apply/" style="color:var(--cream)">Application flow</a> + resonance call</b> &mdash; already built and verified.</div></div>
+      </div>
+      <h3 style="font-size:19px;margin:26px 0 6px;color:var(--champ)">The sales principles &mdash; applied across every stage</h3>
+      <div class="find">
+        <div class="row"><span class="prio p-med">01</span><div class="ft"><b>Conviction &gt; words.</b> 80% is your confidence; 20% is what you say. People buy because they feel understood.</div></div>
+        <div class="row"><span class="prio p-med">02</span><div class="ft"><b>Know the buyer.</b> Young buy the dream, older buy security, owners buy time, alphas need it to feel like their idea, betas need a clear game plan and empowerment.</div></div>
+        <div class="row"><span class="prio p-med">03</span><div class="ft"><b>80/20.</b> They talk 80, you talk 20. Whoever asks the questions controls the conversation.</div></div>
+        <div class="row"><span class="prio p-med">04</span><div class="ft"><b>Sell the sizzle, not the steak.</b> Stop yapping; don&rsquo;t over-educate.</div></div>
+        <div class="row"><span class="prio p-med">05</span><div class="ft"><b>It&rsquo;s a dance.</b> Push, then pull back. Buy on emotion, justify with logic.</div></div>
+        <div class="row"><span class="prio p-med">06</span><div class="ft"><b>Sell the gap.</b> Where they are vs. where they want to be.</div></div>
+        <div class="row"><span class="prio p-med">07</span><div class="ft"><b>Understand before you pitch.</b> Make them sell themselves; push past smoke screens.</div></div>
+        <div class="row"><span class="prio p-med">08</span><div class="ft"><b>The first objection isn&rsquo;t the real one.</b> Objections are proof someone&rsquo;s processing a buying decision.</div></div>
+        <div class="row"><span class="prio p-med">09</span><div class="ft"><b>Common ground is where the deal is found.</b></div></div>
+        <div class="row"><span class="prio p-med">10</span><div class="ft"><b>After you say the price, shut up.</b> Real urgency, not &ldquo;one spot left.&rdquo; Slow down &mdash; selling is the 20%.</div></div>
       </div>
     </div>
-    <h3 style="font-size:20px;margin:26px 0 6px;color:var(--champ)">First sprint — two weeks to live</h3>
-    <div class="find">
-      <div class="row"><span class="prio p-high">Wk 1</span><div class="ft"><b><a href="../learn/" style="color:var(--cream)">Book lead-capture landing</a></b> (free chapter → email) + a 3-email nurture built on the mito proof and TED. <i>The missing top of funnel.</i></div></div>
-      <div class="row"><span class="prio p-high">Wk 1</span><div class="ft"><b><a href="../practitioners/" style="color:var(--cream)">Practitioner one-pager</a></b> — ROI + the protocol + the massage-table fit — and the <b><a href="../scripts/" style="color:var(--cream)">OPUS-credit DM script</a></b> + lead list.</div></div>
-      <div class="row"><span class="prio p-med">Wk 2</span><div class="ft"><b>Content cuts</b> — a 60-sec mito-proof reel and the TED clip; 3 LinkedIn posts for the B2B path.</div></div>
-      <div class="row"><span class="prio p-med">Wk 2</span><div class="ft"><b>KOL outreach</b> — a shortlist of longevity voices + the pitch (the book + the measured claim as the hook).</div></div>
-      <div class="row"><span class="prio p-low">Live</span><div class="ft"><b>Application flow + resonance call</b> — the bottom of the funnel is already built and verified.</div></div>
-    </div>
-  </div>
   </section>
 
   <!-- BOOK -->
