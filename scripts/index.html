@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>VIBE — sales scripts</title>
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:.02em}
+a{color:rgb(var(--violet-soft))}
+.wrap{max-width:820px;margin:0 auto;padding:clamp(28px,5vw,52px) clamp(20px,5vw,40px) 80px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;text-decoration:none;color:rgb(var(--cream))}
+.top a.back{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(var(--cream)/.55);text-decoration:none}
+.kicker{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-size:clamp(2rem,5vw,3rem);margin:12px 0 6px}
+h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.intro{color:rgb(var(--cream)/.7);max-width:60ch;margin-bottom:26px}
+.tabs{display:flex;gap:6px;border:1px solid rgba(233,200,154,.22);background:rgba(233,200,154,.04);border-radius:100px;padding:5px;margin-bottom:28px;flex-wrap:wrap}
+.tab{flex:1;min-width:130px;font-family:var(--body);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.7);
+  background:transparent;border:0;padding:.8em 1em;border-radius:100px;cursor:pointer;transition:all .25s}
+.tab[aria-selected="true"]{background:rgb(var(--violet));color:rgb(var(--cream))}
+.tab:focus-visible{outline:2px solid rgb(var(--violet-soft));outline-offset:2px}
+.script{display:none;animation:fade .35s ease both}
+.script.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.script,.script.on{animation:none}}
+.card{border:1px solid rgb(var(--cream)/.1);border-radius:14px;padding:clamp(20px,4vw,30px);background:rgba(255,250,247,.02);margin-bottom:16px}
+.card h3{font-size:1.3rem;margin-bottom:6px}
+.card .meta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--champ);margin-bottom:16px}
+.beat{margin:0 0 18px;padding-left:16px;border-left:2px solid rgba(139,92,246,.4)}
+.beat .k{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:5px}
+.beat .say{font-family:var(--display);font-size:1.12rem;line-height:1.4;color:rgb(var(--cream));letter-spacing:.01em}
+.beat .dir{font-size:.86rem;color:rgb(var(--cream)/.6);font-style:italic;margin-top:5px}
+.objh{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--champ);margin:20px 0 10px}
+.obj{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.92rem;padding:9px 0;border-bottom:1px solid rgb(var(--cream)/.08)}
+.obj:last-child{border-bottom:0}
+.obj .q{color:var(--gold-1)} .obj .a{color:rgb(var(--cream)/.78)}
+.copybtn{font-family:var(--body);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--champ);
+  background:transparent;border:1px solid rgba(233,200,154,.35);border-radius:999px;padding:.6em 1.2em;cursor:pointer;transition:all .25s;margin-top:6px}
+.copybtn:hover{color:var(--gold-1);border-color:var(--gold-2)}
+.dm{white-space:pre-wrap;font-size:.98rem;color:rgb(var(--cream)/.86);background:rgb(var(--aub2)/.5);border:1px solid rgb(var(--cream)/.1);border-radius:12px;padding:18px;line-height:1.6}
+footer{color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center;margin-top:30px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="../index-v3.html">VIBE</a>
+      <a class="back" href="../command/">← Command Center</a>
+    </div>
+    <p class="kicker">Internal · sales enablement</p>
+    <h1>The <em>scripts</em>.</h1>
+    <p class="intro">Three conversations, one belief: not all vibration is equal, and we can prove it. Lead with the person, land on the measured claim, close on the founding scarcity.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-s="call">HNW · resonance call</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="pract">Practitioner outreach</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="opus">OPUS-credit DM</button>
+    </div>
+
+    <!-- HNW resonance call -->
+    <div class="script on" data-s="call">
+      <div class="card">
+        <h3>The resonance call</h3>
+        <div class="meta">B2C · HNW biohacker · 15 min · warm applicant</div>
+        <div class="beat"><div class="k">Open — earn the room</div><div class="say">"Before I tell you anything about VIBE — what made you apply? What are you actually trying to change?"</div><div class="dir">Let them talk. You're qualifying for fit, not selling. The right founder wants to build, not just buy.</div></div>
+        <div class="beat"><div class="k">Reframe — not another gadget</div><div class="say">"You've probably tried a lot. Here's what's different: most of what you own manages symptoms. This works one level down — at the cell."</div></div>
+        <div class="beat"><div class="k">Proof — the measured claim</div><div class="say">"In our testing, twenty minutes cut free-radical load by about a quarter, and a week of use raised the mitochondria's oxygen consumption. That's not relaxation. That's the thing generic sound beds don't do."</div><div class="dir">Say it plainly, then stop. Let the number sit.</div></div>
+        <div class="beat"><div class="k">Belonging — the circle</div><div class="say">"The first ten are delivered. We're completing a founding fifty — the people who help shape what this becomes, and who I'll see in Mexico. It's a circle, not a checkout."</div></div>
+        <div class="beat"><div class="k">Close — the honest ask</div><div class="say">"If this is a fit, I'd love you in the founding fifty. If it isn't, I'll tell you — no pressure either way. Where's your head?"</div></div>
+        <div class="objh">If they push back</div>
+        <div class="obj"><span class="q">"It's expensive."</span><span class="a">"It is. It's a hand-made, measured device and a founding seat, not a mass-market gadget. The question isn't the price — it's whether the outcome is real for you. That's what the founding trial is for."</span></div>
+        <div class="obj"><span class="q">"Isn't this just a vibration bed?"</span><span class="a">"That's the exact thing we're not. Vibration is the category; the frequency is ours, and it's the reason the mitochondrial numbers move. I can send Dr. Steven's TED talk."</span></div>
+        <div class="obj"><span class="q">"Let me think about it."</span><span class="a">"Of course. Founding seats are limited and member-referred, so I can hold yours for a week. What would you need to see to feel sure?"</span></div>
+      </div>
+    </div>
+
+    <!-- practitioner outreach -->
+    <div class="script" data-s="pract">
+      <div class="card">
+        <h3>Practitioner outreach</h3>
+        <div class="meta">B2B · cold-to-warm · DM / email / call</div>
+        <div class="beat"><div class="k">Hook — their economics</div><div class="say">"Quick one — are you looking for a differentiated, measurable modality that raises per-visit value without adding square footage?"</div></div>
+        <div class="beat"><div class="k">The fit</div><div class="say">"VIBE sits on the massage table you already have. Clients feel it in one session, and you can cite what it does at the cellular level — a real protocol, a real premium."</div></div>
+        <div class="beat"><div class="k">Proof</div><div class="say">"In our testing: −25% free radicals in twenty minutes, rising mitochondrial output over a week. It's the difference between a relaxation add-on and a modality you build a price around."</div></div>
+        <div class="beat"><div class="k">Ask — the demo</div><div class="say">"We're placing a small founding cohort with practitioners first. Fifteen minutes to walk your room math and book a demo?"</div><div class="dir">Point them to the one-pager; the ROI slider does the selling.</div></div>
+        <div class="objh">If they push back</div>
+        <div class="obj"><span class="q">"What's the ROI?"</span><span class="a">"Depends on your utilization and price — the one-pager has a live calculator. Most rooms clear the unit inside a quarter on repeat bookings alone."</span></div>
+        <div class="obj"><span class="q">"My clients want proven."</span><span class="a">"Fair. We're honest that the head-to-head study is in progress — but our own mitochondrial data and Dr. Steven's 25 years are more than most modalities on your floor can show. Wellness claims, not medical."</span></div>
+      </div>
+    </div>
+
+    <!-- OPUS-credit DM -->
+    <div class="script" data-s="opus">
+      <div class="card">
+        <h3>OPUS-credit DM</h3>
+        <div class="meta">Warm · stranded OPUS commercial leads · short + human</div>
+        <p style="font-size:.86rem;color:rgb(var(--cream)/.6);margin-bottom:14px">Founder-led, one at a time. Never blast. Reference something specific about them.</p>
+        <div class="dm" id="dmText">Hi [Name] — I know the OPUS situation left a lot of people holding deposits and not much else. I'm with VIBE (Dr. Steven Schwartz's vibroacoustic work), and we're quietly making it right for OPUS customers: we'll honor your deposit as credit toward a VIBE, plus a founding discount.
+
+It's a different, measurable device — in our testing it cut free radicals ~25% in one session and raised mitochondrial output over a week. Happy to send Steven's TED talk and a short walkthrough.
+
+No pressure at all — just didn't want you left with nothing. Want me to send the details?</div>
+        <button class="copybtn" id="copyDm">Copy message</button>
+        <div class="objh">If they reply</div>
+        <div class="obj"><span class="q">"How much credit?"</span><span class="a">"Whatever your OPUS deposit was, applied to the VIBE, plus the founding discount. Send me your order detail and I'll confirm the exact number."</span></div>
+        <div class="obj"><span class="q">"Is this legit / who are you?"</span><span class="a">"Completely fair to ask. I'm [name] with VIBE — here's the film and Dr. Steven's TED talk. This is founder-led customer recovery, not a mass email. No payment until you've seen it."</span></div>
+      </div>
+    </div>
+
+    <footer>VIBE · Bioharmonic — internal sales enablement. Wellness claims only; keep the head-to-head study honest.</footer>
+  </div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected', x===t?'true':'false'); });
+      document.querySelectorAll('.script').forEach(function(s){ s.classList.toggle('on', s.dataset.s===t.dataset.s); });
+    });
+  });
+  var copyBtn=document.getElementById('copyDm');
+  if(copyBtn) copyBtn.addEventListener('click', function(){
+    var txt=document.getElementById('dmText').textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){
+      copyBtn.textContent='Copied ✓'; setTimeout(function(){ copyBtn.textContent='Copy message'; },1600);
+    }).catch(function(){ copyBtn.textContent='Select & copy manually'; });
+  });
+</script>
+</body>
+</html>

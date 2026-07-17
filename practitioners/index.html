@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIBE for practitioners — treatment room to destination</title>
+<meta name="description" content="A measurable modality for longevity clinics and functional-medicine practices. VIBE sits on a standard massage table and raises what a room is worth.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --amber-soft:255 186 130; --good:143 227 176;
+  --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24; --metal:203 185 160;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.65;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh;overflow-x:hidden}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;line-height:1.06;letter-spacing:.02em}
+a{color:rgb(var(--violet-soft))}
+img{display:block;max-width:100%}
+.top{max-width:1100px;margin:0 auto;padding:22px clamp(20px,5vw,48px);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.top a.cta{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-1);border:1px solid rgba(233,200,154,.4);border-radius:999px;padding:.7em 1.4em;text-decoration:none;transition:all .3s}
+.top a.cta:hover{background:rgba(233,200,154,.1)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding:clamp(24px,4vw,44px) 0}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero .img{order:-1}}
+.kicker{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-size:clamp(2.3rem,5.5vw,3.8rem);margin:14px 0 12px}
+h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.lead{font-size:1.08rem;color:rgb(var(--cream)/.82);font-weight:300;max-width:52ch;margin-bottom:1.6rem}
+.hero .img img{width:100%;border-radius:12px;border:1px solid rgb(var(--cream)/.1);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:1em 2em;border-radius:999px;font-size:.76rem;letter-spacing:.16em;
+  text-transform:uppercase;cursor:pointer;text-decoration:none;border:1px solid transparent;font-weight:500;transition:all .3s var(--ease)}
+.btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}
+.btn-solid:hover{background:rgb(var(--violet-soft));color:rgb(var(--aub2))}
+.btn-ghost{border-color:rgb(var(--cream)/.28);color:rgb(var(--cream))}
+.btn-ghost:hover{border-color:rgb(var(--violet-soft));color:rgb(var(--violet-soft))}
+/* section */
+.sec{padding:clamp(2.5rem,5vw,4rem) 0;border-top:1px solid rgb(var(--cream)/.1)}
+.sec h2{font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:.6rem}
+.sec h2 em{font-style:normal;color:rgb(var(--violet-soft))}
+.sec .sub{color:rgb(var(--cream)/.7);max-width:60ch;margin-bottom:1.8rem}
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:760px){.proof{grid-template-columns:1fr}}
+.pcard{border:1px solid rgb(var(--cream)/.1);border-radius:12px;padding:1.6rem;background:rgb(var(--cream)/.02)}
+.pcard .v{font-family:var(--display);font-size:2.4rem;color:rgb(var(--good))}
+.pcard .l{font-size:.92rem;color:rgb(var(--cream)/.66);margin-top:.3rem}
+/* ROI calculator */
+.roi{background:linear-gradient(165deg,rgba(233,200,154,.06),rgba(255,250,247,.015));border:1px solid rgba(233,200,154,.22);border-radius:16px;padding:clamp(22px,4vw,34px)}
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem;align-items:end}
+@media(max-width:640px){.roi-grid{grid-template-columns:1fr}}
+.roi label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--cream)/.62);margin-bottom:8px}
+.roi input[type=range]{width:100%;accent-color:rgb(var(--violet))}
+.roi .rv{font-family:var(--display);font-size:1.3rem;color:var(--gold-1)}
+.roi-out{margin-top:1.8rem;border-top:1px solid rgb(var(--cream)/.12);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem}
+.roi-out .lbl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.roi-out .big{font-family:var(--display);font-size:clamp(2.4rem,6vw,3.4rem);color:var(--gold-1);line-height:1}
+.roi-note{font-size:.8rem;color:rgb(var(--cream)/.5);margin-top:1rem}
+/* how / protocol */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+.step{border:1px solid rgb(var(--cream)/.1);border-radius:12px;padding:1.4rem;background:rgb(var(--cream)/.02)}
+.step .n{font-family:var(--display);font-size:1.2rem;color:var(--gold-2)}
+.step h4{font-size:1.05rem;margin:.4rem 0 .4rem}
+.step p{font-size:.86rem;color:rgb(var(--cream)/.64)}
+/* close */
+.close{text-align:center;background:linear-gradient(200deg,rgba(15,9,24,.6),rgba(27,15,46,.4));border-radius:16px;padding:clamp(2.4rem,5vw,3.6rem);margin:clamp(2rem,5vw,3rem) 0}
+.close h2{font-size:clamp(1.8rem,4.5vw,2.8rem);max-width:20ch;margin:0 auto 1rem}
+.close .btnrow{justify-content:center;margin-top:1.4rem}
+footer{max-width:1100px;margin:0 auto;padding:30px clamp(20px,5vw,48px) 80px;color:rgb(var(--cream)/.4);font-size:.8rem;text-align:center}
+footer em{color:var(--gold-3);font-style:normal}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <a class="logo" href="../index-v3.html">VIBE</a>
+    <a class="cta" href="../apply/">Apply · practitioner</a>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="reveal in">
+        <p class="kicker">For practitioners &amp; clinics</p>
+        <h1>Turn a treatment room into a <em>destination</em>.</h1>
+        <p class="lead">VIBE is a measurable nervous-system modality that sits on a standard massage table. Clients feel it in one session; you can cite what it does at the cellular level. It's the reason they book you, and re-book.</p>
+        <p style="font-size:.86rem;color:rgb(var(--cream)/.55);margin:-.6rem 0 1.6rem">For operators who sell outcomes, not discount rooms.</p>
+        <div class="btnrow">
+          <a class="btn btn-solid" href="../apply/">Request a founding demo</a>
+          <a class="btn btn-ghost" href="#roi">See the room math</a>
+        </div>
+      </div>
+      <div class="img reveal in">
+        <img loading="lazy" src="../storyboard/gen/stack/FS4-wide-reveal.png" alt="A VIBE bed on a standard massage table with the full regulation stack, a practitioner attending">
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <h2>Not another relaxation table. A <em>measurable</em> one.</h2>
+      <p class="sub">Generic sound beds relax the client. In our mitochondrial testing, VIBE changes the cell — which is the difference between a nice add-on and a modality you can build a protocol and a price around.</p>
+      <div class="proof">
+        <div class="pcard"><div class="v">−25%</div><div class="l">Free radicals after one 20-minute session</div></div>
+        <div class="pcard"><div class="v">↑ OCR</div><div class="l">Rising mitochondrial output over 7 days of use</div></div>
+        <div class="pcard"><div class="v">0</div><div class="l">Extra square footage — it fits your existing table</div></div>
+      </div>
+    </div>
+
+    <div class="sec reveal" id="roi">
+      <h2>The room <em>math</em>.</h2>
+      <p class="sub">Move the sliders. A single VIBE, added to a room you already run, at your own numbers.</p>
+      <div class="roi">
+        <div class="roi-grid">
+          <div>
+            <label>Sessions per week <span class="rv" id="vSess">20</span></label>
+            <input type="range" id="sess" min="4" max="60" value="20">
+          </div>
+          <div>
+            <label>Price per session <span class="rv" id="vPrice">$120</span></label>
+            <input type="range" id="price" min="40" max="400" step="10" value="120">
+          </div>
+        </div>
+        <div class="roi-out">
+          <div><span class="lbl">Added revenue / year</span></div>
+          <div class="big" id="roiOut">$124,800</div>
+        </div>
+        <p class="roi-note">Illustration only — set your own utilization and price. Figures exclude your cost of goods and the unit. The point isn't the exact number; it's that a measurable modality justifies a premium and drives repeat bookings.</p>
+      </div>
+    </div>
+
+    <div class="sec reveal">
+      <h2>How a session <em>runs</em>.</h2>
+      <p class="sub">A repeatable, sellable protocol your team can deliver in an existing slot.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>Settle</h4><p>Client lies on the VIBE, on your table. Light-and-sound mask on.</p></div>
+        <div class="step"><div class="n">2</div><h4>Layer</h4><p>Add the stack as it fits — red-light mat, the Axiom H₂ cannula.</p></div>
+        <div class="step"><div class="n">3</div><h4>Tune</h4><p>The frequency runs. Twenty focused minutes; nothing to operate.</p></div>
+        <div class="step"><div class="n">4</div><h4>Re-book</h4><p>They feel it before they leave. That's the retention loop.</p></div>
+      </div>
+    </div>
+
+    <div class="close reveal">
+      <p class="kicker">Founding practitioner program</p>
+      <h2>Were you an OPUS commercial customer?</h2>
+      <p class="sub" style="max-width:46ch;margin:0 auto">We're honoring OPUS deposits as credit toward a VIBE, plus a founding discount. Fewer than fifty founding slots — practitioners get priority.</p>
+      <div class="btnrow">
+        <a class="btn btn-solid" href="../apply/">Apply for a founding demo</a>
+        <a class="btn btn-ghost" href="../film/">See the film</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>VIBE · Bioharmonic — for practitioners. <em>Treatment room to destination.</em></footer>
+
+<script>
+  var sess=document.getElementById('sess'), price=document.getElementById('price'),
+      vSess=document.getElementById('vSess'), vPrice=document.getElementById('vPrice'), out=document.getElementById('roiOut');
+  function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function calc(){
+    var s=+sess.value, p=+price.value;
+    vSess.textContent=s; vPrice.textContent=fmt(p);
+    out.textContent=fmt(s*p*52);
+  }
+  sess.addEventListener('input',calc); price.addEventListener('input',calc); calc();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primal Resonance — free chapter | VIBE</title>
+<meta name="description" content="Read the opening of Primal Resonance by Dr. Steven Schwartz. Where chronic inflammation begins — and the frequency that answers it.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --amber-soft:255 186 130;
+  --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24; --metal:203 185 160;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.65;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh;overflow-x:hidden}
+h1,h2,h3,.display{font-family:var(--display);font-weight:400;line-height:1.06;letter-spacing:.02em}
+a{color:rgb(var(--violet-soft))}
+img{display:block;max-width:100%}
+.top{max-width:1080px;margin:0 auto;padding:22px clamp(20px,5vw,48px);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.top a.back{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(var(--cream)/.55);text-decoration:none}
+.top a.back:hover{color:rgb(var(--violet-soft))}
+.wrap{max-width:1080px;margin:0 auto;padding:clamp(24px,5vw,60px) clamp(20px,5vw,48px)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.book-side{order:-1;max-width:320px;margin:0 auto}}
+.kicker{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-size:clamp(2.4rem,6vw,4rem);margin:14px 0 2px}
+h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.by{font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.55);margin-bottom:1.4rem}
+.lead{font-size:1.08rem;color:rgb(var(--cream)/.82);font-weight:300;max-width:52ch;margin-bottom:1.6rem}
+.pull{border-left:2px solid rgba(233,200,154,.5);padding-left:16px;font-style:italic;color:rgb(var(--cream)/.72);font-size:1rem;margin-bottom:1.8rem}
+.book-side{position:relative}
+.book-side img{width:100%;border-radius:10px;box-shadow:0 34px 80px rgba(0,0,0,.6)}
+.book-side .halo{position:absolute;inset:-12%;z-index:-1;background:radial-gradient(circle,rgba(139,92,246,.28),transparent 62%);filter:blur(20px)}
+/* form */
+.form{background:linear-gradient(165deg,rgba(255,250,247,.055),rgba(255,250,247,.015));border:1px solid rgba(233,200,154,.2);
+  border-radius:16px;padding:clamp(22px,4vw,32px);max-width:520px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.form h3{font-size:1.5rem;margin-bottom:6px}
+.form p.sub{font-size:.9rem;color:rgb(var(--cream)/.65);margin-bottom:18px}
+.fld{margin-bottom:14px}
+.fld input{width:100%;background:rgb(var(--aub2)/.6);border:1px solid rgb(var(--cream)/.16);color:rgb(var(--cream));
+  border-radius:11px;padding:.85em 1em;font:400 1rem/1.5 var(--body);transition:border-color .3s}
+.fld input:focus{outline:0;border-color:rgb(var(--violet-soft))}
+.fld input::placeholder{color:rgb(var(--cream)/.35)}
+.err{color:var(--amber-soft);font-size:.82rem;min-height:1em;margin:-4px 0 10px}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:1em 2em;border-radius:999px;font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;cursor:pointer;border:0;font-family:var(--body);font-weight:500;width:100%;justify-content:center;
+  background:rgb(var(--violet));color:rgb(var(--cream));transition:all .3s var(--ease)}
+.btn:hover{background:rgb(var(--violet-soft));color:rgb(var(--aub2))}
+.btn:focus-visible{outline:2px solid rgb(var(--violet-soft));outline-offset:3px}
+.micro{font-size:.76rem;color:rgb(var(--cream)/.45);text-align:center;margin-top:12px}
+/* what's inside */
+.inside{margin-top:clamp(3rem,7vw,5rem);border-top:1px solid rgb(var(--cream)/.1);padding-top:clamp(2rem,5vw,3rem)}
+.inside h2{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:1.6rem}
+.inside h2 em{font-style:normal;color:rgb(var(--violet-soft))}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:760px){.grid3{grid-template-columns:1fr}}
+.card{border:1px solid rgb(var(--cream)/.1);border-radius:12px;padding:1.6rem;background:rgb(var(--cream)/.02)}
+.card .n{font-family:var(--display);font-size:1.4rem;color:var(--gold-2)}
+.card h4{font-size:1.15rem;margin:.4rem 0 .5rem}
+.card p{font-size:.92rem;color:rgb(var(--cream)/.66)}
+/* proof strip */
+.proof{display:flex;gap:clamp(1.5rem,5vw,4rem);flex-wrap:wrap;margin-top:clamp(2.5rem,6vw,3.5rem);padding-top:2rem;border-top:1px solid rgb(var(--cream)/.1)}
+.pstat .v{font-family:var(--display);font-size:2rem;color:var(--good, #8fe3b0)}
+.pstat .l{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.55);max-width:22ch}
+/* confirmation */
+#done{display:none}#done.on{display:block}
+#formWrap.hide{display:none}
+.done-seal{width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,var(--gold-1),var(--gold-3));display:grid;place-items:center;color:rgb(var(--aub2));font-size:28px;margin-bottom:16px}
+footer{max-width:1080px;margin:0 auto;padding:40px clamp(20px,5vw,48px) 80px;color:rgb(var(--cream)/.4);font-size:.8rem;text-align:center;border-top:1px solid rgb(var(--cream)/.08);margin-top:40px}
+footer em{color:var(--gold-3);font-style:normal}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <a class="logo" href="../index-v3.html">VIBE</a>
+    <a class="back" href="../index-v3.html">← VIBE</a>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="reveal in">
+        <p class="kicker">The book · free opening chapter</p>
+        <h1>It begins in the <em>body</em>.</h1>
+        <p class="by">Primal Resonance · Dr. Steven Schwartz</p>
+        <p class="lead">Almost everything in modern life feeds chronic inflammation — the root of most chronic disease. This book is how the body heals: the right signal, not more effort. Read the opening chapter, free.</p>
+        <p class="pull">"You were never broken. You were only waiting for the right frequency."</p>
+        <div id="formWrap">
+          <form class="form" id="leadForm" novalidate>
+            <h3>Get the first chapter</h3>
+            <p class="sub">Sent straight to your inbox. No spam, unsubscribe anytime.</p>
+            <div class="fld"><input name="name" autocomplete="name" placeholder="First name"></div>
+            <div class="fld"><input name="email" type="email" autocomplete="email" placeholder="Email address"></div>
+            <div class="err" id="err"></div>
+            <button class="btn" type="submit">Send me the chapter</button>
+            <p class="micro">Then we'll show you what the frequency actually does.</p>
+          </form>
+        </div>
+        <div id="done">
+          <div class="form">
+            <div class="done-seal">✦</div>
+            <h3>Check your inbox.</h3>
+            <p class="sub" style="margin-bottom:18px">The opening chapter of Primal Resonance is on its way. While you wait — this is the technology the book describes, built into a bed.</p>
+            <a class="btn" href="../film/" style="text-decoration:none">Watch the film →</a>
+          </div>
+        </div>
+      </div>
+      <div class="book-side reveal in">
+        <div class="halo"></div>
+        <img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt="Primal Resonance — the body as a field of resonance">
+      </div>
+    </div>
+
+    <div class="inside reveal">
+      <h2>What the opening chapter <em>reveals</em></h2>
+      <div class="grid3">
+        <div class="card"><div class="n">01</div><h4>The real root</h4><p>Why chronic inflammation sits underneath fatigue, poor sleep, and most modern disease — and why willpower doesn't touch it.</p></div>
+        <div class="card"><div class="n">02</div><h4>The body's language</h4><p>The nervous system doesn't respond to more effort. It responds to the right signal, felt — not thought.</p></div>
+        <div class="card"><div class="n">03</div><h4>The frequency</h4><p>What 25 years of clinical work found: a precise vibration that tells the body it's safe to let go.</p></div>
+      </div>
+      <div class="proof">
+        <div class="pstat"><div class="v">−25%</div><div class="l">Free radicals, after one 20-minute session (our mitochondrial testing)</div></div>
+        <div class="pstat"><div class="v">↑ OCR</div><div class="l">Rising mitochondrial output after 7 days</div></div>
+        <div class="pstat"><div class="v">25 yrs</div><div class="l">Of clinical research behind the frequency</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>VIBE · Bioharmonic — It all begins in the body. <em>Peace is a vibe.</em></footer>
+
+<script>
+  var LEAD_ENDPOINT = ""; // ← paste your email-capture endpoint (Formspree/ConvertKit/etc.) to go live
+  var LEAD_EMAIL = "hello@healwithvibe.com";
+  var form=document.getElementById('leadForm'), err=document.getElementById('err');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name=form.name.value.trim(), email=form.email.value.trim();
+    if(!name){ err.textContent='Your first name, please.'; return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='A valid email, please.'; return; }
+    err.textContent='';
+    try{ localStorage.setItem('vibe_lead', JSON.stringify({name:name,email:email})); }catch(_){}
+    if(LEAD_ENDPOINT){
+      fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email})}).catch(function(){});
+    } else {
+      // fallback: open a pre-filled email so no lead is lost before the endpoint is wired
+      window.open("mailto:"+LEAD_EMAIL+"?subject="+encodeURIComponent("Chapter request — "+name)+"&body="+encodeURIComponent("Send the Primal Resonance chapter to "+email), "_self");
+    }
+    document.getElementById('formWrap').classList.add('hide');
+    document.getElementById('done').classList.add('on');
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
