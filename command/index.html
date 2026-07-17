@@ -259,6 +259,61 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
 .status{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-left:8px}
 .st-live{background:rgba(143,227,176,.14);color:var(--good)}
 .st-draft{background:rgba(232,180,90,.14);color:var(--warn)}
+
+/* ============ CD/UX pass: digest layer + progressive disclosure ============ */
+.exec{border:1px solid rgba(233,200,154,.3);border-radius:18px;padding:clamp(26px,4.5vw,40px);margin-top:34px;
+  background:linear-gradient(160deg,rgba(233,200,154,.055),rgba(139,92,246,.05) 55%,rgba(255,250,247,.015));
+  box-shadow:0 26px 70px rgba(0,0,0,.35)}
+section#exec{border-top:0;padding-top:0;padding-bottom:10px}
+.exk{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px}
+.exec h2{font-size:clamp(26px,4.4vw,42px);line-height:1.08;margin-bottom:12px}
+.exec h2 em{font-style:normal;color:var(--violet-br)}
+.exline{color:var(--muted);font-size:15px;max-width:66ch;margin-bottom:24px}
+.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+@media(max-width:700px){.ex-stats{grid-template-columns:1fr 1fr}}
+.exs{border:1px solid var(--faint);border-radius:12px;padding:14px 16px;background:rgba(13,10,30,.35)}
+.exs b{display:block;font-family:var(--display);font-weight:400;font-size:28px;color:var(--good);line-height:1.05}
+.exs:nth-child(3) b,.exs:nth-child(4) b{color:var(--gold-2)}
+.exs span{font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.ex-status{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+@media(max-width:700px){.ex-status{grid-template-columns:1fr 1fr}}
+.exb span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--champ);display:flex;justify-content:space-between;align-items:baseline}
+.exb b{font-family:var(--display);font-weight:400;font-size:17px;color:var(--cream)}
+.exb .bar{height:5px;border-radius:99px;background:rgba(255,250,247,.09);margin-top:7px;overflow:hidden}
+.exb .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--violet),var(--gold-2));transition:width 1.2s cubic-bezier(.22,.61,.36,1) .3s}
+.reveal.in .exb .bar i{width:var(--w)}
+.ex-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.exbtn-ghost{background:transparent;border:1px solid rgba(255,250,247,.25);color:var(--cream)}
+.exbtn-ghost:hover{border-color:var(--gold-2);color:var(--gold-1);transform:translateY(-1px)}
+.ex-next{font-size:12.5px;color:var(--muted);border-top:1px solid var(--faint);padding-top:16px}
+.ex-next b{color:var(--champ)}
+
+.fold-toggle{display:inline-flex;align-items:center;gap:.55em;margin-top:2px;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--champ);background:transparent;border:1px solid var(--hair);border-radius:999px;
+  padding:9px 18px;cursor:pointer;font-family:var(--sans);transition:all .25s}
+.fold-toggle::after{content:"\2193";transition:transform .3s}
+.fold-toggle[aria-expanded="true"]::after{transform:rotate(180deg)}
+.fold-toggle:hover{color:var(--gold-1);border-color:var(--gold-2)}
+.fold-toggle:focus-visible{outline:2px solid var(--violet-br);outline-offset:2px}
+.fold-body{animation:ccfade .35s ease both}
+.fold-body[hidden]{display:none}
+section.folded{padding:40px 0 34px}
+section.folded .sec-sub{margin-bottom:16px}
+
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl{min-width:600px}
+@media(max-width:700px){
+  nav.sticky .in{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:0 14px;scrollbar-width:none}
+  nav.sticky .in::-webkit-scrollbar{display:none}
+}
+nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);background:rgba(233,200,154,.09)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .exb .bar i{transition:none;width:var(--w)}
+  .fold-body{animation:none}
+  header.top .glow{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -271,7 +326,7 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
     <p>Everything we've built for the VIBE launch, in one place: the film, the site, the offer, and the raise. Both advisory councils have reviewed it.</p>
     <p class="addressed">Prepared for Dr. Steven Schwartz — founder, <em>Primal Resonance</em>.</p>
     <div class="meta-row">
-      <span class="pill">Status: <b>v2 — council-reviewed</b></span>
+      <span class="pill">Status: <b>v3 — the digest</b></span>
       <span class="pill">Builds: <b>5 · one hub</b></span>
       <span class="pill">Councils: <b>2 · 10 advisors</b></span>
       <span class="pill">Updated: <b>Jul 2026</b></span>
@@ -297,6 +352,33 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
 
 <div class="wrap">
 
+  <!-- EXECUTIVE DIGEST -->
+  <section id="exec" class="reveal">
+    <div class="exec">
+      <p class="exk">The two-minute read</p>
+      <h2>One product. One wedge. <em>Measured proof.</em></h2>
+      <p class="exline">HyperVIBE, positioned on longevity and the mitochondria, defended by the frequency. The story, the site, the film, and the funnel are built. The raise is gated by traction, not polish.</p>
+      <div class="ex-stats">
+        <div class="exs"><b>&minus;25%</b><span>free radicals &middot; one 20-min session</span></div>
+        <div class="exs"><b>&uarr; OCR</b><span>mitochondrial output &middot; 7 days</span></div>
+        <div class="exs"><b>10/10</b><span>Black Edition delivered</span></div>
+        <div class="exs"><b>40</b><span>founding places open</span></div>
+      </div>
+      <div class="ex-status">
+        <div class="exb"><span>Brand <b>8</b></span><div class="bar"><i style="--w:80%"></i></div></div>
+        <div class="exb"><span>Go-to-market <b>8</b></span><div class="bar"><i style="--w:80%"></i></div></div>
+        <div class="exb"><span>Product &amp; proof <b>8</b></span><div class="bar"><i style="--w:80%"></i></div></div>
+        <div class="exb"><span>Fundability <b>6</b></span><div class="bar"><i style="--w:60%"></i></div></div>
+      </div>
+      <div class="ex-actions">
+        <a class="dbtn dbtn-solid" href="../film/">Enter the Production Hub</a>
+        <a class="dbtn exbtn-ghost" href="#funnel">See the funnel</a>
+        <a class="dbtn exbtn-ghost" href="#build">Download the build &middot; $1,000</a>
+      </div>
+      <p class="ex-next"><b>Next three moves:</b> fill the Founding 50 and track the member-sourced % &middot; run the head-to-head baseline study &middot; the OPUS-credit recovery play.</p>
+    </div>
+  </section>
+
   <!-- EXPERT PANEL -->
   <section id="panel" class="reveal">
     <div class="sec-h"><span class="n">01</span><h2>The panel</h2></div>
@@ -321,9 +403,11 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
   </section>
 
   <!-- OVERVIEW -->
-  <section id="overview" class="reveal">
+  <section id="overview" class="reveal folded">
     <div class="sec-h"><span class="n">02</span><h2>Where we stand</h2></div>
     <p class="sec-sub">An honest readout across the dimensions both councils scored. The story and the assets are strong. The gap is proof of a repeatable engine behind the scarcity, and that's what the roadmap targets.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="scores">
       <div class="score"><div class="lbl">Brand &amp; Story</div><div class="v">8<small>/10</small></div><div class="d">Clear POV, film, "delivered" scarcity.</div></div>
       <div class="score"><div class="lbl">Assets / Build</div><div class="v">8<small>/10</small></div><div class="d">Storyboard, script, site, film hub live.</div></div>
@@ -331,12 +415,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       <div class="score"><div class="lbl">Product &amp; Proof</div><div class="v">8<small>/10</small></div><div class="d">Measured mito effect (−25% free radicals, ↑OCR) + TED + real WTP.</div></div>
       <div class="score"><div class="lbl">Fundability</div><div class="v">6.0<small>/10</small></div><div class="d">Differentiated proof + moat; engine still to prove.</div></div>
     </div>
+  </div>
   </section>
 
   <!-- STRATEGY / WEDGE -->
-  <section id="strategy" class="reveal">
+  <section id="strategy" class="reveal folded">
     <div class="sec-h"><span class="n">03</span><h2>The wedge, the moat, the proof</h2></div>
     <p class="sec-sub">Direction from Dr. Steven, now the spine of the package: focus ruthlessly on <b>one product</b> (HyperVIBE + accessories), win on <b>longevity + mitochondria</b>, and defend it with the <b>frequency</b>, the thing generic sound beds can't replicate.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="scores" style="grid-template-columns:repeat(3,1fr)">
       <div class="score"><div class="lbl">Free radicals</div><div class="v" style="color:var(--good)">−25%</div><div class="d">after one 20-min session (our mitochondrial testing)</div></div>
       <div class="score"><div class="lbl">Mitochondrial OCR</div><div class="v" style="color:var(--good)">↑ 7d</div><div class="d">measured rise in oxygen-consumption rate after 7 days</div></div>
@@ -357,12 +444,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
         <li><small style="color:var(--muted)">OPUS is in Article 9 wind-down — run this as founder-led customer recovery, not automation.</small></li>
       </ul></div>
     </div>
+  </div>
   </section>
 
   <!-- THE SCIENCE -->
-  <section id="science" class="reveal">
+  <section id="science" class="reveal folded">
     <div class="sec-h"><span class="n">04</span><h2>The science — why this is the moat</h2></div>
     <p class="sec-sub">Steven's mitochondrial testing is what separates VIBE from another relaxation bed. To be straight about it: these are VIBE's own findings (the subject of his TED talk), not a peer-reviewed head-to-head yet. That's the study to run.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="sci">
       <div class="scard"><h4>What we measured</h4><div class="big">−25%</div>
         <p><b>Free radicals</b>, after a single 20-minute session. Oxidative stress sits upstream of the chronic inflammation <i>Primal Resonance</i> is about.</p></div>
@@ -382,12 +472,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       </ul></div>
     </div>
     <p class="guard">Guardrail: present as "in our mitochondrial testing," and keep wellness (not medical) claims until the study + counsel are in place. The honesty is part of the brand.</p>
+  </div>
   </section>
 
   <!-- THE TRAUMA LENS / PTSD -->
-  <section id="ptsd" class="reveal">
+  <section id="ptsd" class="reveal folded">
     <div class="sec-h"><span class="n">05</span><h2>The trauma lens — PTSD &amp; the mitochondria</h2></div>
     <p class="sec-sub">The "nervous system on guard" the film opens with is, at its extreme, trauma. A growing research line ties chronic stress and PTSD to mitochondrial dysfunction, which is exactly where VIBE's measured effect sits. It's a large, underserved, emotionally urgent story, told honestly.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="sci">
       <div class="scard"><h4>The scale</h4><div class="big" style="color:var(--violet-br)">~13M</div>
         <p>U.S. adults with PTSD in a given year (about 5%); roughly 6% will have it in their lifetime, and rates run far higher among veterans and first responders. <span style="color:var(--muted)">Source: U.S. National Center for PTSD.</span></p></div>
@@ -407,6 +500,7 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       </ul></div>
     </div>
     <p class="guard">This is a story and a market, not a clinical claim. Keep it wellness-framed and honest until the research and counsel are in place.</p>
+  </div>
   </section>
 
   <!-- THE PACKAGE / BUILDS -->
@@ -428,9 +522,11 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
   </section>
 
   <!-- BRAND & GTM COUNCIL -->
-  <section id="brand" class="reveal">
+  <section id="brand" class="reveal folded">
     <div class="sec-h"><span class="n">07</span><h2>Brand &amp; Go-To-Market Council</h2></div>
     <p class="sec-sub">Five brand minds pressure-test the story and the funnel. Consensus: book (authority) → film (emotion) → Founding-50 application (scarcity) → Mexico (belonging) → practitioner path (secondary). One action throughout: <b>Apply</b>.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
 
     <div class="panel"><div class="panel-top"><div class="role">Alex Hormozi<small>Offer &amp; the value equation</small></div><span class="verdict v-yes">Strong</span></div>
       <p>The offer is finally worth <i>applying</i> for — bed + founding status + Mexico + founder access. Make the value stack explicit and reverse risk on the application ("apply in 90 sec; if you're not a fit we'll tell you"). <b>The book is your best free lead magnet</b> — it earns the application.</p></div>
@@ -451,12 +547,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       <div class="row"><span class="prio p-med">Med</span><div class="ft"><b>Book as lead magnet</b> — <i>Primal Resonance</i> at the top of the funnel; book → film → apply.</div></div>
       <div class="row"><span class="prio p-low">Low</span><div class="ft"><b>Keep the practitioner path a side door</b> — a different tribe; don't let it compete with the hero.</div></div>
     </div>
+  </div>
   </section>
 
   <!-- THE RAISE / FUNDRAISING BOARD -->
-  <section id="raise" class="reveal">
+  <section id="raise" class="reveal folded">
     <div class="sec-h"><span class="n">08</span><h2>The Fundraising Board</h2></div>
     <p class="sec-sub">Four permanent members + a 5th seat: <b>Kirsten Green (Forerunner)</b> — seated for premium consumer-wellness hardware; she led Oura, the closest comp. Read at pre-seed / founder-led, judged against an angel-seed target, not a hyperscale yardstick.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
 
     <h3 style="font-size:20px;margin:6px 0 12px;color:var(--champ)">The arc — nascent → very successful</h3>
     <div class="arc">
@@ -484,14 +583,14 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
     </div>
 
     <h3 style="font-size:20px;margin:6px 0 10px;color:var(--champ)">Where each investor enters — and their one metric</h3>
-    <table class="tbl">
+    <div class="tbl-wrap"><table class="tbl">
       <tr><th>Investor</th><th>Enters at</th><th>The metric that flips them</th></tr>
       <tr><td><b>Naval Ravikant</b><br><small style="color:var(--muted)">founder &amp; leverage</small></td><td>Now / angel</td><td class="metric">Why-you + evidence the founding circle compounds (members recruit members). Small check on the person today.</td></tr>
       <tr><td><b>Kirsten Green</b><br><small style="color:var(--muted)">consumer-wellness (Oura)</small></td><td>Seed</td><td class="metric">≥30–40% of Founding 50 sourced by members (not Steven); early NPS + a real second transaction.</td></tr>
       <tr><td><b>Chamath</b><br><small style="color:var(--muted)">unit economics</small></td><td>Seed / A</td><td class="metric">Contribution margin/unit + CAC payback &lt; 6–9 mo on ≥50 non-network buyers; retreat proven accretive.</td></tr>
       <tr><td><b>Marc Andreessen</b><br><small style="color:var(--muted)">market &amp; inevitability</small></td><td>A+</td><td class="metric">A credible path to $1B+ — a recurring/network layer with a why-now, not a $20M hardware boutique.</td></tr>
       <tr><td><b>Elon Musk</b><br><small style="color:var(--muted)">first-principles cost</small></td><td>Likely pass</td><td class="metric">Idiot index (bed cost ÷ raw birch+transducers). Flips only on a 10x manufacturing or defensible tech claim (biometric mirror).</td></tr>
-    </table>
+    </table></div>
 
     <h3 style="font-size:20px;margin:26px 0 8px;color:var(--champ)">Return-to-raise trigger map</h3>
     <div class="trig">
@@ -500,12 +599,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       <div class="row"><div class="t">A live <b>recurring / network layer</b> with early retention<small>Brings Andreessen to the table</small></div><div class="score">→ 80+</div></div>
     </div>
     <p style="font-size:13.5px;color:var(--muted);margin-top:16px"><b style="color:var(--violet-br)">Update — the mitochondrial data changes the read.</b> A measured −25% free-radical drop, rising OCR, and a TED stage give <b style="color:var(--cream)">Musk a defensible tech claim to test</b> and <b style="color:var(--cream)">Chamath a real moat</b>, which lifts the base from 46 to <b style="color:var(--gold-2)">~60/100</b>. The remaining gates: member-sourced demand, unit margins, and the <b>head-to-head baseline study</b> vs. other vibroacoustics (Steven wants to run it; it's the credibility keystone). <b style="color:var(--cream)">Champion:</b> Naval now, Kirsten at seed. <b style="color:var(--cream)">Biggest risk:</b> it stays a founder-dependent object. → <b style="color:var(--gold-2)">68</b> when demand proves it isn't Steven; → <b style="color:var(--gold-2)">76</b> with the baseline study + a repeatable loop.</p>
+  </div>
   </section>
 
   <!-- MARKET -->
-  <section id="market" class="reveal">
+  <section id="market" class="reveal folded">
     <div class="sec-h"><span class="n">09</span><h2>Market &amp; audience</h2></div>
     <p class="sec-sub">Per Steven's direction: one B2C ICP and one B2B ICP, both anchored on <b>measurable</b> mitochondrial benefit, on the mid-2026 longevity wave (Casey Means / <i>Good Energy</i>, Huberman, red-light/PBM, Urolithin A).</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="personas">
       <div class="pc">
         <span class="ptag ptag-b2c">Primary · B2C</span>
@@ -557,12 +659,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
         <li><b>White-glove</b> — personal outreach, in-home or in-clinic demos, concierge onboarding.</li>
       </ul></div>
     </div>
+  </div>
   </section>
 
   <!-- THE FUNNEL -->
-  <section id="funnel" class="reveal">
+  <section id="funnel" class="reveal folded">
     <div class="sec-h"><span class="n">10</span><h2>The funnel — two ICPs</h2></div>
     <p class="sec-sub">Designed with the councils + strategic resolve. Cold traffic won't apply for a $10k+ bed on first touch, so each ICP gets a top and middle of funnel that earns the application. Warm traffic (referral, OPUS) skips straight to it.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="funnels">
       <div class="fn"><h4>B2C · the HNW biohacker</h4>
         <div class="fstage"><div class="fk">Where they are</div><div class="fv">Longevity clinics (Fountain Life, Next Health), events (Biohacker Summit, A4M, RAADfest), longevity media (Attia, Huberman, Kevin Rose), Oura/Whoop communities, family offices.</div></div>
@@ -583,12 +688,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       <div class="row"><span class="prio p-med">Wk 2</span><div class="ft"><b>KOL outreach</b> — a shortlist of longevity voices + the pitch (the book + the measured claim as the hook).</div></div>
       <div class="row"><span class="prio p-low">Live</span><div class="ft"><b>Application flow + resonance call</b> — the bottom of the funnel is already built and verified.</div></div>
     </div>
+  </div>
   </section>
 
   <!-- BOOK -->
-  <section id="book" class="reveal">
+  <section id="book" class="reveal folded">
     <div class="sec-h"><span class="n">11</span><h2>Primal Resonance — the founder's authority</h2></div>
     <p class="sec-sub">The book is the top of the funnel: it makes Dr. Steven the category author, and reframes VIBE from "an expensive bed" to "the object the man who wrote the book makes."</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="bookrow">
       <img loading="lazy" src="../storyboard/gen/book/primal-resonance-art.png" alt="Primal Resonance">
       <div>
@@ -597,12 +705,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
         <p class="note">Placeholder art shown (bioelectric field). Drop the real cover scan at <code>storyboard/gen/book/primal-resonance-cover.jpg</code> and it swaps in.</p>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- DECK -->
-  <section id="deck" class="reveal">
+  <section id="deck" class="reveal folded">
     <div class="sec-h"><span class="n">12</span><h2>Pitch deck — concise</h2></div>
     <p class="sec-sub">A 10-card investor deck, deliberately short. Built to be generated in Gamma so it reads standardized and templated.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="deck">
       <ol>
         <li><b>Title</b> — VIBE. It all begins in the body. Peace is a vibe.</li>
@@ -618,12 +729,15 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
       </ol>
       <p class="note">To auto-generate in Gamma: mark one deck in your Gamma workspace as a <b>Template</b>, then I can generate this into it in one call. Right now the workspace has no template, so this outline is deck-ready to paste or template.</p>
     </div>
+  </div>
   </section>
 
   <!-- ROADMAP -->
-  <section id="road" class="reveal">
+  <section id="road" class="reveal folded">
     <div class="sec-h"><span class="n">13</span><h2>Roadmap — what turns 60 into 80</h2></div>
     <p class="sec-sub">The councils agree on the sequence. Everything here moves real votes and real customers, in order.</p>
+    <button class="fold-toggle" type="button" aria-expanded="false">Read the full section</button>
+    <div class="fold-body" hidden>
     <div class="grid2">
       <div class="blk"><h4>Now → next quarter</h4><ul>
         <li><b>Package the mito proof</b> — a clean one-pager of the −25% / OCR data + TED; it's the wedge and the sales asset.</li>
@@ -640,6 +754,7 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
         <li><b>Bring the trigger-map metrics to Naval, then Kirsten</b> — raise on proof, not story.</li>
       </ul></div>
     </div>
+  </div>
   </section>
 
   <!-- DOWNLOAD THE BUILD -->
@@ -754,6 +869,41 @@ button.mem{font-family:inherit;color:inherit;cursor:pointer;text-align:center;wi
     if(PAYMENT_URL){ location.href=PAYMENT_URL; }
     else { checkoutBtn.textContent='Add your Stripe / Gumroad link to enable'; checkoutBtn.disabled=true; checkoutBtn.style.opacity=.6; }
   });
+
+  // progressive disclosure
+  document.querySelectorAll('.fold-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var body = btn.nextElementSibling, opening = body.hidden;
+      body.hidden = !opening;
+      btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+      btn.childNodes[0].textContent = opening ? 'Collapse ' : 'Read the full section ';
+    });
+  });
+  function expandTarget(hash){
+    if(!hash || hash.length < 2) return;
+    var sec = document.querySelector(hash);
+    if(sec){
+      var b = sec.querySelector('.fold-body[hidden]');
+      if(b){ var t = sec.querySelector('.fold-toggle'); if(t) t.click(); }
+    }
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ try{ expandTarget(a.getAttribute('href')); }catch(e){} });
+  });
+  addEventListener('hashchange', function(){ expandTarget(location.hash); });
+  if(location.hash) expandTarget(location.hash);
+  // scroll-spy
+  var navLinks = {};
+  document.querySelectorAll('nav.sticky a[href^="#"]').forEach(function(a){ navLinks[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        Object.keys(navLinks).forEach(function(k){ navLinks[k].classList.remove('active'); });
+        var l = navLinks[e.target.id]; if(l) l.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-30% 0px -60% 0px'});
+  Object.keys(navLinks).forEach(function(id){ var el = document.getElementById(id); if(el) spy.observe(el); });
 </script>
 </body>
 </html>
