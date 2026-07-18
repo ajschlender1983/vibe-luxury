@@ -42,6 +42,12 @@ h1 em{font-style:normal;color:var(--violet-soft)}
 .sl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.64);margin-bottom:8px}
 .sl label b{font-family:var(--display);font-size:1.2rem;color:var(--gold-1);letter-spacing:0}
 .sl input[type=range]{width:100%;accent-color:rgb(var(--violet));max-width:420px}
+.who{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+.who .wf{flex:1;min-width:200px}
+.who span{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.55);margin-bottom:5px}
+.inp{width:100%;background:rgba(27,15,46,.6);border:1px solid rgba(168,130,246,.3);border-radius:10px;padding:.7em .9em;color:rgb(var(--cream));font:400 .95rem var(--body)}
+.inp:focus{outline:none;border-color:var(--violet-soft)}
+.plan-h .prep{font-size:.82rem;color:var(--champ);margin-top:8px;letter-spacing:.02em}
 /* the plan */
 .plan{margin-top:12px;border:1px solid rgba(233,200,154,.4);border-radius:20px;overflow:hidden;
   background:linear-gradient(170deg,rgba(233,200,154,.09),rgba(139,92,246,.05))}
@@ -95,6 +101,10 @@ footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:ce
   <div class="sl no-print">
     <label>Your price per session <b id="vPrice">$150</b></label>
     <input type="range" id="price" min="75" max="400" step="5" value="150">
+  </div>
+  <div class="who no-print">
+    <label class="wf"><span>Client's first name (optional)</span><input class="inp" id="clientName" placeholder="e.g. Jordan"></label>
+    <label class="wf"><span>Your clinic (optional)</span><input class="inp" id="clinicName" placeholder="e.g. Continuum Wellness"></label>
   </div>
 
   <div class="sec-k">2 · Their plan</div>
@@ -155,9 +165,13 @@ function render(){
 
   var plan=document.getElementById('plan'); plan.textContent='';
   var h=el('div','plan-h');
-  h.appendChild(el('div','pk','Your client’s protocol'));
+  var client=document.getElementById('clientName').value.trim();
+  var clinic=document.getElementById('clinicName').value.trim();
+  h.appendChild(el('div','pk',client?('A plan for '+client):'Your client’s protocol'));
   h.appendChild(el('div','pn',goal.plan));
   h.appendChild(el('div','pd',goal.desc));
+  var parts=[]; if(clinic)parts.push(clinic); parts.push(new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'}));
+  h.appendChild(el('div','prep','Prepared '+(clinic?'by ':'')+parts.join(' · ')));
   plan.appendChild(h);
   var tiers=el('div','tiers');
   tiers.appendChild(tierNode('Start here','Experience','A single session to feel it',pr,'',false));
@@ -169,7 +183,7 @@ function render(){
 
   var cm=document.getElementById('cmath'); cm.textContent='';
   cm.appendChild(el('div','k','What this earns your room'));
-  var p1=el('p'); p1.appendChild(document.createTextNode('One '+goal.plan+' Core Series = '));
+  var p1=el('p'); p1.appendChild(document.createTextNode('One Core Series (' + goal.plan + ') = '));
   p1.appendChild(el('b',null,fmt(corePrice))); p1.appendChild(document.createTextNode('. Once the bed is placed, a session’s only real cost is staff time and the room — so most of that is margin.'));
   cm.appendChild(p1);
   var ratio=corePrice/LEASE_MO;
@@ -180,6 +194,8 @@ function render(){
   cm.appendChild(p2);
 }
 price.addEventListener('input',render);
+document.getElementById('clientName').addEventListener('input',render);
+document.getElementById('clinicName').addEventListener('input',render);
 render();
 </script>
 </body>

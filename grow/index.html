@@ -59,6 +59,7 @@ h1 em{font-style:normal;color:var(--violet-soft)}
 .pl .c .v{font-family:var(--display);font-size:1.7rem;color:#fff8f4;line-height:1}
 .pl .c .v.good{color:var(--good)} .pl .c .v.gold{color:var(--gold-1)}
 .pl .c .l{font-size:.76rem;color:rgb(var(--cream)/.6);margin-top:4px}
+.payline{margin-top:14px;text-align:center;font-size:1rem;color:var(--good);font-weight:400}
 .credit{margin-top:14px;font-size:.84rem;color:var(--good);display:flex;gap:.5em;align-items:flex-start}
 .assump{margin-top:12px;font-size:.72rem;color:var(--warn);line-height:1.5}
 .assump code{background:rgba(232,180,90,.08);border:1px solid rgba(232,180,90,.3);border-radius:5px;padding:1px 6px;color:var(--warn)}
@@ -136,15 +137,16 @@ footer{margin-top:40px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:ce
     </div>
     <div class="sgrid">
       <div class="sl"><label>Sessions a week <b id="vSess">5</b></label>
-        <input type="range" id="sess" min="2" max="30" value="5"></div>
+        <input type="range" id="sess" min="2" max="30" value="5" aria-label="Sessions a week"></div>
       <div class="sl"><label>Your price per session <b id="vPrice">$150</b></label>
-        <input type="range" id="price" min="75" max="400" step="5" value="150"></div>
+        <input type="range" id="price" min="75" max="400" step="5" value="150" aria-label="Your price per session"></div>
     </div>
     <div class="pl">
       <div class="c"><div class="v gold" id="rev">—</div><div class="l">Monthly revenue from the bed</div></div>
       <div class="c"><div class="v" id="pay">—</div><div class="l">Your monthly cost (this door)</div></div>
       <div class="c"><div class="v good" id="net">—</div><div class="l">Monthly profit after that</div></div>
     </div>
+    <div class="payline" id="payline"></div>
     <div class="credit" id="creditNote">✦ <span>On the lease, every dollar of your first six months applies toward owning it — trying it is never wasted money.</span></div>
     <p class="assump">Numbers use <i>your</i> pricing and are yours to verify — never a guarantee of income. Financing shown at <code>~12% APR · 24 mo</code> and the lease at <code>$1,650/mo · 6-mo min</code> are working assumptions; <b>Steven finalizes the real lease &amp; finance terms.</b></p>
   </div>
@@ -219,16 +221,20 @@ function calc(){
   document.getElementById('rev').textContent=fmt(rev);
   document.getElementById('pay').textContent=cost?fmt(cost):'$0';
   document.getElementById('net').textContent=fmt(net);
+  var payline=document.getElementById('payline');
   if(door==='buy'){
+    var months=Math.max(1,Math.ceil(PRICE/rev));
     document.getElementById('heroK').textContent='It pays for itself in';
-    document.getElementById('heroBig').textContent=sessionsToCover(PRICE,pr).toLocaleString();
-    document.getElementById('heroLead').textContent='sessions. ';
+    document.getElementById('heroBig').textContent=months;
+    document.getElementById('heroLead').textContent=(months===1?'month. ':'months. ');
     document.getElementById('heroBold').textContent='After that the room is pure margin.';
+    payline.textContent='At this pace, ~'+sessionsToCover(PRICE,pr).toLocaleString()+' sessions clears it — then every session is yours.';
   } else {
     document.getElementById('heroK').textContent='You cover it with';
     document.getElementById('heroBig').textContent=sessionsToCover(cost,pr);
     document.getElementById('heroLead').textContent='clients a month. ';
     document.getElementById('heroBold').textContent='Everything after that is profit.';
+    payline.textContent='In profit from month one — every dollar past the '+fmt(cost)+' is yours.';
   }
   document.getElementById('creditNote').style.display=(door==='lease')?'flex':'none';
 }
