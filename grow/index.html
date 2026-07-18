@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grow your practice with VIBE — the room that pays for itself</title>
+<meta name="description" content="See how a HyperVIBE pays for itself in a handful of sessions a month. Own it, spread it, or try it on a short lease. Then book a call.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --warn:#e8b45a; --muted:#9a8fb0;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.55;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 80% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
+a{color:rgb(var(--violet-soft))}
+.wrap{max-width:920px;margin:0 auto;padding:clamp(20px,5vw,44px) clamp(16px,5vw,40px) 90px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.eyebrow{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.4vw,3.3rem);letter-spacing:.02em;line-height:1.06;margin:10px 0}
+h1 em{font-style:normal;color:var(--violet-soft)}
+.sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:60ch;margin-bottom:8px}
+.hero-num{margin:22px 0 6px;text-align:center;border:1px solid rgba(233,200,154,.4);border-radius:20px;
+  padding:clamp(22px,4vw,34px);background:linear-gradient(165deg,rgba(233,200,154,.09),rgba(139,92,246,.06))}
+.hero-num .k{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--champ)}
+.hero-num .big{font-family:var(--display);font-size:clamp(3rem,11vw,5.6rem);line-height:.98;color:var(--gold-1);margin:6px 0}
+.hero-num .cap{font-size:1.02rem;color:rgb(var(--cream)/.86)}
+.hero-num .cap b{color:var(--good)}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 6px}
+@media(max-width:620px){.doors{grid-template-columns:1fr}}
+.door{position:relative;text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:14px;padding:16px 16px 15px;
+  background:rgba(27,15,46,.55);cursor:pointer;transition:all .2s}
+.door:hover{border-color:rgba(168,130,246,.6)}
+.door.on{border-color:var(--gold-2);background:linear-gradient(180deg,rgba(233,200,154,.12),rgba(27,15,46,.5));box-shadow:0 0 0 1px rgba(233,200,154,.4)}
+.door .verb{font-family:var(--display);font-size:1.35rem;color:#fff8f4;letter-spacing:.02em}
+.door .amt{font-size:1.02rem;color:var(--gold-1);margin:3px 0 2px;font-weight:700}
+.door .note{font-size:.8rem;color:rgb(var(--cream)/.66);line-height:1.4}
+.door .rec{position:absolute;top:-9px;right:12px;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+  background:linear-gradient(180deg,#f7e8b4,#e4c56b);color:#1b0f2e;border-radius:999px;padding:.3em .7em;font-weight:700}
+.calc{border:1px solid rgba(255,250,247,.1);border-radius:16px;padding:clamp(18px,4vw,26px);margin-top:14px;background:rgba(255,250,247,.02)}
+.scn{display:inline-flex;gap:4px;background:rgba(27,15,46,.7);border:1px solid rgba(168,130,246,.2);border-radius:999px;padding:4px;margin-bottom:16px}
+.scn button{background:none;border:0;color:rgb(var(--cream)/.7);font:500 .78rem/1 var(--body);padding:.5em 1em;border-radius:999px;cursor:pointer}
+.scn button.on{background:linear-gradient(180deg,#f7e8b4,#e4c56b);color:#1b0f2e}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+@media(max-width:560px){.sgrid{grid-template-columns:1fr}}
+.sl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.64);margin-bottom:8px}
+.sl label b{font-family:var(--display);font-size:1.2rem;color:var(--gold-1);letter-spacing:0}
+.sl input[type=range]{width:100%;accent-color:rgb(var(--violet))}
+.pl{margin-top:18px;border-top:1px solid rgba(255,250,247,.12);padding-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+@media(max-width:560px){.pl{grid-template-columns:1fr;gap:8px;text-align:left}}
+.pl .c .v{font-family:var(--display);font-size:1.7rem;color:#fff8f4;line-height:1}
+.pl .c .v.good{color:var(--good)} .pl .c .v.gold{color:var(--gold-1)}
+.pl .c .l{font-size:.76rem;color:rgb(var(--cream)/.6);margin-top:4px}
+.credit{margin-top:14px;font-size:.84rem;color:var(--good);display:flex;gap:.5em;align-items:flex-start}
+.assump{margin-top:12px;font-size:.72rem;color:var(--warn);line-height:1.5}
+.assump code{background:rgba(232,180,90,.08);border:1px solid rgba(232,180,90,.3);border-radius:5px;padding:1px 6px;color:var(--warn)}
+.aband{margin-top:34px;border-top:1px solid rgba(168,130,246,.16);padding-top:26px}
+.step{display:none} .step.on{display:block;animation:fade .4s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2rem);color:#fff8f4;margin:4px 0 4px}
+.qs{font-size:.82rem;color:rgb(var(--cream)/.55);margin-bottom:16px}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:1rem;border:1px solid rgba(168,130,246,.25);border-radius:12px;
+  padding:15px 18px;margin-bottom:10px;cursor:pointer;transition:all .2s;font-size:1.02rem}
+.opt:hover{border-color:rgba(168,130,246,.55)}
+.opt.on{border-color:var(--gold-2);background:rgba(233,200,154,.08)}
+.opt .dot{width:20px;height:20px;border-radius:50%;border:2px solid rgba(168,130,246,.5);flex:none}
+.opt.on .dot{border-color:var(--gold-2);background:radial-gradient(circle,#e4c56b 40%,transparent 46%)}
+.fld{display:block;margin-bottom:12px}
+.fld span{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.6);margin-bottom:6px}
+.inp{width:100%;background:rgba(27,15,46,.6);border:1px solid rgba(168,130,246,.3);border-radius:10px;padding:.85em 1em;color:rgb(var(--cream));font:400 1rem var(--body)}
+.inp:focus{outline:none;border-color:var(--violet-soft)}
+.nav{display:flex;gap:10px;align-items:center;margin-top:18px}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.95em 2em;border-radius:999px;font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all .3s var(--ease);text-decoration:none}
+.btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}
+.btn-solid:hover{background:var(--violet-soft);color:var(--aub2)}
+.btn-ghost{border-color:rgb(var(--cream)/.28);color:rgb(var(--cream));background:none}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.err{color:var(--warn);font-size:.82rem;min-height:1em;margin-top:6px}
+.prog{display:flex;gap:5px;margin-bottom:20px}
+.prog i{height:4px;flex:1;border-radius:99px;background:rgba(255,250,247,.12)}
+.prog i.on{background:linear-gradient(90deg,var(--gold-2),var(--violet-soft))}
+.thanks{text-align:center;padding:20px 0}
+.thanks .ic{font-size:2.4rem}
+.thanks h2{font-family:var(--display);font-size:2rem;margin:8px 0}
+footer{margin-top:40px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center;line-height:1.6}
+.disc{font-size:.72rem;color:rgb(var(--cream)/.4);max-width:70ch;margin:22px auto 0;text-align:center;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="../">VIBE</a>
+    <span class="eyebrow">For your practice</span>
+  </div>
+
+  <p class="eyebrow">The room that pays for itself</p>
+  <h1>Add VIBE to your practice — <em>without the risk</em>.</h1>
+  <p class="sub">A HyperVIBE is a premium, measurable session your clients feel in twenty minutes. Move the two sliders to your own numbers and watch it pay for itself.</p>
+
+  <!-- THE ONE NUMBER -->
+  <div class="hero-num">
+    <div class="k" id="heroK">You cover it with</div>
+    <div class="big" id="heroBig">—</div>
+    <div class="cap"><span id="heroLead">clients a month. </span><b id="heroBold">Everything after that is profit.</b></div>
+  </div>
+
+  <!-- THREE DOORS -->
+  <div class="doors" id="doors">
+    <button class="door" data-door="buy" type="button">
+      <div class="verb">Own it</div><div class="amt">$24,999 once</div>
+      <div class="note">Best long-run economics. Keep 100% of every session.</div></button>
+    <button class="door" data-door="finance" type="button">
+      <div class="verb">Spread it</div><div class="amt" id="finAmt">—/mo</div>
+      <div class="note">Own it over time. Cash-flow positive from month one.</div></button>
+    <button class="door on" data-door="lease" type="button"><span class="rec">Start here</span>
+      <div class="verb">Try it</div><div class="amt" id="leaseAmt">—/mo</div>
+      <div class="note">Start earning in 30 days. Cancel any time after six months.</div></button>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc">
+    <div class="scn" id="scn">
+      <button data-s="con" class="on">Conservative</button>
+      <button data-s="exp">Expected</button>
+      <button data-s="agg">Busy room</button>
+    </div>
+    <div class="sgrid">
+      <div class="sl"><label>Sessions a week <b id="vSess">5</b></label>
+        <input type="range" id="sess" min="2" max="30" value="5"></div>
+      <div class="sl"><label>Your price per session <b id="vPrice">$150</b></label>
+        <input type="range" id="price" min="75" max="400" step="5" value="150"></div>
+    </div>
+    <div class="pl">
+      <div class="c"><div class="v gold" id="rev">—</div><div class="l">Monthly revenue from the bed</div></div>
+      <div class="c"><div class="v" id="pay">—</div><div class="l">Your monthly cost (this door)</div></div>
+      <div class="c"><div class="v good" id="net">—</div><div class="l">Monthly profit after that</div></div>
+    </div>
+    <div class="credit" id="creditNote">✦ <span>On the lease, every dollar of your first six months applies toward owning it — trying it is never wasted money.</span></div>
+    <p class="assump">Numbers use <i>your</i> pricing and are yours to verify — never a guarantee of income. Financing shown at <code>~12% APR · 24 mo</code> and the lease at <code>$1,650/mo · 6-mo min</code> are working assumptions; <b>Steven finalizes the real lease &amp; finance terms.</b></p>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="aband">
+    <div class="prog" id="prog"><i class="on"></i><i></i><i></i></div>
+
+    <div class="step on" data-step="0">
+      <div class="q">What's your main goal in adding VIBE?</div>
+      <div class="qs">Select all that apply.</div>
+      <div id="goals"></div>
+      <div class="nav"><div class="spacer"></div><button class="btn btn-solid" type="button" data-next>Continue</button></div>
+    </div>
+
+    <div class="step" data-step="1">
+      <div class="q">When are you planning to get started?</div>
+      <div class="qs">One choice.</div>
+      <div id="timing"></div>
+      <div class="nav"><button class="btn btn-ghost" type="button" data-back>Back</button><div class="spacer"></div></div>
+    </div>
+
+    <div class="step" data-step="2">
+      <div class="q">Where should we send your ROI summary &amp; book your call?</div>
+      <div class="qs">A member of the team will walk your room with you — in person where we can.</div>
+      <label class="fld"><span>Your name</span><input class="inp" id="fName" autocomplete="name"></label>
+      <label class="fld"><span>Practice / center</span><input class="inp" id="fBiz" autocomplete="organization"></label>
+      <label class="fld"><span>Email</span><input class="inp" id="fEmail" type="email" autocomplete="email"></label>
+      <label class="fld"><span>Phone</span><input class="inp" id="fPhone" type="tel" autocomplete="tel"></label>
+      <div class="err" id="err"></div>
+      <div class="nav"><button class="btn btn-ghost" type="button" data-back>Back</button><div class="spacer"></div>
+        <button class="btn btn-solid" type="button" id="submit">Book my call →</button></div>
+    </div>
+
+    <div class="step" data-step="3">
+      <div class="thanks">
+        <div class="ic">🗓️</div>
+        <h2>You're in.</h2>
+        <p class="sub" style="margin:0 auto 18px">We'll reach out to walk your room and your numbers. Pick a time now, or we'll come to you.</p>
+        <a class="btn btn-solid" id="bookBtn" href="#" target="_blank" rel="noopener">Pick a time</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="disc">VIBE is a wellness product. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease. Figures are illustrative, based on your inputs, and are not a guarantee of income.</p>
+  <footer>VIBE · Bioharmonic Technologies — Engineered resonance. Measurable repair.</footer>
+</div>
+
+<script>
+/* ===== shared math engine (identical to the Protocol Builder in /onboard/) ===== */
+var PRICE=24999;
+var FIN_APR=0.12, FIN_MONTHS=24;               // financing assumption
+var LEASE_MO=1650, LEASE_MIN=6;                // lease assumption (Steven finalizes)
+function financeMonthly(){var r=FIN_APR/12;return PRICE*(r*Math.pow(1+r,FIN_MONTHS))/(Math.pow(1+r,FIN_MONTHS)-1);}
+function monthlyRevenue(sessWk,price){return sessWk*price*4.33;}
+function sessionsToCover(monthlyCost,price){return Math.max(1,Math.ceil(monthlyCost/price));}
+var DOOR_COST={buy:0, finance:financeMonthly(), lease:LEASE_MO};
+function fmt(n){return '$'+Math.round(n).toLocaleString();}
+
+var SCN={con:{sess:5,price:150}, exp:{sess:9,price:175}, agg:{sess:16,price:200}};
+var door='lease';
+
+var sess=document.getElementById('sess'), price=document.getElementById('price');
+function calc(){
+  var sw=+sess.value, pr=+price.value;
+  document.getElementById('vSess').textContent=sw;
+  document.getElementById('vPrice').textContent='$'+pr;
+  var rev=monthlyRevenue(sw,pr);
+  document.getElementById('finAmt').textContent=fmt(DOOR_COST.finance)+'/mo';
+  document.getElementById('leaseAmt').textContent=fmt(DOOR_COST.lease)+'/mo';
+  var cost=DOOR_COST[door], net=rev-cost;
+  document.getElementById('rev').textContent=fmt(rev);
+  document.getElementById('pay').textContent=cost?fmt(cost):'$0';
+  document.getElementById('net').textContent=fmt(net);
+  if(door==='buy'){
+    document.getElementById('heroK').textContent='It pays for itself in';
+    document.getElementById('heroBig').textContent=sessionsToCover(PRICE,pr).toLocaleString();
+    document.getElementById('heroLead').textContent='sessions. ';
+    document.getElementById('heroBold').textContent='After that the room is pure margin.';
+  } else {
+    document.getElementById('heroK').textContent='You cover it with';
+    document.getElementById('heroBig').textContent=sessionsToCover(cost,pr);
+    document.getElementById('heroLead').textContent='clients a month. ';
+    document.getElementById('heroBold').textContent='Everything after that is profit.';
+  }
+  document.getElementById('creditNote').style.display=(door==='lease')?'flex':'none';
+}
+sess.addEventListener('input',calc); price.addEventListener('input',calc);
+
+document.getElementById('doors').addEventListener('click',function(e){
+  var b=e.target.closest('.door'); if(!b)return; door=b.dataset.door;
+  [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b);});
+  calc();
+});
+document.getElementById('scn').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b)return;
+  [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b);});
+  var s=SCN[b.dataset.s]; sess.value=s.sess; price.value=s.price; calc();
+});
+
+/* ===== assessment ===== */
+var GOALS=['Increase revenue','Improve client retention','Attract new clients','Add premium services','Other'];
+var TIMING=['Immediately','In the next 3–6 months','In 6–12 months','In 12+ months'];
+var picked={goals:[],timing:null};
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+var gWrap=document.getElementById('goals');
+GOALS.forEach(function(g){
+  var o=el('div','opt'); o.appendChild(el('span',null,g)); o.appendChild(el('span','dot'));
+  o.addEventListener('click',function(){var i=picked.goals.indexOf(g);if(i>-1){picked.goals.splice(i,1);o.classList.remove('on');}else{picked.goals.push(g);o.classList.add('on');}});
+  gWrap.appendChild(o);
+});
+var tWrap=document.getElementById('timing');
+TIMING.forEach(function(t){
+  var o=el('div','opt'); o.appendChild(el('span',null,t)); o.appendChild(el('span','dot'));
+  o.addEventListener('click',function(){picked.timing=t;[].forEach.call(tWrap.children,function(x){x.classList.toggle('on',x===o);});setTimeout(function(){go(2);},220);});
+  tWrap.appendChild(o);
+});
+
+var stepEls=[].slice.call(document.querySelectorAll('.step')), progEls=[].slice.call(document.querySelectorAll('#prog i')), cur=0;
+function go(n){cur=n;stepEls.forEach(function(s){s.classList.toggle('on',+s.dataset.step===n);});progEls.forEach(function(p,i){p.classList.toggle('on',i<=Math.min(n,2));});window.scrollTo({top:document.querySelector('.aband').offsetTop-30,behavior:'smooth'});}
+document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){go(1);});});
+document.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){go(Math.max(0,cur-1));});});
+
+/* ===== submit — founder wires these ===== */
+var LEAD_ENDPOINT="";                 // e.g. Formspree URL
+var BOOKING_URL="";                   // e.g. Calendly URL
+document.getElementById('bookBtn').addEventListener('click',function(e){ if(!BOOKING_URL){e.preventDefault(); alert('Add your Calendly link (BOOKING_URL) to enable booking.');}});
+if(BOOKING_URL) document.getElementById('bookBtn').href=BOOKING_URL;
+document.getElementById('submit').addEventListener('click',function(){
+  var name=document.getElementById('fName').value.trim(),
+      biz=document.getElementById('fBiz').value.trim(),
+      email=document.getElementById('fEmail').value.trim(),
+      phone=document.getElementById('fPhone').value.trim(),
+      err=document.getElementById('err');
+  if(!name){err.textContent='Your name, please.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent='A valid email, please.';return;}
+  if(phone.replace(/\D/g,'').length<7){err.textContent='A phone we can reach you at.';return;}
+  err.textContent='';
+  var payload={name:name,practice:biz,email:email,phone:phone,goals:picked.goals,timing:picked.timing,
+    sessionsPerWeek:+sess.value, pricePerSession:+price.value, door:door};
+  if(LEAD_ENDPOINT){
+    fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
+  } else {
+    var body=encodeURIComponent('New VIBE practice lead:\n'+JSON.stringify(payload,null,2));
+    window.location.href='mailto:hello@healwithvibe.com?subject='+encodeURIComponent('VIBE practice lead — '+(biz||name))+'&body='+body;
+  }
+  go(3);
+});
+
+calc();
+</script>
+</body>
+</html>

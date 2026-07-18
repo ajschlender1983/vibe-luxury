@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIBE Protocol Builder — build your client's session plan</title>
+<meta name="description" content="Turn a HyperVIBE session into a multi-session package your clients buy. Pick a goal, set your price, hand them a beautiful plan.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --warn:#e8b45a; --muted:#9a8fb0;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.55;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 80% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
+a{color:rgb(var(--violet-soft))}
+.wrap{max-width:960px;margin:0 auto;padding:clamp(20px,5vw,44px) clamp(16px,5vw,40px) 90px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.eyebrow{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.2vw,3.1rem);letter-spacing:.02em;line-height:1.06;margin:8px 0}
+h1 em{font-style:normal;color:var(--violet-soft)}
+.sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:64ch;margin-bottom:8px}
+.sec-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin:26px 0 10px}
+/* goal cards */
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:680px){.goals{grid-template-columns:1fr}}
+.goal{text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:14px;padding:18px;background:rgba(27,15,46,.55);cursor:pointer;transition:all .2s}
+.goal:hover{border-color:rgba(168,130,246,.6)}
+.goal.on{border-color:var(--gold-2);background:linear-gradient(180deg,rgba(233,200,154,.12),rgba(27,15,46,.5))}
+.goal .nm{font-family:var(--display);font-size:1.35rem;color:#fff8f4}
+.goal .fe{font-size:.86rem;color:rgb(var(--cream)/.66);margin-top:4px}
+/* price slider */
+.sl{margin-top:20px}
+.sl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.64);margin-bottom:8px}
+.sl label b{font-family:var(--display);font-size:1.2rem;color:var(--gold-1);letter-spacing:0}
+.sl input[type=range]{width:100%;accent-color:rgb(var(--violet));max-width:420px}
+/* the plan */
+.plan{margin-top:12px;border:1px solid rgba(233,200,154,.4);border-radius:20px;overflow:hidden;
+  background:linear-gradient(170deg,rgba(233,200,154,.09),rgba(139,92,246,.05))}
+.plan-h{padding:22px clamp(20px,4vw,32px) 8px}
+.plan-h .pk{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--champ)}
+.plan-h .pn{font-family:var(--display);font-size:clamp(1.8rem,4.4vw,2.6rem);color:#fff8f4;margin:4px 0}
+.plan-h .pd{font-size:.95rem;color:rgb(var(--cream)/.78);max-width:60ch}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(233,200,154,.2);margin-top:14px}
+@media(max-width:680px){.tiers{grid-template-columns:1fr}}
+.tier{padding:20px clamp(16px,3vw,24px);border-right:1px solid rgba(233,200,154,.16)}
+.tier:last-child{border-right:0}
+@media(max-width:680px){.tier{border-right:0;border-bottom:1px solid rgba(233,200,154,.16)}}
+.tier.hero{background:rgba(233,200,154,.06)}
+.tier .tt{font-family:var(--display);font-size:1.25rem;color:#fff8f4}
+.tier .tag{display:inline-block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#1b0f2e;background:linear-gradient(180deg,#f7e8b4,#e4c56b);border-radius:999px;padding:.24em .6em;margin-bottom:6px}
+.tier .cad{font-size:.82rem;color:rgb(var(--cream)/.62);margin:4px 0 10px}
+.tier .pr{font-family:var(--display);font-size:2rem;color:var(--gold-1);line-height:1}
+.tier .pr small{font-family:var(--body);font-size:.8rem;color:rgb(var(--cream)/.55)}
+.tier .fe{font-size:.82rem;color:rgb(var(--cream)/.7);margin-top:8px;line-height:1.45}
+/* clinic math */
+.cmath{margin-top:16px;border:1px solid rgba(143,227,176,.3);border-radius:14px;padding:18px 20px;background:rgba(143,227,176,.05)}
+.cmath .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--good);margin-bottom:8px}
+.cmath p{font-size:.95rem;color:rgb(var(--cream)/.86);margin:5px 0}
+.cmath b{color:var(--good)}
+.cmath .tie{font-size:.86rem;color:rgb(var(--cream)/.66);margin-top:8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.9em 1.8em;border-radius:999px;font-size:.76rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all .3s var(--ease);text-decoration:none}
+.btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}
+.btn-solid:hover{background:var(--violet-soft);color:var(--aub2)}
+.btn-ghost{border-color:rgb(var(--cream)/.28);color:rgb(var(--cream));background:none}
+.disc{font-size:.72rem;color:rgb(var(--cream)/.42);max-width:74ch;margin:22px 0 0;line-height:1.6}
+footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center}
+@media print{body{background:#fff;color:#111}.top,.goals,.sl,.actions,footer,.no-print{display:none!important}.plan{border-color:#caa}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="../">VIBE</a>
+    <span class="eyebrow">Protocol Builder · for your clients</span>
+  </div>
+
+  <p class="eyebrow">Turn one session into a package</p>
+  <h1>Build your client's <em>plan</em>.</h1>
+  <p class="sub">A single session is a nice add-on. A <b>protocol</b> is a business. Pick your client's goal and your price — VIBE builds a multi-session package you can hand them, and shows the money it makes your room.</p>
+
+  <div class="sec-k">1 · What does this client want?</div>
+  <div class="goals" id="goals"></div>
+
+  <div class="sl no-print">
+    <label>Your price per session <b id="vPrice">$150</b></label>
+    <input type="range" id="price" min="75" max="400" step="5" value="150">
+  </div>
+
+  <div class="sec-k">2 · Their plan</div>
+  <div class="plan" id="plan"></div>
+
+  <div class="cmath" id="cmath"></div>
+
+  <div class="actions no-print">
+    <button class="btn btn-solid" onclick="window.print()">Print / save this plan</button>
+    <a class="btn btn-ghost" href="../grow/">See what the bed earns your room →</a>
+  </div>
+
+  <p class="disc">For wellness use. VIBE sessions are an experience of deep rest and recovery — not a medical treatment, and not intended to diagnose, treat, cure, or prevent any disease. Describe benefits experientially (rest, recovery, calm), never as a clinical outcome. Prices are the clinic's own; margins depend on your costs.</p>
+  <footer>VIBE · Bioharmonic Technologies — Engineered resonance. Measurable repair.</footer>
+</div>
+
+<script>
+/* ===== shared math engine (identical to the ROI tool in /grow/) ===== */
+var LEASE_MO=1650;                                  // matches /grow/ lease assumption
+function fmt(n){return '$'+Math.round(n).toLocaleString();}
+
+/* goals → an experiential protocol (wellness language only, always multi-session) */
+var GOALS=[
+  {key:'reset', nm:'Deep rest & stress', plan:'The Reset',
+   desc:'For the client carrying tension they can’t put down. A guided reset of the nervous system toward calm and deep rest.',
+   core:{n:12,weeks:6,cad:'2× a week for 6 weeks'}, feel:'Most report feeling settled, sleeping deeper, and more like themselves by the end.'},
+  {key:'coherence', nm:'Recovery & performance', plan:'The Coherence Series',
+   desc:'For the athlete, executive, or high-output client who wants to recover faster and stay steady under load.',
+   core:{n:10,weeks:5,cad:'2× a week for 5 weeks'}, feel:'Clients describe faster recovery, steadier energy, and a clearer head.'},
+  {key:'vitality', nm:'Longevity & vitality', plan:'The Vitality Protocol',
+   desc:'For the longevity-minded client building a daily practice around how they age and feel.',
+   core:{n:8,weeks:8,cad:'weekly for 8 weeks, then monthly'}, feel:'A sustainable rhythm clients keep — the practice they look forward to.'}
+];
+var goal=GOALS[0];
+
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+
+var gWrap=document.getElementById('goals');
+GOALS.forEach(function(g){
+  var b=el('div','goal'+(g===goal?' on':'')); b.appendChild(el('div','nm',g.nm)); b.appendChild(el('div','fe',g.plan));
+  b.addEventListener('click',function(){goal=g;[].forEach.call(gWrap.children,function(x){x.classList.toggle('on',x===b);});render();});
+  gWrap.appendChild(b);
+});
+
+var price=document.getElementById('price');
+function tierNode(tag,title,cad,pr,note,hero){
+  var t=el('div','tier'+(hero?' hero':''));
+  if(tag)t.appendChild(el('span','tag',tag));
+  t.appendChild(el('div','tt',title));
+  t.appendChild(el('div','cad',cad));
+  var p=el('div','pr'); p.appendChild(document.createTextNode(fmt(pr))); if(note)p.appendChild(el('small',null,' '+note));
+  t.appendChild(p);
+  return t;
+}
+function render(){
+  var pr=+price.value; document.getElementById('vPrice').textContent='$'+pr;
+  var core=goal.core, corePrice=core.n*pr, maint=4*pr;
+
+  var plan=document.getElementById('plan'); plan.textContent='';
+  var h=el('div','plan-h');
+  h.appendChild(el('div','pk','Your client’s protocol'));
+  h.appendChild(el('div','pn',goal.plan));
+  h.appendChild(el('div','pd',goal.desc));
+  plan.appendChild(h);
+  var tiers=el('div','tiers');
+  tiers.appendChild(tierNode('Start here','Experience','A single session to feel it',pr,'',false));
+  var cs=tierNode('The protocol','Core Series',core.cad,corePrice,'· '+core.n+' sessions',true);
+  cs.appendChild(el('div','fe',goal.feel));
+  tiers.appendChild(cs);
+  tiers.appendChild(tierNode('Keep it going','Maintenance','4 sessions a month',maint,'/mo',false));
+  plan.appendChild(tiers);
+
+  var cm=document.getElementById('cmath'); cm.textContent='';
+  cm.appendChild(el('div','k','What this earns your room'));
+  var p1=el('p'); p1.appendChild(document.createTextNode('One '+goal.plan+' Core Series = '));
+  p1.appendChild(el('b',null,fmt(corePrice))); p1.appendChild(document.createTextNode('. Once the bed is placed, a session’s only real cost is staff time and the room — so most of that is margin.'));
+  cm.appendChild(p1);
+  var ratio=corePrice/LEASE_MO;
+  var p2=el('p','tie');
+  p2.appendChild(document.createTextNode('Your target is dead simple: '));
+  p2.appendChild(el('b',null,'convert one client into a Core Series a week.'));
+  p2.appendChild(document.createTextNode(' At '+fmt(corePrice)+' each, that’s about '+ratio.toFixed(1)+'× your monthly lease in the door every week — the bed pays for itself and then some.'));
+  cm.appendChild(p2);
+}
+price.addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
