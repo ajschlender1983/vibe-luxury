@@ -29,14 +29,22 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.2vw,3.1rem)
 h1 em{font-style:normal;color:var(--violet-soft)}
 .sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:64ch;margin-bottom:8px}
 .sec-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin:26px 0 10px}
+.bedshot{margin:18px 0 4px;border-radius:18px;overflow:hidden;border:1px solid rgba(168,130,246,.2);position:relative}
+.bedshot img{width:100%;display:block}
+.bedshot .cap{position:absolute;left:16px;bottom:12px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream)/.85);text-shadow:0 1px 6px rgba(0,0,0,.6)}
 /* goal cards */
 .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:680px){.goals{grid-template-columns:1fr}}
-.goal{text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:14px;padding:18px;background:rgba(27,15,46,.55);cursor:pointer;transition:all .2s}
-.goal:hover{border-color:rgba(168,130,246,.6)}
-.goal.on{border-color:var(--gold-2);background:linear-gradient(180deg,rgba(233,200,154,.12),rgba(27,15,46,.5))}
-.goal .nm{font-family:var(--display);font-size:1.35rem;color:#fff8f4}
-.goal .fe{font-size:.86rem;color:rgb(var(--cream)/.66);margin-top:4px}
+.goal{text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:16px;overflow:hidden;background:rgba(27,15,46,.55);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column}
+.goal:hover{border-color:rgba(168,130,246,.6);transform:translateY(-2px)}
+.goal.on{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2)}
+.goal .av{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 20%;display:block}
+.goal .txt{padding:14px 16px 16px}
+.goal .nm{font-family:var(--display);font-size:1.3rem;color:#fff8f4;line-height:1.1}
+.goal .fe{font-size:.86rem;color:var(--champ);margin-top:4px}
+.goal.on .fe{color:var(--gold-1)}
+.plan-h .pn-row{display:flex;align-items:center;gap:14px}
+.plan-h .pav{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid rgba(233,200,154,.5);flex:none}
 /* price slider */
 .sl{margin-top:20px}
 .sl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.64);margin-bottom:8px}
@@ -95,7 +103,9 @@ footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:ce
   <h1>Build your client's <em>plan</em>.</h1>
   <p class="sub">A single session is a nice add-on. A <b>protocol</b> is a business. Pick your client's goal and your price — VIBE builds a multi-session package you can hand them, and shows the money it makes your room.</p>
 
-  <div class="sec-k">1 · What does this client want?</div>
+  <div class="bedshot"><img src="../storyboard/gen/products/vibe-bed.png" alt="The HyperVIBE — a vibroacoustic bed with a cream swirl-quilt surface on a birch arch frame"><span class="cap">The HyperVIBE · what your client lies on</span></div>
+
+  <div class="sec-k">1 · Who is this client?</div>
   <div class="goals" id="goals"></div>
 
   <div class="sl no-print">
@@ -128,13 +138,13 @@ function fmt(n){return '$'+Math.round(n).toLocaleString();}
 
 /* goals → an experiential protocol (wellness language only, always multi-session) */
 var GOALS=[
-  {key:'reset', nm:'Deep rest & stress', plan:'The Reset',
+  {key:'reset', av:'cust-rest.png', nm:'Deep rest & stress', plan:'The Reset',
    desc:'For the client carrying tension they can’t put down. A guided reset of the nervous system toward calm and deep rest.',
    core:{n:12,weeks:6,cad:'2× a week for 6 weeks'}, feel:'Most report feeling settled, sleeping deeper, and more like themselves by the end.'},
-  {key:'coherence', nm:'Recovery & performance', plan:'The Coherence Series',
+  {key:'coherence', av:'cust-recovery.png', nm:'Recovery & performance', plan:'The Coherence Series',
    desc:'For the athlete, executive, or high-output client who wants to recover faster and stay steady under load.',
    core:{n:10,weeks:5,cad:'2× a week for 5 weeks'}, feel:'Clients describe faster recovery, steadier energy, and a clearer head.'},
-  {key:'vitality', nm:'Longevity & vitality', plan:'The Vitality Protocol',
+  {key:'vitality', av:'cust-longevity.png', nm:'Longevity & vitality', plan:'The Vitality Protocol',
    desc:'For the longevity-minded client building a daily practice around how they age and feel.',
    core:{n:8,weeks:8,cad:'weekly for 8 weeks, then monthly'}, feel:'A sustainable rhythm clients keep — the practice they look forward to.'}
 ];
@@ -144,7 +154,10 @@ function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null
 
 var gWrap=document.getElementById('goals');
 GOALS.forEach(function(g){
-  var b=el('div','goal'+(g===goal?' on':'')); b.appendChild(el('div','nm',g.nm)); b.appendChild(el('div','fe',g.plan));
+  var b=el('div','goal'+(g===goal?' on':''));
+  var img=document.createElement('img');img.className='av';img.src='../storyboard/gen/personas/'+g.av;img.alt='';img.loading='lazy';
+  b.appendChild(img);
+  var txt=el('div','txt');txt.appendChild(el('div','nm',g.nm));txt.appendChild(el('div','fe',g.plan));b.appendChild(txt);
   b.addEventListener('click',function(){goal=g;[].forEach.call(gWrap.children,function(x){x.classList.toggle('on',x===b);});render();});
   gWrap.appendChild(b);
 });
@@ -168,7 +181,10 @@ function render(){
   var client=document.getElementById('clientName').value.trim();
   var clinic=document.getElementById('clinicName').value.trim();
   h.appendChild(el('div','pk',client?('A plan for '+client):'Your client’s protocol'));
-  h.appendChild(el('div','pn',goal.plan));
+  var pnrow=el('div','pn-row');
+  var pav=document.createElement('img');pav.className='pav';pav.src='../storyboard/gen/personas/'+goal.av;pav.alt='';
+  pnrow.appendChild(pav);pnrow.appendChild(el('div','pn',goal.plan));
+  h.appendChild(pnrow);
   h.appendChild(el('div','pd',goal.desc));
   var parts=[]; if(clinic)parts.push(clinic); parts.push(new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'}));
   h.appendChild(el('div','prep','Prepared '+(clinic?'by ':'')+parts.join(' · ')));
