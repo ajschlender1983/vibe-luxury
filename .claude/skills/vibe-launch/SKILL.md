@@ -38,6 +38,11 @@ Everything below keeps new work matching what's already shipped.
 | Practitioner one-pager | `/practitioners/` | B2B: ROI calculator + protocol + massage-table fit. |
 | Sales scripts | `/scripts/` | Resonance call, practitioner outreach, warm-referral DM. |
 | Command Center | `/command/` | Internal package for Steven: digest, councils, funnel, download. `noindex`. |
+| The Two Funnels | `/funnels/` | Clickable HNW + longevity-center funnels + the unified story (pattern → PTSD → the cell → HyperVIBE). |
+| Center CRM | `/crm/` | 37 US+MX centers ranked A/B/C by showroom potential (Tier A = proven $10–30k clientele). |
+| HNW lead CRM | `/hnw-crm/` | 23 B2C lead sources (databases, family offices, events, media, clubs, concierge) — sources, never named individuals. |
+| Center assessment | `/grow/` | Lead-form assessment + ROI calculator: Own/Finance/Lease doors, "N clients a month covers it." Lease/finance terms are placeholders Steven finalizes. |
+| Protocol Builder | `/onboard/` | Clinic tool: client avatar cards → multi-session package (Experience → Core Series → Maintenance); shares /grow/ math. |
 
 ## Brand system (match exactly)
 - **Tokens** (RGB triples for `rgb(var(--x)/α)`): `--violet:128 60 238` · `--violet-soft:168 130 246` ·
