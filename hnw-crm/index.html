@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>VIBE — HNW Lead-Source CRM</title>
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --warn:#e8b45a; --muted:#9a8fb0;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.55;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 80% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
+a{color:rgb(var(--violet-soft))}
+.wrap{max-width:1200px;margin:0 auto;padding:clamp(24px,5vw,52px) clamp(18px,5vw,44px) 90px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:8px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);letter-spacing:.02em;margin:10px 0 6px;line-height:1.05}
+h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.lead{color:rgb(var(--cream)/.76);max-width:72ch;font-weight:300;margin-bottom:6px}
+.disc{font-size:.78rem;color:rgb(var(--cream)/.5);max-width:80ch;margin:10px 0 22px}
+.controls{position:sticky;top:0;z-index:10;display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  padding:14px 0;margin-bottom:8px;background:linear-gradient(180deg,#160f33 70%,transparent)}
+.seg{display:inline-flex;gap:4px;flex-wrap:wrap;background:rgba(27,15,46,.7);border:1px solid rgba(168,130,246,.2);border-radius:16px;padding:4px}
+.seg button{background:none;border:0;color:rgb(var(--cream)/.7);font:500 .78rem/1 var(--body);letter-spacing:.03em;
+  padding:.55em 1em;border-radius:999px;cursor:pointer;transition:all .2s}
+.seg button.on{background:linear-gradient(180deg,#f7e8b4,#e4c56b);color:#1b0f2e}
+.search{flex:1;min-width:170px;background:rgba(27,15,46,.7);border:1px solid rgba(168,130,246,.2);border-radius:999px;
+  padding:.6em 1.1em;color:rgb(var(--cream));font:400 .9rem var(--body)}
+.search::placeholder{color:rgb(var(--cream)/.4)}
+.count{font-size:.78rem;color:var(--champ);letter-spacing:.05em;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-top:8px}
+.card{border-radius:16px;padding:18px 18px 16px;background:linear-gradient(180deg,rgba(27,15,46,.72),rgba(15,9,24,.55));
+  border:1px solid rgba(168,130,246,.18);display:flex;flex-direction:column;gap:2px}
+.card .ch{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+.card h3{font-family:var(--display);font-weight:400;font-size:1.3rem;letter-spacing:.01em;color:#fff8f4;line-height:1.12}
+.card h3 a{color:inherit;text-decoration:none}
+.cat{flex:none;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.34em .7em;border-radius:999px;
+  border:1px solid rgba(233,200,154,.4);color:var(--champ);white-space:nowrap}
+.what{font-size:.88rem;color:rgb(var(--cream)/.75);margin:6px 0 8px;line-height:1.45}
+.rowd{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:.85rem;margin-top:2px}
+.rowd dt{color:var(--champ);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px;white-space:nowrap}
+.rowd dd{color:rgb(var(--cream)/.82)}
+.rowd dd.np{color:rgb(var(--cream)/.4);font-style:italic}
+.play{margin-top:10px;padding-top:10px;border-top:1px solid rgba(168,130,246,.14);font-size:.84rem;color:rgb(var(--cream)/.72)}
+.play b{color:var(--good);font-weight:600}
+.src{margin-top:9px;display:flex;flex-wrap:wrap;gap:8px}
+.src a{font-size:.72rem;color:var(--violet-soft);border:1px solid rgba(168,130,246,.25);border-radius:6px;padding:.15em .5em;text-decoration:none}
+.src a:hover{border-color:var(--violet-soft)}
+.empty{color:rgb(var(--cream)/.5);padding:40px 0;text-align:center}
+footer{margin-top:40px;color:rgb(var(--cream)/.4);font-size:.8rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="../">VIBE</a>
+    <a class="eyebrow" href="../funnels/" style="text-decoration:none">← The Two Funnels</a>
+  </div>
+  <p class="eyebrow">B2C lead sources · the HNW individual</p>
+  <h1>The HNW <em>lead CRM</em>.</h1>
+  <p class="lead">Where the high-net-worth longevity buyer is actually reachable — wealth databases, family-office networks, the event circuit, HNW-skewed media, private clubs, and concierge channels. Each with the way in, the cost where public, and the specific play to run.</p>
+  <p class="disc">Sources, not names — this is a map of channels and databases, never a list of private individuals. Costs and stats link to public sources; unknowns are marked <i>not public</i>, not estimated. Wealth-screening tools carry data-use restrictions — confirm permitted marketing use before running them.</p>
+
+  <div class="controls">
+    <div class="seg" id="segCat">
+      <button data-c="all" class="on">All</button>
+      <button data-c="wealth database">Databases</button>
+      <button data-c="family-office network">Family office</button>
+      <button data-c="event">Events</button>
+      <button data-c="media channel">Media</button>
+      <button data-c="membership/club">Clubs</button>
+      <button data-c="direct channel">Direct</button>
+    </div>
+    <input class="search" id="q" placeholder="Search source, play, audience…">
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No sources match.</div>
+
+  <footer>VIBE · Bioharmonic Technologies — internal B2C lead-source CRM. Public-source research; verify before spend.</footer>
+</div>
+
+<script>
+/* HNW_DATA_START */
+const DATA = [];
+/* HNW_DATA_END */
+
+var cat='all', q='';
+var grid=document.getElementById('grid'), empty=document.getElementById('empty'), countEl=document.getElementById('count');
+function isNP(v){return !v || /^(not public|n\/?a|none.*|unknown)$/i.test(String(v).trim());}
+function host(u){try{return new URL(u).hostname.replace(/^www\./,'');}catch(e){return 'source';}}
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+function ddNode(v){var d=document.createElement('dd');if(isNP(v)){d.className='np';d.textContent=v?String(v):'not public';}else d.textContent=String(v);return d;}
+
+function card(d){
+  var c=el('div','card');
+  var ch=el('div','ch');
+  var h=el('h3');
+  if(d.website){var a=el('a',null,d.name);a.href=d.website;a.target='_blank';a.rel='noopener';h.appendChild(a);}
+  else h.textContent=d.name||'';
+  ch.appendChild(h);
+  ch.appendChild(el('span','cat',d.category||''));
+  c.appendChild(ch);
+  if(d.what_it_is)c.appendChild(el('div','what',d.what_it_is));
+  var dl=el('dl','rowd');
+  [['The way in',d.access],['Audience fit',d.audience_fit]].forEach(function(p){dl.appendChild(el('dt',null,p[0]));dl.appendChild(ddNode(p[1]));});
+  c.appendChild(dl);
+  if(d.play){var f=el('div','play');f.appendChild(el('b',null,'The play: '));f.appendChild(document.createTextNode(d.play));c.appendChild(f);}
+  if(d.sources&&d.sources.length){
+    var s=el('div','src');
+    d.sources.forEach(function(u){var a=el('a',null,host(u));a.href=u;a.target='_blank';a.rel='noopener';s.appendChild(a);});
+    c.appendChild(s);
+  }
+  return c;
+}
+function render(){
+  var ql=q.trim().toLowerCase();
+  var rows=DATA.filter(function(d){
+    if(cat!=='all' && d.category!==cat) return false;
+    if(!ql) return true;
+    return JSON.stringify(d).toLowerCase().indexOf(ql)>-1;
+  });
+  countEl.textContent=rows.length+(rows.length===1?' source':' sources');
+  empty.style.display=rows.length?'none':'block';
+  grid.textContent='';
+  rows.forEach(function(d){grid.appendChild(card(d));});
+}
+document.getElementById('segCat').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b)return;
+  cat=b.dataset.c;
+  [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b);});
+  render();
+});
+document.getElementById('q').addEventListener('input',function(e){q=e.target.value;render();});
+render();
+</script>
+</body>
+</html>

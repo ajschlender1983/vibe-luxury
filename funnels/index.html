@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>VIBE — The Two Funnels</title>
+<meta name="description" content="Two funnels, one story: the high-net-worth individual and the longevity center. Click any stage to go deep.">
+<meta name="theme-color" content="#0F0918">
+<link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{
+  --violet:128 60 238; --violet-soft:168 130 246; --cream:255 250 247; --aub:27 15 46; --aub2:15 9 24;
+  --gold-1:#f7e8b4; --gold-2:#e4c56b; --gold-3:#a37f2c; --champ:#e9c89a; --good:#8fe3b0; --warn:#e8b45a; --muted:#9a8fb0;
+  --display:"Abel","Futura",sans-serif; --body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.55;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(130% 80% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
+a{color:rgb(var(--violet-soft))}
+.wrap{max-width:1080px;margin:0 auto;padding:clamp(20px,5vw,44px) clamp(16px,5vw,40px) 90px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.eyebrow{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5.4vw,3.4rem);letter-spacing:.02em;line-height:1.06;margin:8px 0}
+h1 em{font-style:normal;color:var(--violet-soft)}
+.sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:66ch;margin-bottom:8px}
+
+/* ===== the story ===== */
+.story{margin:22px 0 8px;border:1px solid rgba(233,200,154,.38);border-radius:20px;overflow:hidden;
+  background:linear-gradient(165deg,rgba(233,200,154,.08),rgba(139,92,246,.05))}
+.story .s-head{padding:clamp(20px,4vw,30px) clamp(20px,4vw,32px) 14px}
+.story .sk{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--champ)}
+.story h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,4.4vw,2.6rem);color:#fff8f4;margin:6px 0 4px;line-height:1.1}
+.story h2 em{font-style:normal;color:var(--violet-soft)}
+.story .one{font-size:1.02rem;color:rgb(var(--cream)/.85);max-width:64ch}
+.story .one b{color:var(--gold-1);font-weight:400}
+.s-toggle{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid rgba(233,200,154,.2);
+  color:var(--champ);font:500 .74rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;
+  padding:14px clamp(20px,4vw,32px);cursor:pointer}
+.s-toggle:hover{color:var(--gold-1)}
+.s-body{display:none;padding:6px clamp(20px,4vw,32px) 24px}
+.story.open .s-body{display:block}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px 0 16px}
+@media(max-width:760px){.chain{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.chain{grid-template-columns:1fr}}
+.link{border:1px solid rgba(168,130,246,.22);border-radius:12px;padding:14px;background:rgba(27,15,46,.5)}
+.link .n{font-family:var(--display);font-size:.95rem;color:var(--gold-2);letter-spacing:.06em}
+.link h4{font-family:var(--display);font-weight:400;font-size:1.12rem;color:#fff8f4;margin:4px 0 5px;line-height:1.15}
+.link p{font-size:.82rem;color:rgb(var(--cream)/.7);line-height:1.45}
+.link p b{color:var(--good);font-weight:400}
+.sym{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 14px}
+.sym span{font-size:.76rem;color:rgb(var(--cream)/.75);border:1px solid rgba(168,130,246,.3);border-radius:999px;padding:.3em .85em}
+.s-note{font-size:.72rem;color:rgb(var(--cream)/.45);line-height:1.55;max-width:80ch}
+
+/* ===== the funnels ===== */
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:26px 0 12px;font-size:.78rem;color:rgb(var(--cream)/.6)}
+.legend b{color:var(--champ);font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,26px);align-items:start}
+@media(max-width:820px){.cols{grid-template-columns:1fr}}
+.col-h{border-radius:14px;padding:16px 18px;margin-bottom:12px;border:1px solid rgba(168,130,246,.3);
+  background:linear-gradient(180deg,rgba(27,15,46,.75),rgba(15,9,24,.5))}
+.col-h .ck{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ)}
+.col-h h3{font-family:var(--display);font-weight:400;font-size:1.5rem;color:#fff8f4;margin:3px 0 2px}
+.col-h p{font-size:.82rem;color:rgb(var(--cream)/.65)}
+.stage{margin-bottom:10px;border:1px solid rgba(168,130,246,.24);border-radius:14px;background:rgba(27,15,46,.5);overflow:hidden;transition:border-color .25s}
+.stage.open{border-color:var(--gold-2)}
+.st-btn{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;color:inherit;
+  padding:14px 16px;cursor:pointer;font-family:var(--body)}
+.st-btn:hover{background:rgba(168,130,246,.06)}
+.st-num{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font:600 13px/1 var(--body);color:#1b0f2e;background:linear-gradient(180deg,#f7e8b4,#e4c56b)}
+.st-tt{flex:1}
+.st-tt .t{font-family:var(--display);font-size:1.15rem;color:#fff8f4;line-height:1.1}
+.st-tt .d{font-size:.8rem;color:rgb(var(--cream)/.6);margin-top:2px}
+.st-car{flex:none;color:var(--violet-soft);transition:transform .25s;font-size:.8rem}
+.stage.open .st-car{transform:rotate(90deg)}
+.st-body{display:none;padding:2px 16px 16px 56px}
+.stage.open .st-body{display:block;animation:fd .3s var(--ease)}
+@keyframes fd{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.st-body p{font-size:.86rem;color:rgb(var(--cream)/.78);line-height:1.55;margin-bottom:10px}
+.st-body p b{color:var(--gold-1);font-weight:400}
+.assets{display:flex;flex-wrap:wrap;gap:8px}
+.asset{display:inline-flex;align-items:center;gap:.45em;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-1);border:1px solid rgba(233,200,154,.45);border-radius:999px;padding:.55em 1.1em;text-decoration:none;transition:all .25s}
+.asset:hover{background:rgba(233,200,154,.12)}
+.asset.soon{color:rgb(var(--cream)/.4);border-color:rgba(255,250,247,.15);pointer-events:none}
+.prin{margin-top:8px;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+.prin b{color:rgb(var(--cream)/.6);font-weight:600}
+/* the crossover */
+.cross{grid-column:1/-1;margin-top:4px;text-align:center;border:1px dashed rgba(143,227,176,.45);border-radius:14px;
+  padding:16px 20px;background:rgba(143,227,176,.05)}
+@media(max-width:820px){.cross{grid-column:auto}}
+.cross .ck{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--good)}
+.cross p{font-size:.92rem;color:rgb(var(--cream)/.85);max-width:70ch;margin:6px auto 0}
+.cross p b{color:var(--good);font-weight:400}
+.disc{font-size:.72rem;color:rgb(var(--cream)/.4);max-width:76ch;margin:26px auto 0;text-align:center;line-height:1.6}
+footer{margin-top:26px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="../">VIBE</a>
+    <a class="eyebrow" href="../command/" style="text-decoration:none">← Command Center</a>
+  </div>
+
+  <p class="eyebrow">The go-to-market, visualized</p>
+  <h1>Two funnels. <em>One story.</em></h1>
+  <p class="sub">The person who buys a HyperVIBE for their home, and the center that buys one for its clients. Different doors, same body. Click any stage to go deep.</p>
+
+  <!-- ===== THE STORY ===== -->
+  <div class="story" id="story">
+    <div class="s-head">
+      <div class="sk">The story both funnels tell</div>
+      <h2>Stress isn't in your head.<br>It's <em>stored in your body</em>.</h2>
+      <p class="one">A nervous system that stays on guard stores the stress response as a <b>pattern</b> — and at the root, that pattern shows up in the cells. HyperVIBE is the answer to it: precisely engineered frequency the body can feel, so the pattern can finally let go.</p>
+    </div>
+    <button class="s-toggle" type="button" id="storyTog" aria-expanded="false">Read the whole story →</button>
+    <div class="s-body">
+      <div class="chain">
+        <div class="link"><div class="n">1</div><h4>The pattern</h4>
+          <p>Years of stress teach the body to hold its guard up. That stored stress response becomes the default — tension you can't put down.</p></div>
+        <div class="link"><div class="n">2</div><h4>The extreme case</h4>
+          <p>PTSD is that same pattern at its most severe. In a six-week study cited in our film, participants using vibroacoustic therapy reported a <b>~40% reduction in PTSD symptoms</b> — the strongest signal that sound reaches what talk can't.</p></div>
+        <div class="link"><div class="n">3</div><h4>Down to the cell</h4>
+          <p>In our own preliminary lab testing, one 20-minute session cut free-radical markers <b>~25%</b>, and cellular oxygen consumption rose over 7 days. The pattern is measurable — in the mitochondria.</p></div>
+        <div class="link"><div class="n">4</div><h4>One answer</h4>
+          <p>Not more effort. The right signal. <b>HyperVIBE</b> — engineered resonance the body already understands, tuned toward repair.</p></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--champ);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Where the stored pattern shows up day to day</p>
+      <div class="sym">
+        <span>Poor sleep</span><span>Tension that won't release</span><span>Fatigue</span><span>Brain fog</span><span>Low mood</span><span>Feeling wired &amp; tired</span><span>Slow recovery</span>
+      </div>
+      <p class="s-note">Chronic stress is implicated across much of modern chronic illness — which is why longevity medicine keeps arriving at the nervous system and the mitochondria. We say this carefully: the study figure is a reported result, attributed and past-tense; the cellular data is our own preliminary, internal, not-yet-peer-reviewed lab work. VIBE is a wellness product — it does not diagnose, treat, cure, or prevent any disease, and the PTSD research is context, never a claim.</p>
+    </div>
+  </div>
+
+  <!-- ===== THE FUNNELS ===== -->
+  <div class="legend"><span><b>How to read this:</b> top = where they come from · bottom = who they become. Every stage has its asset built — tap it.</span></div>
+
+  <div class="cols">
+    <!-- HNW individual -->
+    <div>
+      <div class="col-h">
+        <div class="ck">Funnel one · B2C</div>
+        <h3>The HNW individual</h3>
+        <p>The longevity-minded buyer who brings a HyperVIBE home. Won by story, proof, and belonging — never by a checkout.</p>
+      </div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">1</span><span class="st-tt"><span class="t">Leads — where they are</span><span class="d">The HNW lead-source CRM</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Wealth databases, family-office networks, longevity events, HNW-skewed media, private clubs, and concierge channels — a named, sourced list of where this buyer is actually reachable.</p>
+          <div class="assets"><a class="asset" href="../hnw-crm/">Open the HNW lead CRM</a></div>
+          <p class="prin"><b>Principle:</b> know the buyer — this person is won warm, never cold.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">2</span><span class="st-tt"><span class="t">Awareness — the idea</span><span class="d">The book, the film, the TED clip</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>They meet the question — <i>can sound do the work we've asked medication to do?</i> — before they ever meet a price.</p>
+          <div class="assets"><a class="asset" href="../learn/">Book landing</a><a class="asset" href="../film/">Production Hub</a></div>
+          <p class="prin"><b>Principle:</b> sell the sizzle — don't over-educate.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">3</span><span class="st-tt"><span class="t">Interest — the proof</span><span class="d">Nurture on the measured story</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>The story above, told over email and content: the pattern, the extreme case, the cell. The Mexico retreat is the hook that makes it personal.</p>
+          <div class="assets"><a class="asset" href="#story" data-openstory>The unified story</a></div>
+          <p class="prin"><b>Principle:</b> buy on emotion, justify with logic.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">4</span><span class="st-tt"><span class="t">Application — not checkout</span><span class="d">The Founding-50 application</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>They apply; they aren't sold. The friction qualifies, and they sell themselves on the way through.</p>
+          <div class="assets"><a class="asset" href="../apply/">Application flow</a></div>
+          <p class="prin"><b>Principle:</b> whoever asks the questions controls the conversation.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">5</span><span class="st-tt"><span class="t">The resonance call</span><span class="d">Understand, then invite</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Find the gap, read the buyer, say the price, and go quiet.</p>
+          <div class="assets"><a class="asset" href="../scripts/">Sales scripts</a></div>
+          <p class="prin"><b>Principle:</b> after you say the price, shut up.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">6</span><span class="st-tt"><span class="t">Founding member</span><span class="d">The circle &amp; the Mexico retreat</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>They join who they're becoming — hand-numbered unit, the founding circle, the retreat. Then they refer the next member.</p>
+          <div class="assets"><a class="asset" href="../apply/">The founding offer</a></div>
+          <p class="prin"><b>Principle:</b> real urgency, not "one spot left."</p></div></div>
+    </div>
+
+    <!-- Longevity center -->
+    <div>
+      <div class="col-h">
+        <div class="ck">Funnel two · B2B</div>
+        <h3>The longevity center</h3>
+        <p>The clinic that hosts a HyperVIBE as a profit center. Won in person, on their P&amp;L — they don't care about the book.</p>
+      </div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">1</span><span class="st-tt"><span class="t">Targets — the center CRM</span><span class="d">37 centers, ranked by showroom potential</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Tier A first: centers already selling $10–30k programs — proof their clients spend at HyperVIBE's level. The ranking <b>is</b> the underwriting.</p>
+          <div class="assets"><a class="asset" href="../crm/">Open the center CRM</a></div>
+          <p class="prin"><b>Principle:</b> the first ten are met in person, geographically clustered.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">2</span><span class="st-tt"><span class="t">The in-person assessment</span><span class="d">Their business, not our story</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Walk their rooms, learn their pricing and volume. The assessment collects the real numbers the calculator runs on — discovery disguised as a consult.</p>
+          <div class="assets"><a class="asset" href="../grow/">The assessment</a></div>
+          <p class="prin"><b>Principle:</b> 80/20 — they talk, you ask.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">3</span><span class="st-tt"><span class="t">The ROI — three doors</span><span class="d">Own it · Spread it · Try it</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>One number in <i>their</i> pricing: <b>"you cover it with N clients a month."</b> The short lease removes the $25k decision; lease dollars credit toward owning it.</p>
+          <div class="assets"><a class="asset" href="../grow/">ROI &amp; lease calculator</a></div>
+          <p class="prin"><b>Principle:</b> sell the gap — cashflow, not capex.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">4</span><span class="st-tt"><span class="t">Demo → placement</span><span class="d">The owner lies on the bed</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Felt experience closes vibroacoustics — a deck never will. Then the unit is placed under the lease, and the room starts earning.</p>
+          <div class="assets"><span class="asset soon">Lease terms — Steven finalizes</span></div>
+          <p class="prin"><b>Principle:</b> conviction is 80% of the sale.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">5</span><span class="st-tt"><span class="t">The Protocol Builder</span><span class="d">Make the lease pay — week one</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>The clinic builds each client a multi-session plan (Experience → Core Series → Maintenance). One Core Series ≈ a month's lease.</p>
+          <div class="assets"><a class="asset" href="../onboard/">Protocol Builder</a></div>
+          <p class="prin"><b>Principle:</b> one Core Series sale a week is the whole model.</p></div></div>
+
+      <div class="stage"><button class="st-btn" type="button"><span class="st-num">6</span><span class="st-tt"><span class="t">Showroom &amp; affiliate</span><span class="d">The center starts selling for you</span></span><span class="st-car">▶</span></button>
+        <div class="st-body"><p>Their HNW clients feel the bed in-clinic and want their own. The center earns a flat partner placement fee — dignified, disclosed, never a discount.</p>
+          <div class="assets"><a class="asset" href="../crm/">Tier-A showrooms</a></div>
+          <p class="prin"><b>Principle:</b> one center per metro — scarcity protects the luxury.</p></div></div>
+    </div>
+
+    <!-- crossover -->
+    <div class="cross">
+      <div class="ck">Where the funnels meet</div>
+      <p>The center funnel <b>feeds</b> the individual funnel: every placed showroom puts HNW clients on the bed, and every one who wants it at home enters Funnel One at stage 4 — <b>warm, felt, and referred.</b> One bed, three yields: session revenue, the lease, and the home-unit placements it seeds.</p>
+    </div>
+  </div>
+
+  <p class="disc">VIBE is a wellness product — not a medical device; it does not diagnose, treat, cure, or prevent any disease. Study figures are reported results, attributed; cellular data is preliminary internal lab work, not yet peer-reviewed.</p>
+  <footer>VIBE · Bioharmonic Technologies — Engineered resonance. Measurable repair.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.stage .st-btn').forEach(function(b){
+  b.addEventListener('click',function(){ b.parentElement.classList.toggle('open'); });
+});
+var story=document.getElementById('story'), tog=document.getElementById('storyTog');
+tog.addEventListener('click',function(){
+  var open=story.classList.toggle('open');
+  tog.setAttribute('aria-expanded',open?'true':'false');
+  tog.textContent=open?'Collapse the story ↑':'Read the whole story →';
+});
+document.querySelectorAll('[data-openstory]').forEach(function(a){
+  a.addEventListener('click',function(){ if(!story.classList.contains('open')) tog.click(); });
+});
+</script>
+</body>
+</html>
