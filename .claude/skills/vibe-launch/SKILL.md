@@ -94,6 +94,19 @@ Two advisory councils reviewed the package (simulated personas, not real endorse
 **Fundraising board** — Andreessen, Musk, Naval, Chamath + **Kirsten Green** (wellness-hardware 5th seat).
 Fundability is milestone-gated (member-sourced demand, margins, the baseline study), not polish-gated.
 
+## HyperVIBE Turbo (the system configuration)
+- The stack (red-light mat, H2/O2, light-and-sound mask) is unified as **HyperVIBE Turbo** — a
+  *configuration*, never a "bundle/package/kit." Two products: **HyperVIBE** ("the instrument," $24,999)
+  and **HyperVIBE Turbo** ("the complete system, tuned as one protocol," price set by Steven — amber placeholder).
+- **No visible price arithmetic, ever**: no component sums, no "save $X," no strikethroughs. The line is
+  **"The components are not sold separately."** Bundle pricing is a distinct product price, not a discount.
+- **Speed promise (compliance-locked):** the hero pair is the question + **"You'll have your first answer
+  in twenty minutes."** Speed attaches to *experience*, never to *efficacy*; "faster than pharmaceuticals"
+  as a statement is banned. B2B-only speed line: "a felt result inside a 30-minute appointment."
+- **Centers: potency before throughput.** Lead "the session no one else in town can offer," then room-hour
+  math. Throughput/slot language NEVER appears on consumer surfaces. Lease covers the whole system as one line item.
+- The film/soul copy is NOT Turbo-fied — the question stays a question; depth stays the brand's soul.
+
 ## Guardrails
 - Wellness claims only until the study + counsel are in place; the PTSD–mitochondria angle is a story and
   a market, never a medical claim.
