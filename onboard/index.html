@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VIBE Protocol Builder — build your client's session plan</title>
-<meta name="description" content="Turn a HyperVIBE session into a multi-session package your clients buy. Pick a goal, set your price, hand them a beautiful plan.">
+<title>VIBE Protocol Builder — Sonic-ceuticals session & program finder</title>
+<meta name="description" content="Answer three questions about your client — VIBE recommends a specific Sonic-ceuticals™ session from the Vibrophile library, and builds the multi-session protocol they buy.">
 <meta name="theme-color" content="#0F0918">
 <link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
 <style>
@@ -21,31 +21,49 @@
 body{font-family:var(--body);color:rgb(var(--cream));line-height:1.55;-webkit-font-smoothing:antialiased;
   background:radial-gradient(130% 80% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh}
 a{color:rgb(var(--violet-soft))}
-.wrap{max-width:960px;margin:0 auto;padding:clamp(20px,5vw,44px) clamp(16px,5vw,40px) 90px}
+.wrap{max-width:980px;margin:0 auto;padding:clamp(20px,5vw,44px) clamp(16px,5vw,40px) 90px}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
 .eyebrow{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.2vw,3.1rem);letter-spacing:.02em;line-height:1.06;margin:8px 0}
 h1 em{font-style:normal;color:var(--violet-soft)}
-.sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:64ch;margin-bottom:8px}
-.sec-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin:26px 0 10px}
+.sub{color:rgb(var(--cream)/.78);font-weight:300;max-width:66ch;margin-bottom:8px}
+.applift{display:inline-flex;align-items:center;gap:.6em;font-size:.76rem;color:var(--champ);border:1px solid rgba(233,200,154,.35);border-radius:999px;padding:.5em 1.1em;margin-top:6px}
+.applift b{color:var(--gold-1);font-weight:600}
+.sec-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin:28px 0 10px}
 .bedshot{margin:18px 0 4px;border-radius:18px;overflow:hidden;border:1px solid rgba(168,130,246,.2);position:relative}
 .bedshot img{width:100%;display:block}
 .bedshot .cap{position:absolute;left:16px;bottom:12px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream)/.85);text-shadow:0 1px 6px rgba(0,0,0,.6)}
-/* goal cards */
+/* persona cards */
 .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:680px){.goals{grid-template-columns:1fr}}
 .goal{text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:16px;overflow:hidden;background:rgba(27,15,46,.55);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column}
 .goal:hover{border-color:rgba(168,130,246,.6);transform:translateY(-2px)}
 .goal.on{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2)}
 .goal .av{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 20%;display:block}
-.goal .txt{padding:14px 16px 16px}
-.goal .nm{font-family:var(--display);font-size:1.3rem;color:#fff8f4;line-height:1.1}
-.goal .fe{font-size:.86rem;color:var(--champ);margin-top:4px}
-.goal.on .fe{color:var(--gold-1)}
-.plan-h .pn-row{display:flex;align-items:center;gap:14px}
-.plan-h .pav{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid rgba(233,200,154,.5);flex:none}
-/* price slider */
+.goal .txt{padding:12px 15px 14px}
+.goal .nm{font-family:var(--display);font-size:1.25rem;color:#fff8f4;line-height:1.1}
+.goal .fe{font-size:.82rem;color:var(--champ);margin-top:3px}
+/* album tiles */
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:820px){.albums{grid-template-columns:repeat(2,1fr)}}
+.alb{position:relative;text-align:left;border:1px solid rgba(168,130,246,.25);border-radius:14px;overflow:hidden;background:rgba(27,15,46,.55);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s,opacity .2s}
+.alb:hover{border-color:rgba(168,130,246,.6);transform:translateY(-2px)}
+.alb.on{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2)}
+.alb img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.alb .at{padding:10px 12px 12px}
+.alb .an{font-family:var(--display);font-size:1.02rem;color:#fff8f4;line-height:1.12}
+.alb .au{font-size:.74rem;color:rgb(var(--cream)/.62);margin-top:3px;line-height:1.35}
+.alb .sug{position:absolute;top:8px;left:8px;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#1b0f2e;
+  background:linear-gradient(180deg,#f7e8b4,#e4c56b);border-radius:999px;padding:.3em .7em;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.alb.dim{opacity:.55}
+/* depth chips */
+.depth{display:flex;gap:10px;flex-wrap:wrap}
+.dch{border:1px solid rgba(168,130,246,.3);border-radius:999px;background:rgba(27,15,46,.55);color:rgb(var(--cream)/.85);
+  font:400 .92rem var(--body);padding:.7em 1.4em;cursor:pointer;transition:all .2s}
+.dch:hover{border-color:rgba(168,130,246,.6)}
+.dch.on{border-color:var(--gold-2);background:rgba(233,200,154,.1);color:var(--gold-1)}
+/* price + who */
 .sl{margin-top:20px}
 .sl label{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.64);margin-bottom:8px}
 .sl label b{font-family:var(--display);font-size:1.2rem;color:var(--gold-1);letter-spacing:0}
@@ -55,20 +73,25 @@ h1 em{font-style:normal;color:var(--violet-soft)}
 .who span{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.55);margin-bottom:5px}
 .inp{width:100%;background:rgba(27,15,46,.6);border:1px solid rgba(168,130,246,.3);border-radius:10px;padding:.7em .9em;color:rgb(var(--cream));font:400 .95rem var(--body)}
 .inp:focus{outline:none;border-color:var(--violet-soft)}
-.plan-h .prep{font-size:.82rem;color:var(--champ);margin-top:8px;letter-spacing:.02em}
 /* the plan */
 .plan{margin-top:12px;border:1px solid rgba(233,200,154,.4);border-radius:20px;overflow:hidden;
   background:linear-gradient(170deg,rgba(233,200,154,.09),rgba(139,92,246,.05))}
-.plan-h{padding:22px clamp(20px,4vw,32px) 8px}
+.plan-h{display:flex;gap:clamp(16px,3vw,26px);padding:clamp(20px,4vw,30px) clamp(20px,4vw,32px) 12px;align-items:flex-start;flex-wrap:wrap}
+.plan-h .art{flex:none;width:clamp(120px,18vw,170px);border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.5);border:1px solid rgba(233,200,154,.3)}
+.plan-h .art img{width:100%;display:block}
+.plan-h .hx{flex:1;min-width:240px}
 .plan-h .pk{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--champ)}
-.plan-h .pn{font-family:var(--display);font-size:clamp(1.8rem,4.4vw,2.6rem);color:#fff8f4;margin:4px 0}
-.plan-h .pd{font-size:.95rem;color:rgb(var(--cream)/.78);max-width:60ch}
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(233,200,154,.2);margin-top:14px}
+.plan-h .pn{font-family:var(--display);font-size:clamp(1.7rem,4.2vw,2.5rem);color:#fff8f4;margin:4px 0;line-height:1.05}
+.plan-h .pd{font-size:.95rem;color:rgb(var(--cream)/.78);max-width:56ch}
+.plan-h .sess{margin-top:10px;font-size:.86rem;color:var(--gold-1)}
+.plan-h .sess small{display:block;font-size:.72rem;color:rgb(var(--cream)/.55);letter-spacing:.04em;margin-top:2px}
+.plan-h .prep{font-size:.78rem;color:var(--champ);margin-top:10px;letter-spacing:.02em}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(233,200,154,.2);margin-top:8px}
 @media(max-width:680px){.tiers{grid-template-columns:1fr}}
-.tier{padding:20px clamp(16px,3vw,24px);border-right:1px solid rgba(233,200,154,.16)}
+.tier{padding:20px clamp(16px,3vw,24px);border-right:1px solid rgba(233,200,154,.16);position:relative}
 .tier:last-child{border-right:0}
 @media(max-width:680px){.tier{border-right:0;border-bottom:1px solid rgba(233,200,154,.16)}}
-.tier.hero{background:rgba(233,200,154,.06)}
+.tier.hero{background:rgba(233,200,154,.08)}
 .tier .tt{font-family:var(--display);font-size:1.25rem;color:#fff8f4}
 .tier .tag{display:inline-block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#1b0f2e;background:linear-gradient(180deg,#f7e8b4,#e4c56b);border-radius:999px;padding:.24em .6em;margin-bottom:6px}
 .tier .cad{font-size:.82rem;color:rgb(var(--cream)/.62);margin:4px 0 10px}
@@ -87,9 +110,9 @@ h1 em{font-style:normal;color:var(--violet-soft)}
 .btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}
 .btn-solid:hover{background:var(--violet-soft);color:var(--aub2)}
 .btn-ghost{border-color:rgb(var(--cream)/.28);color:rgb(var(--cream));background:none}
-.disc{font-size:.72rem;color:rgb(var(--cream)/.42);max-width:74ch;margin:22px 0 0;line-height:1.6}
+.disc{font-size:.72rem;color:rgb(var(--cream)/.42);max-width:76ch;margin:22px 0 0;line-height:1.6}
 footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center}
-@media print{body{background:#fff;color:#111}.top,.goals,.sl,.actions,footer,.no-print{display:none!important}.plan{border-color:#caa}}
+@media print{body{background:#fff;color:#111}.top,.goals,.albums,.depth,.sl,.who,.actions,.bedshot,.applift,.sec-k,footer,.no-print{display:none!important}.plan{border-color:#caa}}
 </style>
 </head>
 <body>
@@ -99,25 +122,32 @@ footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:ce
     <span class="eyebrow">Protocol Builder · for your clients</span>
   </div>
 
-  <p class="eyebrow">Turn one session into a package</p>
+  <p class="eyebrow">Three questions → their session &amp; their protocol</p>
   <h1>Build your client's <em>plan</em>.</h1>
-  <p class="sub">A single session is a nice add-on. A <b>protocol</b> is a business. Pick your client's goal and your price — VIBE builds a multi-session package you can hand them, and shows the money it makes your room.</p>
+  <p class="sub">Every VIBE session runs a real <b>Sonic-ceuticals™</b> composition from the <b>Vibrophile</b> library — each one built for a different job. Answer three questions and VIBE recommends the session to start with, and the multi-session protocol they buy.</p>
+  <span class="applift">From the Vibrophile™ library · <b>42+ Sonic-ceuticals™ tracks · 20+ protocols</b> · Pro subscription included with every VIBE</span>
 
   <div class="bedshot"><img src="../storyboard/gen/products/vibe-bed.png" alt="The HyperVIBE — a vibroacoustic bed with a cream swirl-quilt surface on a birch arch frame"><span class="cap">The HyperVIBE · what your client lies on</span></div>
 
   <div class="sec-k">1 · Who is this client?</div>
   <div class="goals" id="goals"></div>
 
+  <div class="sec-k">2 · What do they want most right now?</div>
+  <div class="albums" id="albums"></div>
+
+  <div class="sec-k">3 · How deep do they want to go?</div>
+  <div class="depth" id="depth"></div>
+
   <div class="sl no-print">
     <label>Your price per session <b id="vPrice">$150</b></label>
-    <input type="range" id="price" min="75" max="400" step="5" value="150">
+    <input type="range" id="price" min="75" max="400" step="5" value="150" aria-label="Your price per session">
   </div>
   <div class="who no-print">
     <label class="wf"><span>Client's first name (optional)</span><input class="inp" id="clientName" placeholder="e.g. Jordan"></label>
     <label class="wf"><span>Your clinic (optional)</span><input class="inp" id="clinicName" placeholder="e.g. Continuum Wellness"></label>
   </div>
 
-  <div class="sec-k">2 · Their plan</div>
+  <div class="sec-k">Their plan</div>
   <div class="plan" id="plan"></div>
 
   <div class="cmath" id="cmath"></div>
@@ -127,92 +157,180 @@ footer{margin-top:34px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:ce
     <a class="btn btn-ghost" href="../grow/">See what the bed earns your room →</a>
   </div>
 
-  <p class="disc">For wellness use. VIBE sessions are an experience of deep rest and recovery — not a medical treatment, and not intended to diagnose, treat, cure, or prevent any disease. Describe benefits experientially (rest, recovery, calm), never as a clinical outcome. Prices are the clinic's own; margins depend on your costs.</p>
+  <p class="disc">For wellness use. Sonic-ceuticals™ and Vibrophile™ are Bioharmonic Technologies' own compositions and app; track names and durations are from the published library. VIBE sessions are an experience of deep rest and recovery — not a medical treatment, and not intended to diagnose, treat, cure, or prevent any disease. Describe benefits experientially; prices are the clinic's own.</p>
   <footer>VIBE · Bioharmonic Technologies — Engineered resonance. Measurable repair.</footer>
 </div>
 
 <script>
-/* ===== shared math engine (identical to the ROI tool in /grow/) ===== */
-var LEASE_MO=1650;                                  // matches /grow/ lease assumption
+var LEASE_MO=1650;
 function fmt(n){return '$'+Math.round(n).toLocaleString();}
-
-/* goals → an experiential protocol (wellness language only, always multi-session) */
-var GOALS=[
-  {key:'reset', av:'cust-rest.png', nm:'Deep rest & stress', plan:'The Reset',
-   desc:'For the client carrying tension they can’t put down. A guided reset of the nervous system toward calm and deep rest.',
-   core:{n:12,weeks:6,cad:'2× a week for 6 weeks'}, feel:'Most report feeling settled, sleeping deeper, and more like themselves by the end.'},
-  {key:'coherence', av:'cust-recovery.png', nm:'Recovery & performance', plan:'The Coherence Series',
-   desc:'For the athlete, executive, or high-output client who wants to recover faster and stay steady under load.',
-   core:{n:10,weeks:5,cad:'2× a week for 5 weeks'}, feel:'Clients describe faster recovery, steadier energy, and a clearer head.'},
-  {key:'vitality', av:'cust-longevity.png', nm:'Longevity & vitality', plan:'The Vitality Protocol',
-   desc:'For the longevity-minded client building a daily practice around how they age and feel.',
-   core:{n:8,weeks:8,cad:'weekly for 8 weeks, then monthly'}, feel:'A sustainable rhythm clients keep — the practice they look forward to.'}
-];
-var goal=GOALS[0];
-
 function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
 
+/* ===== the real Sonic-ceuticals library (Vibrophile) ===== */
+var ALBUMS=[
+ {key:'energy',   name:'Energy Clearing', art:'energy-clearing.jpg',
+  use:'Clear stress & heaviness from the nervous system',
+  session:'Body Clearing (guided meditation)', dur:'17 min', state:'alpha',
+  prog:{name:'The Clearing Protocol', n:10, cad:'2× a week for 5 weeks'},
+  desc:'Guided and instrumental clearing sessions that move the nervous system into a settled alpha state — for the client carrying tension they can’t put down.',
+  feel:'Clients describe feeling lighter — like the noise finally drained out.'},
+ {key:'cleanser', name:'Cell Cleanser', art:'cell-cleanser.jpg',
+  use:'A deep cellular reset',
+  session:'Cell Cleanser', dur:'30 min', state:'theta',
+  prog:{name:'The Cleanse Protocol', n:12, cad:'2× a week for 6 weeks'},
+  desc:'The deep-rest session — a theta-state composition built for cellular renewal and recovery from the load of chronic stress.',
+  feel:'Most drift into deep theta rest and come back feeling new.'},
+ {key:'attune',   name:'Cellular Attunement', art:'cellular-attunement.jpg',
+  use:'Emotional balance, zone by zone',
+  session:'Zones 1–3 (one zone at a time)', dur:'~15 min', state:'restorative',
+  prog:{name:'The 12-Zone Attunement', n:12, cad:'one zone per session · 2× a week'},
+  desc:'Twelve compositions, one per emotional zone — from Depression vs Inner Peace to Self-Critical vs Self-Love. A complete, structured journey through the emotional body.',
+  feel:'A session-by-session arc clients genuinely look forward to completing.'},
+ {key:'spectrum', name:'Spectrum', art:'spectrum.jpg',
+  use:'Focus, clarity & sensory calm',
+  session:'Spectrum', dur:'30 min', state:'theta',
+  prog:{name:'The Spectrum Protocol', n:10, cad:'2× a week for 5 weeks'},
+  desc:'Composed for sensory calm and mental clarity — a session for the overstimulated mind that needs the volume turned down and the focus turned up.',
+  feel:'Clients report a quieter head and steadier focus after each session.'},
+ {key:'vol1',     name:'Sonic-ceuticals Vol. 1', art:'sonic-ceuticals-vol1.jpg',
+  use:'Physical recovery & repair',
+  session:'Muscle Relaxation + Universal Phi', dur:'21 min', state:'restorative',
+  prog:{name:'The Recovery Protocol', n:12, cad:'2× a week for 6 weeks'},
+  desc:'The physical-body album — nine compositions spanning muscle release, visceral ease, and the Phi-ratio spinal tracks, built to support the body’s own repair.',
+  feel:'The athlete’s pick — release first, then rebuild.'},
+ {key:'transform',name:'Transformation & Abundance', art:'transformation-abundance.jpg',
+  use:'Intention, mindset & change',
+  session:'Transformation', dur:'30 min', state:'beta → alpha → theta',
+  prog:{name:'The Transformation Protocol', n:8, cad:'weekly for 8 weeks'},
+  desc:'An intention-setting arc that walks the brain from waking beta down into theta — for the client at a turning point who wants the change to stick.',
+  feel:'Best paired with a clear intention; clients set it, then let the session carry it.'},
+ {key:'journey',  name:'The Journey', art:'the-journey.jpg',
+  use:'A deeper inner journey',
+  session:'Escape', dur:'20 min', state:'theta',
+  prog:{name:'The Journey Series', n:6, cad:'weekly for 6 weeks'},
+  desc:'Three theta voyages — Escape, Space, and Who Am I — for the client ready to go somewhere words don’t reach.',
+  feel:'The one clients talk about afterward.'}
+];
+
+/* personas → suggested albums */
+var PERSONAS=[
+ {key:'rest', nm:'Deep rest & stress', av:'cust-rest.png', line:'Carrying tension they can’t put down',
+  suggest:['energy','cleanser','attune'], def:'energy'},
+ {key:'recovery', nm:'Recovery & performance', av:'cust-recovery.png', line:'Wants to recover faster, stay steady',
+  suggest:['vol1','spectrum','journey'], def:'vol1'},
+ {key:'longevity', nm:'Longevity & vitality', av:'cust-longevity.png', line:'Building a practice around how they age',
+  suggest:['cleanser','attune','transform'], def:'cleanser'}
+];
+var DEPTHS=[
+ {key:'first', nm:'A first session', tier:0},
+ {key:'protocol', nm:'A protocol (recommended)', tier:1},
+ {key:'practice', nm:'An ongoing practice', tier:2}
+];
+
+var persona=PERSONAS[0], album=ALBUMS[0], depth=DEPTHS[1];
+
+/* build persona cards */
 var gWrap=document.getElementById('goals');
-GOALS.forEach(function(g){
-  var b=el('div','goal'+(g===goal?' on':''));
-  var img=document.createElement('img');img.className='av';img.src='../storyboard/gen/personas/'+g.av;img.alt='';img.loading='lazy';
+PERSONAS.forEach(function(p){
+  var b=el('div','goal'+(p===persona?' on':''));
+  var img=document.createElement('img');img.className='av';img.src='../storyboard/gen/personas/'+p.av;img.alt='';img.loading='lazy';
   b.appendChild(img);
-  var txt=el('div','txt');txt.appendChild(el('div','nm',g.nm));txt.appendChild(el('div','fe',g.plan));b.appendChild(txt);
-  b.addEventListener('click',function(){goal=g;[].forEach.call(gWrap.children,function(x){x.classList.toggle('on',x===b);});render();});
+  var t=el('div','txt');t.appendChild(el('div','nm',p.nm));t.appendChild(el('div','fe',p.line));b.appendChild(t);
+  b.addEventListener('click',function(){
+    persona=p;
+    [].forEach.call(gWrap.children,function(x){x.classList.toggle('on',x===b);});
+    album=ALBUMS.find(function(a){return a.key===p.def;})||album;
+    buildAlbums(); render();
+  });
   gWrap.appendChild(b);
 });
 
+/* build album tiles */
+var aWrap=document.getElementById('albums');
+function buildAlbums(){
+  aWrap.textContent='';
+  ALBUMS.forEach(function(a){
+    var b=el('div','alb'+(a===album?' on':'')+((persona.suggest.indexOf(a.key)===-1)?' dim':''));
+    var img=document.createElement('img');img.src='../assets/albums/'+a.art;img.alt=a.name+' album art';img.loading='lazy';
+    b.appendChild(img);
+    if(persona.suggest.indexOf(a.key)>-1) b.appendChild(el('span','sug','Suggested'));
+    var t=el('div','at');t.appendChild(el('div','an',a.name));t.appendChild(el('div','au',a.use));b.appendChild(t);
+    b.addEventListener('click',function(){
+      album=a;
+      [].forEach.call(aWrap.children,function(x){x.classList.remove('on');});
+      b.classList.add('on'); render();
+    });
+    aWrap.appendChild(b);
+  });
+}
+
+/* depth chips */
+var dWrap=document.getElementById('depth');
+DEPTHS.forEach(function(d){
+  var b=el('button','dch'+(d===depth?' on':''),d.nm); b.type='button';
+  b.addEventListener('click',function(){depth=d;[].forEach.call(dWrap.children,function(x){x.classList.toggle('on',x===b);});render();});
+  dWrap.appendChild(b);
+});
+
 var price=document.getElementById('price');
-function tierNode(tag,title,cad,pr,note,hero){
+function tierNode(tag,title,cad,pr,note,hero,feel){
   var t=el('div','tier'+(hero?' hero':''));
   if(tag)t.appendChild(el('span','tag',tag));
   t.appendChild(el('div','tt',title));
   t.appendChild(el('div','cad',cad));
   var p=el('div','pr'); p.appendChild(document.createTextNode(fmt(pr))); if(note)p.appendChild(el('small',null,' '+note));
   t.appendChild(p);
+  if(feel)t.appendChild(el('div','fe',feel));
   return t;
 }
+
 function render(){
   var pr=+price.value; document.getElementById('vPrice').textContent='$'+pr;
-  var core=goal.core, corePrice=core.n*pr, maint=4*pr;
+  var prog=album.prog, corePrice=prog.n*pr, maint=4*pr;
+  var client=document.getElementById('clientName').value.trim();
+  var clinic=document.getElementById('clinicName').value.trim();
 
   var plan=document.getElementById('plan'); plan.textContent='';
   var h=el('div','plan-h');
-  var client=document.getElementById('clientName').value.trim();
-  var clinic=document.getElementById('clinicName').value.trim();
-  h.appendChild(el('div','pk',client?('A plan for '+client):'Your client’s protocol'));
-  var pnrow=el('div','pn-row');
-  var pav=document.createElement('img');pav.className='pav';pav.src='../storyboard/gen/personas/'+goal.av;pav.alt='';
-  pnrow.appendChild(pav);pnrow.appendChild(el('div','pn',goal.plan));
-  h.appendChild(pnrow);
-  h.appendChild(el('div','pd',goal.desc));
+  var artBox=el('div','art');
+  var art=document.createElement('img');art.src='../assets/albums/'+album.art;art.alt=album.name+' album art';
+  artBox.appendChild(art); h.appendChild(artBox);
+  var hx=el('div','hx');
+  hx.appendChild(el('div','pk',client?('A plan for '+client):'Your client’s protocol'));
+  hx.appendChild(el('div','pn',prog.name));
+  hx.appendChild(el('div','pd',album.desc));
+  var sess=el('div','sess','Start with: '+album.session+' · '+album.dur);
+  sess.appendChild(el('small',null,'Sonic-ceuticals™ · '+album.name+' · '+album.state+' state · from the Vibrophile library'));
+  hx.appendChild(sess);
   var parts=[]; if(clinic)parts.push(clinic); parts.push(new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'}));
-  h.appendChild(el('div','prep','Prepared '+(clinic?'by ':'')+parts.join(' · ')));
+  hx.appendChild(el('div','prep','Prepared '+(clinic?'by ':'')+parts.join(' · ')));
+  h.appendChild(hx);
   plan.appendChild(h);
+
   var tiers=el('div','tiers');
-  tiers.appendChild(tierNode('Start here','Experience','A single session to feel it',pr,'',false));
-  var cs=tierNode('The protocol','Core Series',core.cad,corePrice,'· '+core.n+' sessions',true);
-  cs.appendChild(el('div','fe',goal.feel));
+  tiers.appendChild(tierNode(depth.tier===0?'Recommended start':'Start here','Experience',album.session+' · '+album.dur,pr,'',depth.tier===0));
+  var cs=tierNode(depth.tier===1?'Recommended':'The protocol',prog.name.replace('The ',''),prog.cad,corePrice,'· '+prog.n+' sessions',depth.tier===1,album.feel);
   tiers.appendChild(cs);
-  tiers.appendChild(tierNode('Keep it going','Maintenance','4 sessions a month',maint,'/mo',false));
+  tiers.appendChild(tierNode(depth.tier===2?'Recommended':'Keep it going','Maintenance','4 sessions a month',maint,'/mo',depth.tier===2));
   plan.appendChild(tiers);
 
   var cm=document.getElementById('cmath'); cm.textContent='';
   cm.appendChild(el('div','k','What this earns your room'));
-  var p1=el('p'); p1.appendChild(document.createTextNode('One Core Series (' + goal.plan + ') = '));
+  var p1=el('p'); p1.appendChild(document.createTextNode('One '+prog.name+' ('+prog.n+' sessions) = '));
   p1.appendChild(el('b',null,fmt(corePrice))); p1.appendChild(document.createTextNode('. Once the bed is placed, a session’s only real cost is staff time and the room — so most of that is margin.'));
   cm.appendChild(p1);
   var ratio=corePrice/LEASE_MO;
   var p2=el('p','tie');
   p2.appendChild(document.createTextNode('Your target is dead simple: '));
-  p2.appendChild(el('b',null,'convert one client into a Core Series a week.'));
-  p2.appendChild(document.createTextNode(' At '+fmt(corePrice)+' each, that’s about '+ratio.toFixed(1)+'× your monthly lease in the door every week — the bed pays for itself and then some.'));
+  p2.appendChild(el('b',null,'convert one client into a protocol a week.'));
+  p2.appendChild(document.createTextNode(' At '+fmt(corePrice)+' each, that’s about '+ratio.toFixed(1)+'× your monthly lease in the door every week.'));
   cm.appendChild(p2);
 }
+
 price.addEventListener('input',render);
 document.getElementById('clientName').addEventListener('input',render);
 document.getElementById('clinicName').addEventListener('input',render);
-render();
+buildAlbums(); render();
 </script>
 </body>
 </html>
