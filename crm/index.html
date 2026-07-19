@@ -73,13 +73,18 @@ h1 em{font-style:normal;color:rgb(var(--violet-soft))}
 .src a:hover{border-color:var(--violet-soft)}
 .empty{color:rgb(var(--cream)/.5);padding:40px 0;text-align:center}
 footer{margin-top:40px;color:rgb(var(--cream)/.4);font-size:.8rem;text-align:center}
+.crumbs{display:flex;align-items:center;gap:.55em;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(255 250 247/.45)}
+.crumbs a{color:rgb(255 250 247/.6);text-decoration:none}
+.crumbs a:hover{color:var(--gold-1)}
+.crumbs .sep{color:rgb(255 250 247/.25)}
+.crumbs .here{color:var(--champ)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
     <a class="logo" href="../">VIBE</a>
-    <a class="eyebrow" href="../command/" style="text-decoration:none">← Command Center</a>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../command/">Command Center</a><span class="sep">/</span><a href="../funnels/">The Campaign</a><span class="sep">/</span><span class="here">Center CRM</span></nav>
   </div>
   <p class="eyebrow">B2B target list · longevity &amp; wellness centers</p>
   <h1>The center <em>CRM</em>.</h1>

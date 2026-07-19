@@ -100,13 +100,18 @@ h1 em{font-style:normal;color:var(--violet-soft)}
 .cross p b{color:var(--good);font-weight:400}
 .disc{font-size:.72rem;color:rgb(var(--cream)/.4);max-width:76ch;margin:26px auto 0;text-align:center;line-height:1.6}
 footer{margin-top:26px;color:rgb(var(--cream)/.4);font-size:.78rem;text-align:center}
+.crumbs{display:flex;align-items:center;gap:.55em;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(255 250 247/.45)}
+.crumbs a{color:rgb(255 250 247/.6);text-decoration:none}
+.crumbs a:hover{color:var(--gold-1)}
+.crumbs .sep{color:rgb(255 250 247/.25)}
+.crumbs .here{color:var(--champ)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
     <a class="logo" href="../">VIBE</a>
-    <a class="eyebrow" href="../command/" style="text-decoration:none">← Command Center</a>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../command/">Command Center</a><span class="sep">/</span><span class="here">The Two Funnels</span></nav>
   </div>
 
   <p class="eyebrow">The go-to-market, visualized</p>

@@ -350,6 +350,49 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
   header.top .glow{display:none}
 }
 
+
+/* ---- breadcrumb ---- */
+.crumbs{display:flex;align-items:center;gap:.55em;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgb(255 250 247/.45);margin-bottom:14px}
+.crumbs a{color:rgb(255 250 247/.6);text-decoration:none}
+.crumbs a:hover{color:var(--gold-1)}
+.crumbs .sep{color:rgb(255 250 247/.25)}
+.crumbs .here{color:var(--champ)}
+/* ---- the 30-second pitch ---- */
+.pitch{max-width:1200px;margin:26px auto 8px;padding:0 clamp(18px,5vw,44px)}
+.pitch .pwrap{border:1px solid rgba(233,200,154,.4);border-radius:22px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(233,200,154,.09),rgba(139,92,246,.06))}
+.pfor{display:flex;gap:16px;align-items:center;padding:20px clamp(18px,4vw,30px) 16px;border-bottom:1px solid rgba(233,200,154,.18)}
+.pfor img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid rgba(233,200,154,.5);flex:none}
+.pfor .pk{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin-bottom:3px}
+.pfor p{font-size:.95rem;color:rgb(255 250 247/.85);line-height:1.5;max-width:74ch}
+.pfor p b{color:var(--gold-1);font-weight:400}
+.p30{padding:16px clamp(18px,4vw,30px) 8px}
+.p30 .pk{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin-bottom:10px}
+.prow30{display:grid;grid-template-columns:110px 1fr;gap:6px 16px;padding:9px 0;border-bottom:1px solid rgba(168,130,246,.12)}
+.prow30:last-of-type{border-bottom:0}
+@media(max-width:560px){.prow30{grid-template-columns:1fr;gap:2px}}
+.prow30 .k30{font-family:var(--display);font-size:1.02rem;color:var(--gold-1);letter-spacing:.04em}
+.prow30 p{font-size:.92rem;color:rgb(255 250 247/.82);line-height:1.5}
+.prow30 p b{color:#fff8f4;font-weight:600}
+.pacts{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;padding:14px clamp(18px,4vw,30px) 20px}
+.penter{flex:1;min-width:260px;display:flex;align-items:center;gap:14px;border:1px solid rgba(233,200,154,.5);border-radius:14px;
+  padding:10px 14px;text-decoration:none;background:rgba(233,200,154,.07);transition:all .25s}
+.penter:hover{background:rgba(233,200,154,.14)}
+.penter img{width:88px;height:56px;object-fit:cover;border-radius:8px;flex:none}
+.penter .tt{flex:1}
+.penter .tt b{display:block;font-family:var(--display);font-size:1.1rem;color:var(--gold-1);letter-spacing:.02em}
+.penter .tt em{font-style:normal;font-size:.76rem;color:rgb(255 250 247/.6)}
+.penter .go{color:var(--gold-1);font-size:1.1rem}
+.plinks{flex:1;min-width:240px;display:grid;gap:8px}
+.plink{display:block;border:1px solid rgba(168,130,246,.28);border-radius:12px;padding:9px 13px;text-decoration:none;transition:border-color .25s}
+.plink:hover{border-color:var(--violet-soft)}
+.plink b{display:block;font-size:.82rem;color:var(--violet-soft)}
+.plink span{font-size:.72rem;color:rgb(255 250 247/.55);line-height:1.35}
+.pstats{display:flex;gap:14px;flex-wrap:wrap;padding:0 clamp(18px,4vw,30px) 18px}
+.pst{flex:1;min-width:170px;border-top:1px solid rgba(168,130,246,.18);padding-top:10px}
+.pst b{font-family:var(--display);font-size:1.5rem;color:#fff8f4;display:block;line-height:1.1}
+.pst span{font-size:.72rem;color:rgb(255 250 247/.55);line-height:1.35;display:block;margin-top:2px}
+.pst .src a{color:var(--champ);text-decoration:none;border-bottom:1px dotted rgba(233,200,154,.5)}
 </style>
 </head>
 <body>
@@ -357,6 +400,7 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
 <header class="top">
   <div class="glow"></div>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Bioharmonic Technologies</a><span class="sep">/</span><a href="../funnels/">The Campaign</a><span class="sep">/</span><span class="here">Command Center</span></nav>
     <p class="eyebrow">The Campaign · Command Center</p>
     <h1>Bioharmonic Technologies<br><em>Brand Upgrade &amp; HyperVIBE Launch</em></h1>
     <p>The whole campaign in one place — the brand upgrade, the book, the film, the site, the offer, and the raise — laid out in the order it runs. Reviewed by your advisory agents.</p>
@@ -388,6 +432,39 @@ nav.sticky a.active{color:var(--gold-1);border-color:rgba(233,200,154,.55);backg
     <a class="cta" href="../film/">Open the Production Hub</a>
   </div></nav>
 </header>
+
+<!-- THE PITCH, IN 30 SECONDS -->
+<section class="pitch reveal">
+  <div class="pwrap">
+    <div class="pfor">
+      <img loading="lazy" src="../storyboard/gen/founding/DR-STEVEN.png" alt="Dr. Steven Schwartz">
+      <div><div class="pk">Prepared for Dr. Steven Schwartz · Founder</div>
+      <p>Steven — <b>the whole campaign is already built</b> before anyone asked for a meeting: the brand, the film, the site, both funnels, the tools, and the raise. The work is the pitch. Scroll on — it&rsquo;s all here.</p></div>
+    </div>
+    <div class="p30">
+      <div class="pk">The pitch, in 30 seconds</div>
+      <div class="prow30"><span class="k30">Opportunity</span><p>Longevity is the fastest-growing story in a <b>$6.3T</b> wellness economy, and nobody owns <i>measurable, felt</i> recovery. You hold what no one can copy: <b>25 years of research, a TED talk, Primal Resonance, and your own cellular data</b>.</p></div>
+      <div class="prow30"><span class="k30">Proof</span><p>Built, not promised — the film, the site, two funnels, two CRMs (<b>37 centers &middot; 23 HNW sources</b>), the ROI/lease engine, and the Protocol Builder on your real Sonic-ceuticals&trade; library. And <b>10/10 Black Editions delivered at $24,999</b>.</p></div>
+      <div class="prow30"><span class="k30">Your move</span><p>Three numbers close it — <b>your lease terms, your landed cost, your close date</b> (every one flagged in amber). Then run the two plays: cap the lead investor, fill the Founding 50.</p></div>
+    </div>
+    <div class="pacts">
+      <a class="penter" href="../">
+        <img loading="lazy" src="../storyboard/gen/stack/EXPLAINER-system.png" alt="">
+        <span class="tt"><b>Enter the campaign</b><em>The live site, reimagined &middot; start here</em></span>
+        <span class="go">&rarr;</span>
+      </a>
+      <div class="plinks">
+        <a class="plink" href="../funnels/"><b>The two funnels &rarr;</b><span>The HNW individual and the longevity center, clickable, with the story they both run on.</span></a>
+        <a class="plink" href="../deck/"><b>The 100 Vibes deck &rarr;</b><span>Proof, the engine, and the $250K founding invitation.</span></a>
+      </div>
+    </div>
+    <div class="pstats">
+      <div class="pst"><b>$6.3T</b><span>global wellness economy, 2023 &middot; <span class="src"><a href="https://globalwellnessinstitute.org/press-room/statistics-and-facts/" target="_blank" rel="noopener">Global Wellness Institute</a></span></span></div>
+      <div class="pst"><b>~$480B</b><span>US consumer wellness, growing 5&ndash;10%/yr; healthy aging a top priority &middot; <span class="src"><a href="https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/the-trends-defining-the-1-point-8-trillion-dollar-global-wellness-market-in-2024" target="_blank" rel="noopener">McKinsey</a></span></span></div>
+      <div class="pst"><b>$25B &rarr; $63B</b><span>biohacking market, 2023 &rarr; 2030 projection &middot; <span class="src"><a href="https://www.grandviewresearch.com/industry-analysis/biohacking-market" target="_blank" rel="noopener">Grand View Research</a></span></span></div>
+    </div>
+  </div>
+</section>
 
 <div class="wrap">
 
