@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HyperVIBE for your home — the answer in twenty minutes</title>
+<meta name="description" content="What if sound could do the work we've asked medication to do? Your first answer in twenty minutes.">
+<meta name="theme-color" content="#0F0918"><link rel="icon" type="image/png" href="../assets/images/oie_Rcuu4eUyxdcH.png">
+<style>
+@font-face{font-family:"Abel";font-weight:400;font-display:swap;src:url("../assets/fonts/abel_n4.0254805ccf79872a96d53996a984f2b9039f9995.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:400;font-display:swap;src:url("../assets/fonts/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2") format("woff2");}
+@font-face{font-family:"Roboto";font-weight:700;font-display:swap;src:url("../assets/fonts/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2") format("woff2");}
+:root{--violet:128 60 238;--violet-soft:168 130 246;--cream:255 250 247;--aub:27 15 46;--aub2:15 9 24;--gold-1:#f7e8b4;--gold-2:#e4c56b;--gold-3:#a37f2c;--champ:#e9c89a;--good:#8fe3b0;--display:"Abel","Futura",sans-serif;--body:"Roboto","Helvetica Neue",Arial,sans-serif;--ease:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:rgb(var(--cream));line-height:1.6;-webkit-font-smoothing:antialiased;background:radial-gradient(130% 90% at 50% -10%,#241a45,#160f33 55%,#0d0a1e);min-height:100vh;overflow-x:hidden}
+a{color:rgb(var(--violet-soft))}img{display:block;max-width:100%}
+.top{max-width:1080px;margin:0 auto;padding:22px clamp(20px,5vw,48px);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--display);font-size:1.3rem;letter-spacing:.22em;color:rgb(var(--cream));text-decoration:none}
+.top a.cta{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-1);border:1px solid rgba(233,200,154,.4);border-radius:999px;padding:.7em 1.4em;text-decoration:none;transition:all .3s}
+.top a.cta:hover{background:rgba(233,200,154,.1)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;padding:clamp(20px,4vw,44px) 0}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero .himg{order:-1}}
+.kicker{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:.02em;margin:14px 0 8px}
+h1 em{font-style:normal;color:rgb(var(--violet-soft))}
+.answer{font-family:var(--display);font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--gold-1);letter-spacing:.02em;margin:0 0 14px}
+.lead{font-size:1.05rem;color:rgb(var(--cream)/.8);font-weight:300;margin-bottom:1.6rem}
+.himg img{width:100%;border-radius:16px;border:1px solid rgb(var(--cream)/.1);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:1em 2.1em;border-radius:999px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;text-decoration:none;border:1px solid transparent;font-weight:500;transition:all .3s var(--ease)}
+.btn-solid{background:rgb(var(--violet));color:rgb(var(--cream))}.btn-solid:hover{background:rgb(var(--violet-soft));color:rgb(var(--aub2))}
+.btn-ghost{border-color:rgb(var(--cream)/.28);color:rgb(var(--cream))}.btn-ghost:hover{border-color:rgb(var(--violet-soft));color:rgb(var(--violet-soft))}
+.trust{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--cream)/.55);margin-top:1.4rem}
+.sec{padding:clamp(2.4rem,6vw,4rem) 0;border-top:1px solid rgb(var(--cream)/.08)}
+.sec h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:.02em;margin-bottom:.5rem}
+.sec h2 em{font-style:normal;color:rgb(var(--violet-soft))}.sec .sub{color:rgb(var(--cream)/.7);max-width:62ch;margin-bottom:1.6rem}
+.collage{border-radius:18px;overflow:hidden;border:1px solid rgba(168,130,246,.2);box-shadow:0 30px 80px rgba(0,0,0,.45)}.collage img{width:100%;display:block}
+.notsold{font-size:.8rem;color:var(--gold-2);margin-top:.8rem;letter-spacing:.03em}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}@media(max-width:760px){.chain{grid-template-columns:1fr 1fr}}@media(max-width:480px){.chain{grid-template-columns:1fr}}
+.link{border:1px solid rgba(168,130,246,.22);border-radius:12px;padding:15px;background:rgba(27,15,46,.5)}
+.link .n{font-family:var(--display);font-size:.95rem;color:var(--gold-2)}.link h4{font-family:var(--display);font-weight:400;font-size:1.12rem;color:#fff8f4;margin:4px 0 5px;line-height:1.15}
+.link p{font-size:.82rem;color:rgb(var(--cream)/.7);line-height:1.45}.link p b{color:var(--good);font-weight:400}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}@media(max-width:720px){.proof{grid-template-columns:1fr}}
+.pcard{border:1px solid rgb(var(--cream)/.1);border-radius:12px;padding:1.5rem;background:rgb(var(--cream)/.02)}
+.pcard .v{font-family:var(--display);font-size:2.2rem;color:var(--good)}.pcard .l{font-size:.9rem;color:rgb(var(--cream)/.66);margin-top:.3rem}
+.pnote{font-size:.74rem;color:rgb(var(--cream)/.5);margin-top:.9rem;max-width:64ch}
+.perks{list-style:none;margin:1rem 0 1.4rem;display:grid;gap:.55rem}.perks li{position:relative;padding-left:24px;font-size:.98rem;color:rgb(var(--cream)/.85)}.perks li::before{content:"\2726";position:absolute;left:0;color:var(--gold-2)}
+.disc{font-size:.72rem;color:rgb(var(--cream)/.42);max-width:74ch;margin:2rem auto 0;text-align:center;line-height:1.6}
+footer{max-width:1080px;margin:0 auto;padding:26px clamp(20px,5vw,48px) 70px;color:rgb(var(--cream)/.4);font-size:.8rem;text-align:center}
+</style></head><body>
+<div class="top"><a class="logo" href="../">VIBE</a><a class="cta" href="../apply/">Apply &middot; Founding 50</a></div>
+<div class="wrap">
+<div class="hero"><div>
+<p class="kicker">For your home &middot; it all begins in the body</p>
+<h1>What if sound could do the work we've asked <em>medication</em> to do?</h1>
+<p class="answer">You'll have your first answer in twenty minutes.</p>
+<p class="lead">You've done the wearables, the panels, the protocols. HyperVIBE works one level down &mdash; precisely engineered frequency your nervous system already understands, tuned toward repair. You don't have to try. You lie down.</p>
+<div class="btnrow"><a class="btn btn-solid" href="../apply/">Apply to the Founding 50</a><a class="btn btn-ghost" href="../#film">Watch the film</a></div>
+<div class="trust"><span>Dr. Steven Schwartz &middot; TEDx &middot; Primal Resonance</span><span>10 of 10 Black Editions delivered</span></div>
+</div><div class="himg"><img loading="lazy" src="../storyboard/gen/stack/HERO-soul-bed.png" alt="A person resting on the HyperVIBE"></div></div>
+<div class="sec"><p class="kicker">HyperVIBE Turbo</p><h2>One system. <em>Four instruments.</em></h2>
+<p class="sub">The frequency is the foundation. Red light, hydrogen and oxygen, and the light-and-sound mask are tuned around it as one protocol &mdash; the way Dr. Schwartz runs it.</p>
+<figure class="collage"><img loading="lazy" src="../storyboard/gen/stack/TURBO-collage.png" alt="The HyperVIBE Turbo system: bed, red-light mat, light-and-sound mask, hydrogen-oxygen machine"></figure>
+<p class="notsold">1 &middot; HyperVIBE &nbsp; 2 &middot; Red-light mat &nbsp; 3 &middot; Light + Sound mask &nbsp; 4 &middot; Hydrogen + oxygen &mdash; the components are not sold separately.</p></div>
+<div class="sec"><p class="kicker">The story your body already knows</p><h2>Stress isn't in your head. It's <em>stored</em>.</h2>
+<div class="chain">
+<div class="link"><div class="n">1</div><h4>The pattern</h4><p>A nervous system on guard for years stores the stress response as a pattern &mdash; tension you can't put down.</p></div>
+<div class="link"><div class="n">2</div><h4>The extreme case</h4><p>PTSD is that pattern at its most severe. In a six-week study, vibroacoustic therapy was reported to reduce symptoms <b>~40%</b>.</p></div>
+<div class="link"><div class="n">3</div><h4>Down to the cell</h4><p>In our own early lab testing: <b>&minus;25% free-radical markers</b> after one 20-minute session.</p></div>
+<div class="link"><div class="n">4</div><h4>One answer</h4><p>Not more effort. The right signal &mdash; <b>HyperVIBE</b>.</p></div></div></div>
+<div class="sec"><p class="kicker">Measured, honestly</p><h2>Numbers you can <em>feel</em>.</h2>
+<div class="proof">
+<div class="pcard"><div class="v">20 min</div><div class="l">One session &mdash; your first answer</div></div>
+<div class="pcard"><div class="v">&minus;25%</div><div class="l">Free-radical markers after one session (cellular assay)</div></div>
+<div class="pcard"><div class="v">7 days</div><div class="l">Rising cellular oxygen consumption</div></div></div>
+<p class="pnote">Preliminary, internal, cellular-level findings &mdash; not yet independently replicated or peer-reviewed.</p></div>
+<div class="sec"><p class="kicker">By application &middot; the Founding 50</p><h2>A circle, <em>not a checkout</em>.</h2>
+<p class="sub">The first ten took the hand-numbered Black Edition. Forty founding places remain.</p>
+<ul class="perks"><li>The cream edition, hand-numbered</li><li>The founding mastermind retreat in Mexico</li><li>Direct access to Dr. Schwartz and the founding circle</li></ul>
+<a class="btn btn-solid" href="../apply/">Begin the application</a></div>
+<p class="disc">VIBE is a wellness product. Not a medical device; not intended to diagnose, treat, cure, or prevent any disease, and not a substitute for medical care or prescribed medication. Study figures are reported results, attributed and past-tense.</p>
+</div>
+<footer>VIBE &middot; Bioharmonic Technologies &mdash; Engineered resonance. Measurable repair.</footer>
+</body></html>
